@@ -1,0 +1,9 @@
+.header {
+  color: black;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  background: black;
+  color: white;
+}
+
