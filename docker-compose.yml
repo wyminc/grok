@@ -1,0 +1,5 @@
+version: '3'
+services:
+  grok:
+    build: .
+    image: itzymin/grok:local
