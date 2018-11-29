@@ -1,12 +1,15 @@
+//THIS WILL BE A SMART COMPONENT ONCE DATA IS IMPORTED
 import React, { Component } from 'react';
 import './styles.css';
+
+import FeaturedCardsComponent from './FeaturedCardsComponent.jsx'
 
 class Home extends Component {
 
   render() {
     return (
       <div className="home">
-        <h2>Alohaaaaaa</h2>
+        <FeaturedCardsComponent />
       </div>
     )
   }
