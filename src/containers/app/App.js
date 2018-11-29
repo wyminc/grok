@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //~~~~ COMPONENTS ~~~~//
 import Header from '../Header/HeaderComponent.jsx'
+import Footer from '../Footer/FooterComponent.jsx'
 
 //~~~~ CONTAINERS ~~~~//
 import Home from '../Home/index.jsx'
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
           </Switch>
         </Router>
+        <Footer />
       </div>
     );
   }

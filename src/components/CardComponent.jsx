@@ -44,25 +44,3 @@ export const CardFour = () => {
     </div>
   )
 }
-
-export const CardFive = () => {
-  return (
-    <div key="card" className="CardFive" >
-      <div className="name">Business Name</div>
-      <div className="address">Address</div>
-      <div className="phoneNumber">Phone #</div>
-      <div className="email">eMail</div>
-    </div>
-  )
-}
-
-export const CardSix = () => {
-  return (
-    <div key="card" className="CardSix" >
-      <div className="name">Business Name</div>
-      <div className="address">Address</div>
-      <div className="phoneNumber">Phone #</div>
-      <div className="email">eMail</div>
-    </div>
-  )
-}
