@@ -17,17 +17,15 @@
 
 .options {
   display: flex;
+  width: 20%;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .login, .design-card {
-  align-self: flex-end;
-  font-size: 12px;
+  align-self: flex-end ;
+  font-size: 14px;
+  /* padding: 0 2% 0 2%; */
 }
-
-.login {
-  padding-right: 5%;
-}
-
-
 
 
