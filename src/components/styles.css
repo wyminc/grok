@@ -1,0 +1,21 @@
+.CardOne, .CardTwo, .CardThree, .CardFour {
+    padding: 2%;
+    border: 1px solid black;
+}
+
+.CardOne {
+    /* width: 3.5in;
+    height: 2in;     */
+}
+
+.CardTwo {
+
+}
+
+.CardThree {
+
+}
+
+.CardFour {
+
+}

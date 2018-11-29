@@ -4,3 +4,19 @@
     height: 50vh;
 }
 
+/* Featured Cards */
+.featured-card-container {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+}
+.featured-card {
+    margin: 0 2% 0 2%;  
+    width: 25%;
+    height: 25%;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5%;
+}

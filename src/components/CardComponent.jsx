@@ -3,7 +3,7 @@ import './styles.css'
 
 export const CardOne = () => {
   return (
-    <div key="card" className="cardOne" >
+    <div key="card" className="CardOne" >
       <div className="name">made it.</div>
       <div className="address">Address</div>
       <div className="phoneNumber">Phone #</div>
