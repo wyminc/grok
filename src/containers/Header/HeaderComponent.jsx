@@ -14,7 +14,7 @@ class Header extends Component {
               <a href="/login"><h3>Login</h3></a>
             </div>
             <div className="design-card">
-              <a href="/design"><h3>Design Your Own</h3></a>
+              <a href="/design"><h3>Design Your Card</h3></a>
             </div>
           </div>
         </div>
