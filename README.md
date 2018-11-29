@@ -1,2 +1,2 @@
-# Grok
+# grok
 Business Card Final Project
