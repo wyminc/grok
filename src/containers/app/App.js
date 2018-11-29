@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+//~~~~ COMPONENTS ~~~~//
+import Header from '../Header/HeaderComponent.jsx'
+
 //~~~~ CONTAINERS ~~~~//
 import Home from '../Home/index.jsx'
 
-//~~~~ COMPONENTS ~~~~//
-import Header from '../Header/HeaderComponent.jsx'
+
 
 class App extends Component {
   render() {
