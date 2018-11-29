@@ -1,17 +1,24 @@
+//THIS WILL BE A SMART COMPONENT ONCE DATA IS IMPORTED
 import React, { Component } from 'react';
 import './styles.css';
+
+import FeaturedCardsComponent from './FeaturedCardsComponent.jsx'
 
 class Home extends Component {
 
   render() {
     return (
-      <div className="home-container">
-        <div className="home-image">
+      <div className="home-body-container">
+        <div className="banner-container">
+          {/* <img className="banner" src="" alt="banner"/> */}
+        </div>
+        <div className="card-example-container">
+          <FeaturedCardsComponent />       
+        </div>
+        <div className="about-info">
         
         </div>
-        <div className="home-content-container">
-          <h2>Alohaaaaaa</h2>    
-          <h4>INSERT STUFF HERE</h4>
+        <div className="footer">
         </div>
       </div>
     )

@@ -1,11 +1,6 @@
-.home-image {
+/* Placeholder Banner */
+.banner-container {
     width: 100%;
-    height: 30vh;
-    
-}
-
-.home-content-container {
-    margin: auto;
-    width: 80%;
+    height: 50vh;
 }
 
