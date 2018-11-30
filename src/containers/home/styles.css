@@ -1,7 +1,9 @@
 /***** PLACEHOLDER BANNER *****/
 .banner-container {
-    width: 100%;
+    width: 100vw;
     height: 50vh;
+    background-color: black;
+    margin: 0 0 2% 0; 
 }
 
 /***** FEATURED CARDS *****/

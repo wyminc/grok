@@ -13,8 +13,8 @@ class Header extends Component {
             <div className="login">
               <a href="/login"><h3>Login</h3></a>
             </div>
-            <div className="design-card">
-              <a href="/design"><h3>Design Your Own</h3></a>
+            <div className="signup">
+              <a href="/signup"><h3>Get Started</h3></a>
             </div>
           </div>
         </div>

@@ -12,7 +12,6 @@ export const CardOne = () => {
           <div className="name">Company Name</div>
           <div className="address">Address <br/> City, State, Zip Code</div>
           <div className="phoneNumber">Phone No.</div>
-          <div className="email">Email</div>
         </div>
       </div>
     </div>
