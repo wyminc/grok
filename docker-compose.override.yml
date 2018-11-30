@@ -1,7 +1,7 @@
 version: '3'
 services:
   grok:
-    image: itzymin/grok:${IMAGE_VERSION}-local
+    image: drcox23/grok:${IMAGE_VERSION}-local
     depends_on:
       - mongodb
       - redis

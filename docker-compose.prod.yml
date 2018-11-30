@@ -1,6 +1,6 @@
 version: '3'
 services:
   grok:
-    image: itzymin/grok:${IMAGE_VERSION}
+    image: drcox23/grok:${IMAGE_VERSION}
     environment:
       NODE_ENV: production
