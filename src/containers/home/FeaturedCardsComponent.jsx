@@ -29,7 +29,18 @@ class FeaturedCardsComponent extends Component {
         <div className="featured-card">
           <CardFour/>
         </div>
+        {/* <div className="card-play">
+        <div className="card-inner">
+        <div className="card-front">
+          <p>Front</p>
+        </div>
+        <div className="card-back">
+        <p>Back</p>
+        </div>
+        </div>
+        </div> */}
       </div>
+
 
     )
   }
