@@ -12,7 +12,193 @@
     flex-direction: row wrap;
     justify-content: space-evenly;
 }
-/* .featured-card, .test-card{
+
+.featured-card {
+    margin: 0 1% 0 1%;
+    background-color: transparent;
+    width: 25vw;
+    height: 25vh;
+    perspective: 1000px;
+}
+
+/* Card Flipping Effect */
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.featured-card:hover {
+    animation: pulse_animation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    transform-origin: 100%;
+}
+
+.featured-card:hover .card{
+    transform: rotateX(180deg);
+}
+
+.card-info, .card-front {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.card-front {
+    /* background-color: lightblue; */
+    color: grey;
+    z-index: 1;
+}
+
+.card-info {
+    background-color: grey;
+    color: white;
+    transform: rotateX(180deg);
+    z-index: 2;
+}
+
+/* Enlarging Card Animation */
+@keyframes pulse_animation {
+    from {
+        width: 25vw;
+        height: 25vh;
+    }
+    to{
+        transform: scale(1.5)
+    }
+}
+
+/* Card Styling */
+/* Card One */
+.one-front {
+    background-image: url('../../assets/card-background1.jpg');
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-size: cover;
+}
+
+.one-title {
+    font-size: 100%;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 25%;
+    left: 75%;
+    color: black;
+}
+
+.one-back {
+    background-image: url('../../assets/card-background1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+}
+
+.one-info {
+    color: black;
+    position: absolute;
+    bottom: 8%; 
+    left: 8%;
+}
+
+
+/* Card Two */
+.two-front {
+    background-image:url('../../assets/card-background2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.two-title {
+    transform: skewY(-33deg);
+    margin-left: 5px;
+    color:#273746;
+}
+
+.two-back {
+    background-color: #F9E79F;
+    /* background-color: #D0ECE7; */
+}
+
+.two-info {
+    padding: 5%;    
+    color: #273746;
+}
+
+
+.two-info .name {
+    text-align: center;
+    border-bottom: 3px solid #73C6B6;
+    margin-bottom: 1%;
+}
+
+.two-info .address {
+    border-top: 3px solid #EC7063;
+    padding-top: 5%;
+}
+
+/* Card Three */
+.three-front {
+    background-image: url('../../assets/card-background3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.three-title {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 1% 0 1% 2%;
+}
+
+.three-back {
+    background-color: black;
+}
+
+.three-info {
+    color: rgba(255, 255, 255, 0.8);
+    border-left: 2px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 5%;
+    margin: 10%;
+    box-shadow: -2px 2px 2px red;
+}
+
+.three-info .address, .three-info .phoneNumber, .three-info .email {
+    font-size: 12px;
+}
+
+
+/* CARD FOUR */
+
+
+
+
+/* SHARED STYLING */
+
+.one-info .name, 
+.two-info .name, 
+.three-info .name {
+    padding-bottom: 5%;
+}
+
+.one-info .address, .one-info .phoneNumber, .one-info .email, 
+.two-info .address, .two-info .phoneNumber, .two-info .email, 
+.three-info .address, .three-info .phoneNumber, .three-info .email {
+    font-size: 12px;
+    padding-bottom: 2%;
+}
+
+
+
+
+
+/* PREVIOUS STYLING */
+
+/* .featured-card {
     margin: 0 1% 0 1%;   */
     /* width: 100vw;
     height: 25vh;
@@ -29,47 +215,6 @@
     transition: width 1s height 1s; */
     /* transform-style: preserve-3d; */
 /* } */
-
-.featured-card {
-    background-color: transparent;
-    width: 200px;
-    height: 200px;
-    perspective: 1000px;
-}
-
-.card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.featured-card:hover .card{
-    transform: rotateX(180deg);
-   }
-
-.card-front, .card-info {
-    position: absolute; 
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-
-.card-front {
-    background-color: lightblue;
-    color: grey;
-    z-index: 2;
-}
-
-.card-info {
-    background-color: grey;
-    color: white;
-    transform: rotateX(180deg);
-    z-index: 1;
-}
 
 /* .featured-card:hover {
     width: 25vw;
