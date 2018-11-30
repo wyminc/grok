@@ -1,0 +1,157 @@
+/* Placeholder Banner */
+.banner-container {
+    width: 100%;
+    height: 50vh;
+}
+
+/* Featured Cards */
+.featured-card-container {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+}
+/* .featured-card, .test-card{
+    margin: 0 1% 0 1%;   */
+    /* width: 100vw;
+    height: 25vh;
+    border: 1px solid black; */
+    /* border: 1px solid black;
+    border-radius: 15px;
+    padding: 2%; */
+    /* align-self: center;
+
+    padding: 3%;
+    border: 1px solid black;
+    width: 20vw;
+    height: 20vh;
+    transition: width 1s height 1s; */
+    /* transform-style: preserve-3d; */
+/* } */
+
+.featured-card {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.featured-card:hover .card{
+    transform: rotateX(180deg);
+   }
+
+.card-front, .card-info {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: lightblue;
+    color: grey;
+    z-index: 2;
+}
+
+.card-info {
+    background-color: grey;
+    color: white;
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+/* .featured-card:hover {
+    width: 25vw;
+    height: 25vh;
+    box-shadow: 20px 20px 10px grey;
+    animation: pulse_animation;
+    animation-duration: 5000ms; 
+    transform-origin: 50% 5 0%;
+} */
+
+/* .test-card {
+    transform-style: preserve-3d;
+    border-radius: 5px;
+
+} */
+/* 
+.test-card:after {
+    top: -100%;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    background: #3a9999;
+    border-radius: 5px;
+    content: 'flipped';
+    transform-origin: left bottom;
+    transform: rotateX(90deg);
+} */
+
+/* .test-card:hover {
+    transform-origin: center bottom;
+    transform: rotateX(-90deg) translateY(100%);
+} */
+
+/* @keyframes pulse_animation {
+    0% {transform: scale(1);}
+    30% {transform: scale(1);}
+    40% {transform: scale(1.08);}
+    50% {transform: scale(1);}
+    60% {transform: scale(1);}
+    70% {transform: scale(1.05);}
+    80% {transform: scale(1);}
+    100% {transform: scale(1);}
+} */
+
+/* .card-play {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-play:hover .card-inner{
+ transform: rotateX(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: lightblue;
+    color: grey;
+    z-index: 2;
+}
+
+.card-back {
+    background-color: grey;
+    color: white;
+    transform: rotateX(180deg);
+    z-index: 1;
+} */
