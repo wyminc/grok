@@ -1,10 +1,10 @@
-/* Placeholder Banner */
+/* PLACEHOLDER BANNER */
 .banner-container {
     width: 100%;
     height: 50vh;
 }
 
-/* Featured Cards */
+/* FEATURED CARDS */
 .featured-card-container {
     margin: auto;
     width: 80%;
@@ -21,7 +21,7 @@
     perspective: 1000px;
 }
 
-/* Card Flipping Effect */
+/* CARD FLIP EFFECT */
 .card {
     position: relative;
     width: 100%;
@@ -51,14 +51,10 @@
 }
 
 .card-front {
-    /* background-color: lightblue; */
-    color: grey;
     z-index: 1;
 }
 
 .card-info {
-    background-color: grey;
-    color: white;
     transform: rotateX(180deg);
     z-index: 2;
 }
@@ -74,8 +70,9 @@
     }
 }
 
-/* Card Styling */
-/* Card One */
+/* CARD STYLING */
+
+/* CARD ONE */
 .one-front {
     background-image: url('../../assets/card-background1.jpg');
     background-repeat: no-repeat;
@@ -107,7 +104,7 @@
 }
 
 
-/* Card Two */
+/* CARD TWO */
 .two-front {
     background-image:url('../../assets/card-background2.png');
     background-repeat: no-repeat;
@@ -142,7 +139,7 @@
     padding-top: 5%;
 }
 
-/* Card Three */
+/* CARD THREE */
 .three-front {
     background-image: url('../../assets/card-background3.jpg');
     background-size: cover;

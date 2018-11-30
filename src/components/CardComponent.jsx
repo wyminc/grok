@@ -59,13 +59,15 @@ export const CardFour = () => {
   return (
     <div key="card" className="CardFour card">
       <div className="card-front four-front">
-        <div className="title">COMPANY NAME</div>
+        <div className="four-title">COMPANY NAME</div>
       </div>
-      <div className="card-info">
-        <div className="name">Business Name</div>
-        <div className="address">Address</div>
-        <div className="phoneNumber">Phone #</div>
-        <div className="email">eMail</div>
+      <div className="card-info four-back">
+        <div className="four-info">
+            <div className="name">Company Name</div>
+            <div className="address">Address <br/> City, State, Zip Code</div>
+            <div className="phoneNumber">Phone No.</div>
+            <div className="email">eMail</div>
+          </div>
       </div>
     </div>
   )
