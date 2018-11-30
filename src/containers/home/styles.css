@@ -1,18 +1,53 @@
 /***** PLACEHOLDER BANNER *****/
 .banner-container {
+    /* position: fixed; */
     width: 100vw;
-    height: 50vh;
+    height: 40vh;
     background-color: black;
-    margin: 0 0 2% 0; 
+    /* margin: 0 0 2% 0;  */
 }
 
-/***** FEATURED CARDS *****/
+/**** NAVIGATION BAR *****/
+.nav-bar-container {
+    /* position: fixed; */
+    width: 100vw;
+    height: 5vh;
+    padding: 1% 0 2% 0;
+    /* background-color: lightgrey; */
+    box-shadow: 2px 2px 2px lightgrey;
+    margin-bottom: 1%;
+}
+
+.nav-bar {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around;
+}
+
+.nav-items {
+    font-size: 90%;
+    padding-bottom: 0.25%;  
+}
+
+.nav-items:hover {
+    animation: border-fadein 2s forwards;
+}
+
+/***** CARD EXAMPLES / FEATURED CARDS *****/
+.card-example-header {
+    text-align: center;
+    padding-top: 2%;
+}
+
 .featured-card-container {
     margin: auto;
     width: 80%;
     display: flex;
     flex-direction: row wrap;
     justify-content: space-evenly;
+    padding: 2%  0 4% 0;
 }
 
 .featured-card {
@@ -61,16 +96,6 @@
     z-index: 2;
 }
 
-/* Enlarging Card Animation */
-@keyframes pulse_animation {
-    from {
-        width: 25vw;
-        height: 25vh;
-    }
-    to{
-        transform: scale(1.5)
-    }
-}
 
 /***** CARD STYLING *****/
 
@@ -210,8 +235,144 @@
 }
 
 
+/***** ABOUT SECTION *****/
+.about-info {
+    margin: 2% 0 2% 0;
+    width: 100vw;
+    height: 50vh;
+    background-color: lightgrey;
+}
 
 
+/***** PREMIUM SECTION *****/
+.premium-info {
+    margin: 2% 0 2% 0;
+    /* width: 100vw;
+    height: 50vh; */
+    /* background-color: lightgrey; */
+}
+
+
+/***** SIGN UP SECTION *****/
+.signup-info {
+    margin: 2% 0 2% 0;
+    width: 100vw;
+    height: 50vh;
+    background-color: lightgrey;
+}
+
+
+/***** ANIMATION KEYFRAMES *****/
+@keyframes border-fadein {
+    from {
+      border-bottom: 3px solid white;
+    }
+    to {
+      /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
+      border-bottom: 3px solid #73C6B6;
+    }
+  }
+
+/* Enlarging Card Animation */
+@keyframes pulse_animation {
+    from {
+        width: 25vw;
+        height: 25vh;
+    }
+    to{
+        transform: scale(1.5)
+    }
+}
+
+@keyframes box-fadein {
+    from {
+        box-shadow: 0 4px 8px 0 white;
+    }
+    to {
+        box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@keyframes button-fadein {
+    from {
+        background-color: white;
+        box-shadow: 0 2px 4px 0 white;
+    }
+    to {
+        background-color: #73C6B6;
+        box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+    }
+}
+
+
+/***** PREMIUM SECTION *****/
+.premium-section-container {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+}
+
+.plans {
+    border-bottom: 3px solid #73C6B6;
+}
+
+.plans:hover {
+    animation: box-fadein 1s forwards;
+}
+
+.plan-image {
+    width: 25vw;
+    height: 25vh;
+    background-color: #73C6B6;
+}
+
+.plan-info {
+    padding: 2%;
+    text-align: center;
+    width: 25vw;
+    height: 50vh;
+    color: black;
+}
+
+ul {
+    padding: 2%;
+}
+
+li {
+    list-style: none;
+}
+
+.plan-start {
+    text-align: right;
+    position: relative;
+    top: 30vh;
+    margin-right: 10%;
+}
+
+.get-started {
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.get-started:before {
+    content: 'Start';
+    color: transparent;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 2s ease;
+}
+
+.get-started:hover:before {
+    width: 90%;
+    color: black;
+
+    /* border: 2px solid #73C6B6;
+    animation: button-fadein 1s forwards; */
+}
 
 /* PREVIOUS STYLING */
 

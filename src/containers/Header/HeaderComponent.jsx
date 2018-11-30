@@ -14,7 +14,7 @@ class Header extends Component {
               <a href="/login"><h3>Login</h3></a>
             </div>
             <div className="signup">
-              <a href="/signup"><h3>Get Started</h3></a>
+              <a href="/signup"><h3>Premium</h3></a>
             </div>
           </div>
         </div>

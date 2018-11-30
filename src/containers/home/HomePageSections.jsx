@@ -21,6 +21,9 @@ export const PremiumSectionComponent = () => {
                         <li>about</li>
                         <li>this</li>
                     </ul>
+                    <div className="plan-start">
+                        <a href="/signup" className="get-started">></a>
+                    </div>
                 </div>
             </div>
             <div className="plans">
@@ -29,6 +32,14 @@ export const PremiumSectionComponent = () => {
                 </div>
                 <div className="fancy-plan plan-info">
                     <h4>Grok It Up A Notch</h4>
+                    <ul>
+                        <li>something</li>
+                        <li>about</li>
+                        <li>this</li>
+                    </ul>
+                    <div className="plan-start">
+                        <a href="/signup" className="get-started">></a>
+                    </div>
                 </div>
             </div>
             <div className="plans">
@@ -37,6 +48,14 @@ export const PremiumSectionComponent = () => {
                 </div>
                 <div className="extra-fancy-plan plan-info">
                     <h4>Super Grok'n Fancy</h4>
+                    <ul>
+                        <li>something</li>
+                        <li>about</li>
+                        <li>this</li>
+                    </ul>
+                    <div className="plan-start">
+                        <a href="/signup" className="get-started">></a>
+                    </div>
                 </div>
             </div>
         </div>

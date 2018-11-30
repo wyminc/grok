@@ -4,7 +4,7 @@
   font-family: 'Ubuntu', sans-serif;
   /* background-color: black;
   color: white; */
-  padding: 2% 0 0.5% 0;
+  padding: 1% 0 0.2% 0;
 }
 
 a {
@@ -22,8 +22,8 @@ a {
 
 .options {
   display: flex;
-  width: 20%;
-  flex-direction: row;
+  width: 15vw;
+  flex-direction: row wrap;
   justify-content: space-evenly;
 }
 
@@ -34,7 +34,7 @@ a {
 }
 
 .login, .signup {
-  padding: 1%;
+  padding: 1% 0 2% 0;
   border-bottom: 3px solid white;
 }
 
