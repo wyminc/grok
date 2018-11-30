@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles.css';
+import './styles.scss';
 
 import { CardOne, CardTwo } from '../../components/CardComponent.jsx'
 
@@ -12,6 +12,7 @@ class FeaturedCardsComponent extends Component {
 
   componentDidMount() {
     console.log('didMount Hits');
+    console.log(React.version)
   }
 
   render() {
