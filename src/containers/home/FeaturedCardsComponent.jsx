@@ -8,7 +8,8 @@ import cardBackground1 from "../../assets/card-background1.jpg";
 // import { url } from 'inspector';
 import cardBackground3 from '../../assets/card-background3.jpg';
 
-let background1 = `url(${cardBackground1})`
+const background1 = `url(${cardBackground1})`;
+const background3 = `url(${cardBackground3})`;
 
 class FeaturedCardsComponent extends Component {
   constructor (props) {
@@ -120,13 +121,13 @@ const styles = {
   title: {
     margin: "5% 5% 0 0",
     textAlign: "right",
-    color: "blue"
+    color: "black"
   },
   back: {
-    backgroundImage: "url(" + cardBackground3 + ")",
+    backgroundImage: background3,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat", 
-    color: "white"
+    color: "white"  
   }
 }
 
