@@ -98,7 +98,7 @@ class FeaturedCardsComponent extends Component {
               className="card-info"
               style={styles.back}
             >
-              <div >
+              <div style={styles.info}>
                 <h3>Company Name</h3>
                 <p>Address</p>
                 <p>Email</p>
@@ -128,6 +128,9 @@ const styles = {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat", 
     color: "white"  
+  },
+  info: {
+
   }
 }
 
