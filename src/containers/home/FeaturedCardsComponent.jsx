@@ -8,6 +8,7 @@ import cardBackground1 from "../../assets/card-background1.jpg";
 // import { url } from 'inspector';
 import cardBackground3 from '../../assets/card-background3.jpg';
 
+let background1 = `url(${cardBackground1})`
 
 class FeaturedCardsComponent extends Component {
   constructor (props) {
@@ -84,25 +85,17 @@ class FeaturedCardsComponent extends Component {
             email={"email"}         
           />
         </div>
-        <div
-         className="featured-card"
-        //  onMouseEnter={() => this.setState({hover: true})}
-        //  onMouseLeave={() => this.setState({hover: false})} 
-        //  style={this.state.hover ? {...style.containerHover, ...style.cardHover} : {...style.container, ...style.card }}
-        >
-          <div className="card"
-          // style={style.card}
-          >
+        <div className="featured-card">
+          <div className="card">
             <div 
-            className="card-front"
-            style={styles.front}
-            // style={style.front}
+              className="card-front"
+              style={styles.front}
             > 
               <div style={styles.title}>Company Name</div>
             </div>
-            <div className="card-info"
-            // style={style.info}
-            style={styles.back}
+            <div 
+              className="card-info"
+              style={styles.back}
             >
               <div >
                 <h3>Company Name</h3>
@@ -119,51 +112,10 @@ class FeaturedCardsComponent extends Component {
 
 // card styling 
 const styles = {
-  container: {  //featured-card
-    margin: "0 1% 0 1%",
-    backgroundColor: "transparent",
-    width: "25vw", 
-    height: "25vh",
-    perspective: "1000px",
-  },
-  containerHover: {   // featured-card:hover
-    margin: "0 1% 0 1%",
-    backgroundColor: "transparent",
-    width: "25vw", 
-    height: "25vh",
-    perspective: "1000px",
-    transform: "rotateX(180deg)",
-  }, 
-  card: { // card
-    position: "relative", 
-    width: "100%", 
-    height: "100%",
-    transition: "transform 2s",
-    transformStyle: "preserve-3d",
-    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-    transform: "rotateX(180deg)"
-  },
-  // cardHover: {
-  //   position: "relative", 
-  //   width: "100%", 
-  //   height: "100%",
-  //   transition: "transform 2s",
-  //   transformStyle: "preserve-3d",
-  //   boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-  //   transform: "rotateX(180deg)"
-  // },
   front: {  
-    backgroundImage: "url(" + cardBackground1 + ")",
+    backgroundImage: background1,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat"
-    // color: "black", 
-    // position: "absolute", 
-    // width: "100%", 
-    // height: "100%", 
-    // backfaceVisibility: "hidden", 
-    // boxShadow: "5px 5px 10px grey", 
-    // zIndex: "1",
-    // backgroundColor: "grey"
   },
   title: {
     margin: "5% 5% 0 0",
@@ -174,18 +126,79 @@ const styles = {
     backgroundImage: "url(" + cardBackground3 + ")",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat", 
-    color: "white",
-  },
-  info: {
-    position: "absolute", 
-    width: "100%",
-    height: "100%",
-    backfaceVisibility: "hidden", 
-    boxShadow: "5px 5px 10px grey",
-    transform: "rotateX(180deg)",
-    zIndex: "2",
+    color: "white"
   }
 }
 
 
 export default FeaturedCardsComponent;
+
+// card styling 
+// const styles = {
+//   container: {  //featured-card
+//     margin: "0 1% 0 1%",
+//     backgroundColor: "transparent",
+//     width: "25vw", 
+//     height: "25vh",
+//     perspective: "1000px",
+//   },
+//   containerHover: {   // featured-card:hover
+//     margin: "0 1% 0 1%",
+//     backgroundColor: "transparent",
+//     width: "25vw", 
+//     height: "25vh",
+//     perspective: "1000px",
+//     transform: "rotateX(180deg)",
+//   }, 
+//   card: { // card
+//     position: "relative", 
+//     width: "100%", 
+//     height: "100%",
+//     transition: "transform 2s",
+//     transformStyle: "preserve-3d",
+//     boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+//     transform: "rotateX(180deg)"
+//   },
+//   // cardHover: {
+//   //   position: "relative", 
+//   //   width: "100%", 
+//   //   height: "100%",
+//   //   transition: "transform 2s",
+//   //   transformStyle: "preserve-3d",
+//   //   boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+//   //   transform: "rotateX(180deg)"
+//   // },
+//   front: {  
+//     backgroundImage: background1,
+//     backgroundSize: "cover",
+//     backgroundRepeat: "no-repeat"
+//     // color: "black", 
+//     // position: "absolute", 
+//     // width: "100%", 
+//     // height: "100%", 
+//     // backfaceVisibility: "hidden", 
+//     // boxShadow: "5px 5px 10px grey", 
+//     // zIndex: "1",
+//     // backgroundColor: "grey"
+//   },
+//   title: {
+//     margin: "5% 5% 0 0",
+//     textAlign: "right",
+//     color: "blue"
+//   },
+//   back: {
+//     backgroundImage: "url(" + cardBackground3 + ")",
+//     backgroundSize: "cover",
+//     backgroundRepeat: "no-repeat", 
+//     color: "white",
+//   },
+//   info: {
+//     position: "absolute", 
+//     width: "100%",
+//     height: "100%",
+//     backfaceVisibility: "hidden", 
+//     boxShadow: "5px 5px 10px grey",
+//     transform: "rotateX(180deg)",
+//     zIndex: "2",
+//   }
+// }
