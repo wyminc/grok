@@ -86,7 +86,7 @@ class FeaturedCardsComponent extends Component {
             email={"email"}         
           />
         </div>
-        <div className="featured-card">
+        {/* <div className="featured-card">
           <div className="card">
             <div 
               className="card-front"
@@ -105,7 +105,7 @@ class FeaturedCardsComponent extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     )
   }

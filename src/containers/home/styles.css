@@ -1,19 +1,15 @@
 /***** PLACEHOLDER BANNER *****/
 .banner-container {
-    /* position: fixed; */
     width: 100vw;
     height: 40vh;
     background-color: black;
-    /* margin: 0 0 2% 0;  */
 }
 
 /**** NAVIGATION BAR *****/
 .nav-bar-container {
-    /* position: fixed; */
     width: 100vw;
     height: 5vh;
     padding: 1% 0 2% 0;
-    /* background-color: lightgrey; */
     box-shadow: 2px 2px 2px lightgrey;
     margin-bottom: 1%;
 }
@@ -140,13 +136,12 @@
 
 .two-title {
     transform: skewY(-33deg);
-    margin-left: 5px;
+    margin-left: 3%;
     color:#273746;
 }
 
 .two-back {
     background-color: #F9E79F;
-    /* background-color: #D0ECE7; */
 }
 
 .two-info {
@@ -217,6 +212,10 @@
     padding: 5%;
 }
 
+.four-title {
+    color: transparent;
+}
+
 
 /* SHARED STYLING */
 
@@ -248,9 +247,6 @@
 /***** PREMIUM SECTION *****/
 .premium-info {
     margin: 2% 0 2% 0;
-    /* width: 100vw;
-    height: 50vh; */
-    /* background-color: lightgrey; */
 }
 
 
@@ -269,7 +265,6 @@
       border-bottom: 3px solid white;
     }
     to {
-      /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
       border-bottom: 3px solid #73C6B6;
     }
   }
@@ -370,9 +365,6 @@ li {
 .get-started:hover:before {
     width: 90%;
     color: black;
-
-    /* border: 2px solid #73C6B6;
-    animation: button-fadein 1s forwards; */
 }
 
 /* PREVIOUS STYLING */
