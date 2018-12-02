@@ -1,6 +1,6 @@
 //THIS WILL BE A SMART COMPONENT ONCE DATA IS IMPORTED
 import React, { Component } from 'react';
-import './styles.css';
+import './styles.scss';
 
 import FeaturedCardsComponent from './FeaturedCardsComponent.jsx'
 import {AboutSectionComponent, PremiumSectionComponent} from './HomePageSections';
