@@ -3,10 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //~~~~ COMPONENTS ~~~~//
-import Header from '../Header/HeaderComponent.jsx'
+import Header from '../Header/HeaderComponent.jsx';
 
 //~~~~ CONTAINERS ~~~~//
-import Home from '../Home/index.jsx'
+import Home from '../Home/index.jsx';
 
 
 
