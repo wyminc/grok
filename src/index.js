@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './containers/App/App';
+import App from './containers/app/App';
 import * as serviceWorker from './serviceWorker';
+import Amplify from 'aws-amplify';
+import config from './config.js';
 
 import ReduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -15,6 +17,17 @@ const store = createStore(
     applyMiddleware(ReduxThunk)
   )
 )
+
+Amplify.configure({
+  Auth: {
+    mandatorySignIn: false,
+    region: config.cognito.REGION,
+    userPoolId: config.cognito.USER_POOL_ID,
+    // identityPoolId: config.cognito.IDENTITY_POOL_ID,
+    userPoolWebClientId: config.cognito.APP_CLIENT_ID
+  },
+})
+
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
