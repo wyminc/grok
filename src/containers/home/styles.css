@@ -2,7 +2,22 @@
 .banner-container {
     width: 100vw;
     height: 40vh;
-    background-color: black;
+    background-color: #273746;
+    margin: auto;
+}
+
+button {
+    margin: 15vh 0 0 5vh;
+    background-color:#273746;
+    padding: 1.5%;
+    border: 2px solid white;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    animation: button-color-fade 1.5s forwards;
 }
 
 /**** NAVIGATION BAR *****/
@@ -20,7 +35,6 @@
     display: flex;
     flex-direction: row wrap;
     justify-content: space-around;
-    background-image: url('../../')
 }
 
 .nav-items {
@@ -303,6 +317,17 @@
     to {
         background-color: #73C6B6;
         box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@keyframes button-color-fade {
+    from {
+        background-color: #273746;
+        color: white;
+    }
+    to {
+        background-color: white;
+        color: #273746;
     }
 }
 

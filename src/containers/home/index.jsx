@@ -11,6 +11,7 @@ class Home extends Component {
     return (
       <div id="top" className="home-body-container">
         <div className="banner-container">
+          <button className="getStarted">GET STARTED</button>
           {/* <img className="banner" src="" alt="banner"/> */}
         </div>
         <div className="nav-bar-container">
