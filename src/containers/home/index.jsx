@@ -31,14 +31,15 @@ class Home extends Component {
             <FeaturedCardsComponent />       
           </div>
         </div>
-        <div id="premium" className="premium-info">
+        {/* <div id="premium" className="premium-info">
           <PremiumSectionComponent/>
-        </div>
+        </div> */}
         <div id="about" className="about-info">
-          <AboutSectionComponent/>
+          {/* <AboutSectionComponent/> */}
+          [Insert About Grok Section Here]
         </div>
         <div id="signup" className="signup-info">
-    
+          [Maybe Insert Something About Sign Up Here?]
         </div>
         <div className="footer">
         </div>

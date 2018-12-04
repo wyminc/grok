@@ -3,7 +3,7 @@ import './styles.css';
 
 export const AboutSectionComponent = () => {
     return (
-        <div>Testing</div>
+        <div></div>
     )
 }
 
