@@ -14,6 +14,14 @@ class Home extends Component {
           <a href="/design">
             <button className="getStarted">GET STARTED</button>
           </a>  
+              <div className="grok-definition">
+                <p className="definition-title">
+                  GROK
+                </p>
+                <p className="definition">
+                  to empathize or communicate sympathetically; <br/> establish a rapport. 
+                </p>
+              </div>
           {/* <img className="banner" src="" alt="banner"/> */}
         </div>
         <div className="nav-bar-container">
@@ -39,7 +47,13 @@ class Home extends Component {
         </div> */}
         <div id="about" className="about-info">
           {/* <AboutSectionComponent/> */}
-          [Insert About Grok Section Here]
+          {/* <p className="definition-title">
+            GROK
+          </p>
+          <p className="definition">
+            to empathize or communicate sympathetically; establish a rapport. 
+          </p> */}
+          
         </div>
         <div id="signup" className="signup-info">
           [Maybe Insert Something About Sign Up Here?]
