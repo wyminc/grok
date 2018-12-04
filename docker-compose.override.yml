@@ -1,38 +1,51 @@
 version: '3'
 services:
-  grok:
-    image: itzymin/grok:${IMAGE_VERSION}-local
+  mongo:
+    container_name: mongo
+    image: mongo
+    # volumes: 
+    #   - mongo-data-volume:/var/lib/mongodb/data
+    ports: 
+      # - "${MONGO_HOST_PORT}:${MONGO_CONTAINER_PORT}"
+      - '27017:27017'
+    networks:
+      - my-app-network
+  server:
+    build:
+      context: ./API
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: development
+    image: golang:1.6.1-alpine
+    command: ["fresh"]
+    volumes:
+      - ".:/go/src/grok"
+    env_file: ./API/.env
+    ports:
+      # -"${PORT}:${PORT}"
+      - "8000:8000"
+    networks:
+      - my-app-network
+  react:
+    build:
+      context: ./FrontendDB
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: development
+    # image: itzymin/grokreact:${IMAGE_VERSION}-local
+    # image: itzymin/grokreact:0.0.1-local
+    # working_dir: /usr/src/app
     command: ["npm", "run", "start"]
-    container_name: grok
     volumes:
       - ".:/app/:rw"
-    env_file: .env
+    env_file: ./FrontendDB/.env
     environment:
       NODE_ENV: development
     ports:
-      # - "${EXPRESS_HOST_PORT}:${EXPRESS_CONTAINER_PORT}"
+      # -"${REACT_HOST_PORT}:${REACT_CONTAINER_PORT}"
       - "3000:3000"
     networks:
       - my-app-network
-  mongo: 
-    container_name: mongo
-    image: mongo
-    env_file: .env
-    volumes: 
-      - mongo-data-volume:/var/lib/mongodb/data
-    ports: 
-      - '${MONGO_HOST_PORT}:${MONGO_CONTAINER_PORT}'
-    networks:
-      - my-app-network
-#   mongodb:
-#     image: postgres:10.0-alpine
-#     env_file: .env
-#     volumes: 
-#       - mongodb-data-volume:/var/lib/mongodb/data
-#     ports: 
-#       - '${POSTGRES_HOST_PORT}:${POSTGRES_CONTAINER_PORT}'
-#     networks:
-#       - my-app-network
 #   redis:
 #     image: redis:4.0-alpine
 #     env_file: .env
@@ -43,8 +56,8 @@ services:
 #     networks:
 #       - my-app-network
 
-volumes: 
-  mongo-data-volume:
+# volumes: 
+#   mongo-data-volume:
 #   redis-data-volume:
 networks:
   my-app-network:
