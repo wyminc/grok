@@ -9,6 +9,8 @@ const reducers = (state = {
     //~~~~ Cases ~~~~//
     case GET_ALL_CARDS:
       return { ...state, allCards: action.payload }
+    default :
+      return {state}
 
   }
 }
