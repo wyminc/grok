@@ -17,4 +17,4 @@ RUN yarn install
 COPY . .
 
 # Start the node application as you normally would
-# CMD ["node", "server.js"]
+CMD ["npm", "run", "start"]
