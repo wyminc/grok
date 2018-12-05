@@ -5,7 +5,7 @@
     /* background-color: #273746; */
     background-image: url('../../assets/Banner.jpg');
     /* background-repeat: no-repeat; */
-    background-size: 100vw 62.5vh;
+    background-size: 100vw 72vh;
     margin: auto;
     display: flex;
     flex-direction: row wrap;
@@ -15,7 +15,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    margin: 12vh 0 0 5vh;
+    margin: 10vh 0 0 5vh;
 }
 
 .definition-title {
@@ -30,7 +30,7 @@
 }
 
 button {
-    margin: 15vh 0 0 5vh;
+    margin: 12vh 0 0 5vh;
     background-color:#273746;
     padding: 15px;
     border: 2px solid white;
