@@ -1,6 +1,0 @@
-version: '3'
-services:
-  grok:
-    image: drcox23/grok:${IMAGE_VERSION}
-    environment:
-      NODE_ENV: production

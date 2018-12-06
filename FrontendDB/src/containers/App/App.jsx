@@ -7,7 +7,7 @@ import Header from '../Header/HeaderComponent.jsx'
 import Footer from '../Footer/FooterComponent.jsx'
 
 //~~~~ CONTAINERS ~~~~//
-import Home from '../home/index.jsx'
+import Home from '../Home/index.jsx'
 import Login from '../Login/Login.jsx'
 
 
