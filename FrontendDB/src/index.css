@@ -7,9 +7,9 @@
   text-decoration: none;
 }
 
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: inherit;
-}
+} */
 
 a:link, a:visited {
   text-decoration: none;
