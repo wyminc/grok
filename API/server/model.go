@@ -4,10 +4,10 @@ import "gopkg.in/mgo.v2/bson"
 
 type card struct {
 	Id         bson.ObjectId `json:"_id" bson:"_id"`
-	User_id    int           `json:"user_id" bson:"user_id"`
+	User_id    string        `json:"user_id" bson:"user_id"`
 	Data       data          `json:"data" bson:"data"`
 	Css        style         `json:"css" bson:"css"`
-	Users      []int         `json:"users" bson:"users"`
+	Users      []string      `json:"users" bson:"users"`
 	Is_deleted bool          `json:"is_deleted" bson:"is_deleted"`
 }
 
@@ -28,10 +28,10 @@ type style struct {
 }
 
 type newCard struct {
-	User_id    int
+	User_id    string
 	Data       newData
 	Css        newStyle
-	Users      []int
+	Users      []string
 	Is_deleted bool
 }
 
