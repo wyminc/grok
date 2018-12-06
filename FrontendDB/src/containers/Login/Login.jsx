@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Auth } from 'aws-amplify';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.scss";
+// import history from "../../history"
 
 export default class Login extends Component {
   constructor(props) {
@@ -11,6 +12,10 @@ export default class Login extends Component {
       email: "",
       password: ""
     };
+  }
+
+  componentDidMount () {
+    console.log("LOGIN PAGE")
   }
 
   validateForm() {
@@ -30,6 +35,10 @@ export default class Login extends Component {
       .then( user => {
         console.log("Auth User", user)
         alert("Logged in");
+      })
+      .then( result => {
+        console.log("GOING HOME")
+        this.props.history.push('/')
       })      
     .catch (err => {
       console.log("Auth Error", err)

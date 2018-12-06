@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.scss';
+import Login from '../Login/Login.jsx'
 
 import logo from '../../assets/logo.png'
 

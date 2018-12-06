@@ -17,4 +17,4 @@ RUN yarn install
 COPY . .
 
 # Start the node application as you normally would
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "ampStart --prefix FrontendDB"]
