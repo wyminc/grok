@@ -5,11 +5,12 @@ import {
   FormControl,
   ControlLabel
 } from "react-bootstrap";
-// import LoaderButton from "../components/LoaderButton";
+import LoaderButton from "../../components/LoaderButton";
 import "./Register.scss";
-import { Auth } from 'aws-amplify'
+import { Auth } from 'aws-amplify';
+import { Button } from 'react';
 
-export default class Signup extends Component {
+export default class Register extends Component {
   constructor(props) {
     super(props);
 
@@ -21,6 +22,10 @@ export default class Signup extends Component {
       confirmationCode: "",
       newUser: null
     };
+  }
+
+  componentDidMount() {
+    console.log("REG PROPS", this.props)
   }
 
   validateForm() {
@@ -73,6 +78,7 @@ export default class Signup extends Component {
       this.props.userHasAuthenticated(true);
       this.props.history.push("/");
     } catch (e) {
+      console.log("full error", e)
       alert(e.message);
       this.setState({ isLoading: false });
     }
@@ -91,7 +97,7 @@ export default class Signup extends Component {
           />
           <HelpBlock>Please check your email for the code.</HelpBlock>
         </FormGroup>
-        {/* <LoaderButton
+        <LoaderButton
           block
           bsSize="large"
           disabled={!this.validateConfirmationForm()}
@@ -99,7 +105,7 @@ export default class Signup extends Component {
           isLoading={this.state.isLoading}
           text="Verify"
           loadingText="Verifying…"
-        /> */}
+        />
       </form>
     );
   }
@@ -132,7 +138,7 @@ export default class Signup extends Component {
             type="password"
           />
         </FormGroup>
-        {/* <LoaderButton
+        <LoaderButton
           block
           bsSize="large"
           disabled={!this.validateForm()}
@@ -140,7 +146,7 @@ export default class Signup extends Component {
           isLoading={this.state.isLoading}
           text="Signup"
           loadingText="Signing up…"
-        /> */}
+        />
       </form>
     );
   }

@@ -10,6 +10,7 @@ import Footer from '../Footer/FooterComponent.jsx'
 import Home from '../Home/index.jsx'
 import Login from '../Login/Login.jsx'
 import Register from '../Register/Register.jsx'
+import Logout from '../../components/LogoutButton.jsx';
 // import { NOTFOUND } from 'dns';
 
 
@@ -27,6 +28,8 @@ class App extends Component {
     this.setState({ isAuthenticated: authenticated });
   }
 
+  
+
   render() {
     const childProps = {
       isAuthenticated: this.state.isAuthenticated,
@@ -38,8 +41,10 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/' component={Home} props={childProps} />
-            <Route path='/login' component={Login} props={childProps} />
-            <Route path='/register' component={Register} props={childProps} />
+            {this.state.isAuthenticated
+              ? <Route path='/logout' component={Logout} /> 
+              : <Route path='/login' component={Login} props={childProps} />}
+            <Route path='/signup' component={Register} props={childProps} />
             {/* <Route component={NOTFOUND} /> */}
           </Switch>
         </Router>

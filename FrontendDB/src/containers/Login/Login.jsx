@@ -34,6 +34,7 @@ export default class Login extends Component {
     await Auth.signIn(this.state.email, this.state.password)
       .then( user => {
         console.log("Auth User", user)
+        // this.props.userHasAuthenticated(true);
         alert("Logged in");
       })
       .then( result => {
