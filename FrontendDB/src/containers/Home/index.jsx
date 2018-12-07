@@ -42,23 +42,8 @@ class Home extends Component {
             <FeaturedCardsComponent />       
           </div>
         </div>
-        {/* <div id="premium" className="premium-info">
-          <PremiumSectionComponent/>
-        </div> */}
         <div id="about" className="about-info">
-          {/* <AboutSectionComponent/> */}
-          {/* <p className="definition-title">
-            GROK
-          </p>
-          <p className="definition">
-            to empathize or communicate sympathetically; establish a rapport. 
-          </p> */}
-          
-        </div>
-        <div id="signup" className="signup-info">
-          [Maybe Insert Something About Sign Up Here?]
-        </div>
-        <div className="footer">
+          [INSERT SECTION ABOUT THE COMPANY]
         </div>
       </div>
     )
