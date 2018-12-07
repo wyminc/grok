@@ -5,10 +5,13 @@ class Logout extends Component {
 
 
   handleLogout = event => {
-    this.userHasAuthenticated(false);
+    console.log("logout initiated")
     Auth.signOut()
     .then( data => {
       console.log("Logged Out", data)
+    })
+    .then( event => {
+    this.userHasAuthenticated(false);
     })
     .catch( err => {
       console.log(err)

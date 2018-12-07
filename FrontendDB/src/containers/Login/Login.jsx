@@ -10,7 +10,8 @@ export default class Login extends Component {
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      isAuthenticated:""
     };
   }
 
@@ -31,10 +32,10 @@ export default class Login extends Component {
   handleSubmit = async event => {
     event.preventDefault();
   
-    await Auth.signIn(this.state.email, this.state.password)
+    Auth.signIn(this.state.email, this.state.password)
       .then( user => {
         console.log("Auth User", user)
-        // this.props.userHasAuthenticated(true);
+        this.setState({isAuthenticated: true});
         alert("Logged in");
       })
       .then( result => {
