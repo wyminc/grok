@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './styles.scss';
 
 import {Card} from '../../components/CardComponent.jsx'
-import { CardOne, CardTwo, CardThree, CardFour  } from '../../components/CardComponent.jsx'
 import { generateKeyPair } from 'crypto';
 import cardBackground1 from "../../assets/card-background1.jpg";
 // import { url } from 'inspector';
@@ -11,7 +10,7 @@ import cardBackground3 from '../../assets/card-background3.jpg';
 const background1 = `url(${cardBackground1})`;
 const background3 = `url(${cardBackground3})`;
 
-class FeaturedCardsComponent extends Component {
+class FeaturedCards extends Component {
   constructor (props) {
     super(props) 
     this.state = {
@@ -136,7 +135,7 @@ const styles = {
 }
 
 
-export default FeaturedCardsComponent;
+export default FeaturedCards;
 
 // card styling 
 // const styles = {

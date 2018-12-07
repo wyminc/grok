@@ -12,15 +12,23 @@ import Home from '../Home/index.jsx';
 
 
 class App extends Component {
+  const 
   render() {
     return (
       <div className="App">
         <Header />
-        <Router>
-          <Switch>
-            <Route exact path='/' component={Home} />
-          </Switch>
-        </Router>
+
+          <Router>
+
+            <Switch>
+
+              <Route exact path='/' component={Home} />
+
+
+            </Switch>
+
+          </Router>
+
         <Footer />
       </div>
     );
