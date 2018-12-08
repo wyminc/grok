@@ -6,6 +6,7 @@
     "aws-amplify": "^1.1.11",
     "axios": "^0.18.0",
     "gitmoji-cli": "^1.9.2",
+    "mongodb": "^3.1.10",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
@@ -22,7 +23,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "ampStart": "npm run-script start"
+    "ampStart": "npm run-script start",
+    "create": "node ./mongo/createCollection.js",
+    "insert": "node ./mongo/insertMany.js",
+    "drop": "node ./mongo/dropCollection.js"
   },
   "eslintConfig": {
     "extends": "react-app"

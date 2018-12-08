@@ -1,25 +1,21 @@
 package server
 
 import (
-	"strconv"
-
 	"github.com/gin-gonic/gin"
 )
 
 func AllCards(c *gin.Context) {
-	iString := (c.Param("id"))
-	iInt, _ := strconv.Atoi(iString)
+	i := (c.Param("id"))
 
-	data, _ := getAll(iInt)
+	data, _ := getAll(i)
 
 	c.JSON(200, gin.H{"data": data})
 }
 
 func Card(c *gin.Context) {
-	iString := (c.Param("id"))
-	iInt, _ := strconv.Atoi(iString)
+	i := (c.Param("id"))
 
-	data, _ := getSpecific(iInt)
+	data, _ := getSpecific(i)
 
 	c.JSON(200, gin.H{"data": data})
 }
@@ -34,22 +30,20 @@ func Add(c *gin.Context) {
 }
 
 func Update(c *gin.Context) {
-	iString := (c.Param("id"))
-	iInt, _ := strconv.Atoi(iString)
+	i := (c.Param("id"))
 
 	body := &newCard{}
 	c.Bind(body)
 
-	data, _ := updateCard(iInt, body)
+	data, _ := updateCard(i, body)
 
 	c.JSON(200, gin.H{"data": data})
 }
 
 func Delete(c *gin.Context) {
-	iString := (c.Param("id"))
-	iInt, _ := strconv.Atoi(iString)
+	i := (c.Param("id"))
 
-	data, _ := deleteCard(iInt)
+	data, _ := deleteCard(i)
 
 	c.JSON(200, gin.H{"data": data})
 }

@@ -14,8 +14,8 @@ func createSession(addr string) (*mgo.Session, error) {
 	return session.Copy(), err
 }
 
-func getSpecific(id int) (card, error) {
-	session, err := createSession("localhost")
+func getSpecific(id string) (card, error) {
+	session, err := createSession("mongo:27017")
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
@@ -30,8 +30,8 @@ func getSpecific(id int) (card, error) {
 }
 
 //Get all cards that is in the id's (the id that is being passed through) users key
-func getAll(id int) ([]card, error) {
-	session, err := createSession("localhost")
+func getAll(id string) ([]card, error) {
+	session, err := createSession("mongo:27017")
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
@@ -49,7 +49,7 @@ func getAll(id int) ([]card, error) {
 }
 
 func addCard(data *newCard) (card, error) {
-	session, err := createSession("localhost")
+	session, err := createSession("mongo:27017")
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
@@ -65,8 +65,8 @@ func addCard(data *newCard) (card, error) {
 	return result, err
 }
 
-func updateCard(id int, data *newCard) (card, error) {
-	session, err := createSession("localhost")
+func updateCard(id string, data *newCard) (card, error) {
+	session, err := createSession("mongo:27017")
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
@@ -82,8 +82,8 @@ func updateCard(id int, data *newCard) (card, error) {
 	return result, err
 }
 
-func deleteCard(id int) (card, error) {
-	session, err := createSession("localhost")
+func deleteCard(id string) (card, error) {
+	session, err := createSession("mongo:27017")
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")

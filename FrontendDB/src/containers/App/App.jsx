@@ -19,6 +19,7 @@ import Register from '../Register/Register.jsx'
 
 
 class App extends Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
       this.state = {
@@ -65,6 +66,9 @@ class App extends Component {
 
   
 
+=======
+  const 
+>>>>>>> development
   render() {
     const childProps = {
       isAuthenticated: this.state.isAuthenticated,
@@ -72,6 +76,7 @@ class App extends Component {
     };
     return (
       <div className="App">
+<<<<<<< HEAD
         <Header props={childProps}/>
         <Router>
           <Switch>
@@ -82,6 +87,21 @@ class App extends Component {
             {/* <Route component={NOTFOUND} /> */}
           </Switch>
         </Router>
+=======
+        <Header />
+
+          <Router>
+
+            <Switch>
+
+              <Route exact path='/' component={Home} />
+
+
+            </Switch>
+
+          </Router>
+
+>>>>>>> development
         <Footer />
       </div>
     );

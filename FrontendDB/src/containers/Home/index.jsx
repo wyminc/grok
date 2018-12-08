@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import './styles.scss';
 
-import FeaturedCardsComponent from './FeaturedCardsComponent.jsx'
+import FeaturedCards from './FeaturedCards/FeaturedCards.jsx'
 import {AboutSectionComponent, PremiumSectionComponent} from './HomePageSections';
 
 class Home extends Component {
@@ -39,7 +39,7 @@ class Home extends Component {
               <h2>Design Your Own Card</h2>
               <p>Choose from one of our templates or customize it and make it your own!</p>
             </div>
-            <FeaturedCardsComponent />       
+            <FeaturedCards />       
           </div>
         </div>
         {/* <div id="premium" className="premium-info">
