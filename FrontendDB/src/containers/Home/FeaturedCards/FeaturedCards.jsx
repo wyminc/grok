@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './styles.scss';
+import '../styles.scss';
 
 import {Card} from '../../../CardComponent/CardComponent.jsx'
 import {cardContainer, name, address, phone, email} from '../../../CardComponent/CardClassing.js'
 
 import { generateKeyPair } from 'crypto';
-import cardBackground1 from "../../assets/card-background1.jpg";
+import cardBackground1 from "../../../assets/card-background1.jpg";
 // import { url } from 'inspector';
-import cardBackground3 from '../../assets/card-background3.jpg';
+import cardBackground3 from '../../../assets/card-background3.jpg';
 
 const background1 = `url(${cardBackground1})`;
 const background3 = `url(${cardBackground3})`;

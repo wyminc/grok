@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './styles.scss';
 
 import FeaturedCards from './FeaturedCards/FeaturedCards.jsx'
-import {AboutSectionComponent, PremiumSectionComponent} from './HomePageSections';
 
 class Home extends Component {
 
