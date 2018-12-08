@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './styles.scss';
 
-import {Card} from '../../components/CardComponent.jsx'
+import {Card} from '../../../CardComponent/CardComponent.jsx'
+import {cardContainer, name, address, phone, email} from '../../../CardComponent/CardClassing.js'
+
 import { generateKeyPair } from 'crypto';
 import cardBackground1 from "../../assets/card-background1.jpg";
 // import { url } from 'inspector';
@@ -36,58 +38,58 @@ class FeaturedCards extends Component {
       <div className="featured-card-container">
         <div className="featured-card">
           <Card
-            cardContainer={"card"}
+            cardContainer={cardContainer}
             front={"card-front one-front"}
             title={"one-title"}
             back={"card-info one-back"}
             info={"one-info"}
-            name={"name"}
-            address={"address"}
-            phone={"phoneNumber"}
-            email={"email"}
+            name={name}
+            address={address}
+            phone={phone}
+            email={email}
           />
         </div>
         <div className="featured-card">
           <Card
-            cardContainer={"card"}
+            cardContainer={cardContainer}
             front={"card-front two-front"}
             title={"two-title"}
             back={"card-info two-back"}
             info={"two-info"}
-            name={"name"}
-            address={"address"}
-            phone={"phoneNumber"}
-            email={"email"}          
+            name={name}
+            address={address}
+            phone={phone}
+            email={email}          
           />
         </div>
         <div className="featured-card">
           <Card
-            cardContainer={"card"}
+            cardContainer={cardContainer}
             front={"card-front three-front"}
             title={"three-title"}
             back={"card-info three-back"}
             info={"three-info"}
-            name={"name"}
-            address={"address"}
-            phone={"phoneNumber"}
-            email={"email"}
+            name={name}
+            address={address}
+            phone={phone}
+            email={email}
           />
         </div>
         <div className="featured-card">
           <Card
-            cardContainer={"card"}
+            cardContainer={cardContainer}
             front={"card-front four-front"}
             title={"four-title"}
             back={"card-info four-back"}
             info={"four-info"}
-            name={"name"}
-            address={"address"}
-            phone={"phoneNumber"}
-            email={"email"}         
+            name={name}
+            address={address}
+            phone={phone}
+            email={email}         
           />
         </div>
         {/* <div className="featured-card">
-          <div className="card">
+          <div className=cardContainer>
             <div 
               className="card-front"
               style={styles.front}
