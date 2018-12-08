@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import '../styles.scss';
-=======
 import '../styles.css';
->>>>>>> development
 
 import {Card} from '../../../CardComponent/CardComponent.jsx'
 import {cardContainer, name, address, phone, email} from '../../../CardComponent/CardClassing.js'
