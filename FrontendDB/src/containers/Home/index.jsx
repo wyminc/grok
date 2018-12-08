@@ -1,6 +1,6 @@
 //THIS WILL BE A SMART COMPONENT ONCE DATA IS IMPORTED
 import React, { Component } from 'react';
-import './styles.scss';
+import './styles.css';
 
 import FeaturedCards from './FeaturedCards/FeaturedCards.jsx'
 
