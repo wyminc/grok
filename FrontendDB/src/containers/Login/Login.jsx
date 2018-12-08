@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Auth } from 'aws-amplify';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.scss";
+import { connect } from 'react-redux'
 // import history from "../../history"
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -83,3 +84,9 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.isAuthenticated
+})
+
+export default connect(mapStateToProps)(Login)

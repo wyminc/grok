@@ -51,19 +51,19 @@ export default class Register extends Component {
   
     this.setState({ isLoading: true });
   
-    try {
-      const newUser = await Auth.signUp({
-        username: this.state.email,
-        password: this.state.password
-      });
-      this.setState({
-        newUser
-      });
-    } catch (e) {
+    Auth.signUp({
+      username: this.state.email,
+      password: this.state.password,
+      attributes: { email: this.state.email }
+      })
+    .then( data => {
+      console.log(data)
+      this.setState({newUser: true})
+    })
+    .catch(e => {
       alert(e.message);
-    }
-  
-    this.setState({ isLoading: false });
+      this.setState({ isLoading: false })
+    })
   }
 
   handleConfirmationSubmit = async event => {
