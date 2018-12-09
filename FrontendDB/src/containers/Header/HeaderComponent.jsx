@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles.scss';
+import './styles.css';
 import Login from '../Login/Login.jsx'
 import { Auth } from 'aws-amplify'
 import { connect } from 'react-redux'
@@ -67,7 +67,7 @@ class Header extends Component {
             <div className="login">
               <a href="/login"><h3>Login</h3></a>
             </div>
-             <div className="login">
+             <div className="logout">
               <a href="/" onClick={this.handleLogout}><h3>Logout</h3></a>
             </div>
             

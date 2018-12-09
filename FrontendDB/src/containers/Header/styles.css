@@ -2,9 +2,18 @@
   display: flex;
   width: 100%;
   font-family: 'Ubuntu', sans-serif;
-  background-color: black;
-  color: white;
-  padding: 2% 0 0.5% 0;
+  /* background-color: black;
+  color: white; */
+  padding: 1% 0 0.2% 0;
+}
+
+.logo-image {
+  height: 8vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .header {
@@ -17,15 +26,36 @@
 
 .options {
   display: flex;
-  width: 20%;
-  flex-direction: row;
-  justify-content: space-evenly;
+  width: 25vw;
+  flex-direction: row wrap;
+  justify-content: space-between;
 }
 
-.login, .design-card {
+.login, .signup, .logout {
   align-self: flex-end ;
   font-size: 14px;
   /* padding: 0 2% 0 2%; */
 }
 
+.login, .signup, .logout {
+  padding: 1% 1% 2% 1%;
+  border-bottom: 3px solid white;
+}
 
+.login:hover, .signup:hover, .logout:hover {
+  /* background: grey;
+  color: black;
+box-shadow: inset 0 0 0 3px black; */ 
+  animation: border-fadein 2s forwards;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+@keyframes border-fadein {
+  from {
+    border-bottom: 3px solid white;
+  }
+  to {
+    /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
+    border-bottom: 3px solid #73C6B6;
+  }
+}

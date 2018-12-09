@@ -11,7 +11,7 @@
   box-sizing: inherit;
 } */
 
-a:link, a:visited {
+/* a:link, a:visited {
   text-decoration: none;
   color: white;
 }
@@ -22,5 +22,5 @@ a:hover {
 
 a:active {
   color: #2c3531
-}
+} */
 

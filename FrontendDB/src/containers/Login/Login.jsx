@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Auth } from 'aws-amplify';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./Login.scss";
+import "./Login.css";
 import { connect } from 'react-redux'
 // import history from "../../history"
 
