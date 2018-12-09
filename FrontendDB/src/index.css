@@ -9,7 +9,7 @@
 
 /* *, *:before, *:after {
   box-sizing: inherit;
-}
+} */
 
 a:link, a:visited {
   text-decoration: none;
@@ -22,5 +22,5 @@ a:hover {
 
 a:active {
   color: #2c3531
-} */
+}
 
