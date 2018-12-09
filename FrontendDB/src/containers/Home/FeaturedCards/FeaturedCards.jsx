@@ -39,9 +39,9 @@ class FeaturedCards extends Component {
         <div className="featured-card">
           <Card
             cardContainer={cardContainer}
-            front={"card-front one-front"}
+            back ={"card-back one-back"}
             title={"one-title"}
-            back={"card-info one-back"}
+            front={"card-info one-front"}
             info={"one-info"}
             name={name}
             address={address}
@@ -52,9 +52,9 @@ class FeaturedCards extends Component {
         <div className="featured-card">
           <Card
             cardContainer={cardContainer}
-            front={"card-front two-front"}
+            back={"card-back two-back"}
             title={"two-title"}
-            back={"card-info two-back"}
+            front={"card-info two-front"}
             info={"two-info"}
             name={name}
             address={address}
@@ -65,9 +65,9 @@ class FeaturedCards extends Component {
         <div className="featured-card">
           <Card
             cardContainer={cardContainer}
-            front={"card-front three-front"}
+            back={"card-back three-back"}
             title={"three-title"}
-            back={"card-info three-back"}
+            front={"card-info three-front"}
             info={"three-info"}
             name={name}
             address={address}
@@ -78,9 +78,9 @@ class FeaturedCards extends Component {
         <div className="featured-card">
           <Card
             cardContainer={cardContainer}
-            front={"card-front four-front"}
+            back={"card-back four-back"}
             title={"four-title"}
-            back={"card-info four-back"}
+            front={"card-info four-front"}
             info={"four-info"}
             name={name}
             address={address}
@@ -91,7 +91,7 @@ class FeaturedCards extends Component {
         {/* <div className="featured-card">
           <div className=cardContainer>
             <div 
-              className="card-front"
+              className="card-back"
               style={styles.front}
             > 
               <div style={styles.title}>Company Name</div>

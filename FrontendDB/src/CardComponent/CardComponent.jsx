@@ -4,10 +4,10 @@ import './styles.css'
 export const Card = (props) => {
   return (
     <div key="card" className={props.cardContainer}>
-      <div className={props.front}>
+      <div className={props.back}>
         <div className={props.title}>COMPANY NAME</div>
       </div>
-      <div className={props.back}>
+      <div className={props.front}>
         <div className={props.info}>
           <div className={props.name}>Company Name</div>
           <div className={props.address}>Address <br/> City, State, Zip Code</div>
