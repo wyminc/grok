@@ -49,7 +49,7 @@ export default class Register extends Component {
   handleSubmit = async event => {
     event.preventDefault();
   
-    this.setState({ isLoading: true });
+    // this.setState({ isLoading: true });
   
     Auth.signUp({
       username: this.state.email,
@@ -75,8 +75,8 @@ export default class Register extends Component {
       await Auth.confirmSignUp(this.state.email, this.state.confirmationCode);
       await Auth.signIn(this.state.email, this.state.password);
   
-      this.props.userHasAuthenticated(true);
       this.props.history.push("/");
+      this.setState({ isLoading: false })
     } catch (e) {
       console.log("full error", e)
       alert(e.message);

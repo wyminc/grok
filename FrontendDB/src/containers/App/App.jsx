@@ -81,14 +81,16 @@ class App extends Component {
             <Route path='/signup' component={Register} props={childProps} />
             
           </Switch>
-        </Router>
-        <Header /> */}
+        </Router> */}
+        <Header />
 
           <Router>
 
             <Switch>
 
               <Route exact path='/' component={Home} />
+              <Route path='/login' component={Login} props={childProps} />
+              <Route path='/signup' component={Register} props={childProps} />
 
 
             </Switch>
