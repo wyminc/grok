@@ -3,12 +3,15 @@ package main
 import (
 	"./server"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	// err := godotenv.Load("../.env")
 	router := gin.Default()
+
+	router.Use(cors.Default())
 
 	// if err != nil {
 	// 	log.Fatal("Error loading .env file")

@@ -9,7 +9,7 @@ func AllCards(c *gin.Context) {
 
 	data, _ := getAll(i)
 
-	c.JSON(200, gin.H{"data": data})
+	c.JSON(200, data)
 }
 
 func Card(c *gin.Context) {
@@ -17,7 +17,7 @@ func Card(c *gin.Context) {
 
 	data, _ := getSpecific(i)
 
-	c.JSON(200, gin.H{"data": data})
+	c.JSON(200, data)
 }
 
 func Add(c *gin.Context) {
@@ -26,7 +26,7 @@ func Add(c *gin.Context) {
 
 	data, _ := addCard(body)
 
-	c.JSON(200, gin.H{"data": data})
+	c.JSON(200, data)
 }
 
 func Update(c *gin.Context) {
@@ -37,7 +37,7 @@ func Update(c *gin.Context) {
 
 	data, _ := updateCard(i, body)
 
-	c.JSON(200, gin.H{"data": data})
+	c.JSON(200, data)
 }
 
 func Delete(c *gin.Context) {
@@ -45,5 +45,5 @@ func Delete(c *gin.Context) {
 
 	data, _ := deleteCard(i)
 
-	c.JSON(200, gin.H{"data": data})
+	c.JSON(200, data)
 }
