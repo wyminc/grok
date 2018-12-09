@@ -25,7 +25,7 @@ class MyCard extends Component {
     
     
   render() {
-    console.log("\n this.props:", this.props)
+
     return (
       <div>
         Hihi

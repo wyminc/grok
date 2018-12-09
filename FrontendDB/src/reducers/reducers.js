@@ -9,7 +9,6 @@ const reducers = (state = {
     case GET_ALL_CARDS:
       return { ...state, allCards: action.payload }
     case GET_MY_CARD:
-      console.log("HI REDUCERS BEEN HIT SON", action.payload)
       return { ...state, myCard: action.payload }
     default:
       return state
