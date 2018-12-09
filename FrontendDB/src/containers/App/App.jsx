@@ -10,7 +10,10 @@ import Header from '../Header/HeaderComponent.jsx'
 import Footer from '../Footer/FooterComponent.jsx'
 
 //~~~~ CONTAINERS ~~~~//
+
 import Home from '../Home/index.jsx'
+import MyCard from "../../containers/Wallet/MyCard/MyCard.jsx"        
+        
 import Login from '../Login/Login.jsx'
 import Register from '../Register/Register.jsx'
 // import Logout from '../../components/LogoutButton.jsx';
@@ -18,7 +21,9 @@ import Register from '../Register/Register.jsx'
 
 
 
+
 class App extends Component {
+
   constructor(props) {
     super(props);
       this.state = {
@@ -70,6 +75,11 @@ class App extends Component {
       isAuthenticated: this.state.isAuthenticated,
       user: this.state.user
     };
+
+
+    console.log("MATCH?", this.props.match)
+
+
     return (
       <div className="App">
         {/* <Header props={childProps}/>
@@ -92,6 +102,9 @@ class App extends Component {
               <Route path='/login' component={Login} props={childProps} />
               <Route path='/signup' component={Register} props={childProps} />
 
+              {/* <Route exact path = {`${url}/wallet/:id`} /> */}
+
+              <Route exact path = "/wallet/:id" component={MyCard} />
 
             </Switch>
 
