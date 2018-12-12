@@ -100,7 +100,7 @@ const mapStateToProps = state => {
     console.log('get all state', state)
     console.log('all cards', state.add)
     return {
-        add: state.add
+        addInfo: state.addInfo
     }
 }
 

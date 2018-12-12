@@ -14,21 +14,21 @@ export const ADD_CARD_INFO = "ADD_NEW_CARD";
 //   }
 // }
 
-export const getAllCards = () => {
-    return dispatch => {
-        axios
-        .get(`/all/A100001001`) 
-        .then (response => {
-            dispatch({ 
-                type: GET_ALL_CARDS,
-                payload: response.data
-            })
-        })
-        .catch(err => {
-            console.log("Error getting all cards: ", err)
-        })
-    }
-}
+// export const getAllCards = () => {
+//     return dispatch => {
+//         axios
+//         .get(`/all/A100001001`) 
+//         .then (response => {
+//             dispatch({ 
+//                 type: GET_ALL_CARDS,
+//                 payload: response.data
+//             })
+//         })
+//         .catch(err => {
+//             console.log("Error getting all cards: ", err)
+//         })
+//     }
+// }
 
 export const getMyCard = (id) => {
   return dispatch => {
