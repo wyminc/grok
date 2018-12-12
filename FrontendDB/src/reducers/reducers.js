@@ -1,7 +1,7 @@
-import { GET_ALL_CARDS, GET_MY_CARD } from '../actions/actions.js'
+import { GET_ALL_CARDS, GET_MY_CARD, ADD_CARD_INFO } from '../actions/actions.js'
 
 const reducers = (state = {
-  allCards: [], myCard: {}
+  allCards: [], myCard: {}, add:{}
 }, action) => {
 
   switch (action.type) {
@@ -10,6 +10,8 @@ const reducers = (state = {
       return { ...state, allCards: action.payload }
     case GET_MY_CARD:
       return { ...state, myCard: action.payload }
+    case ADD_CARD_INFO: 
+      return { ...state, add: action.payload}
     default:
       return state
   }

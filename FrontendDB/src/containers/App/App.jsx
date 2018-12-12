@@ -12,7 +12,8 @@ import Footer from '../Footer/FooterComponent.jsx'
 //~~~~ CONTAINERS ~~~~//
 
 import Home from '../Home/index.jsx'
-import MyCard from "../../containers/Wallet/MyCard/MyCard.jsx"        
+import MyCard from "../../containers/Wallet/MyCard/MyCard.jsx"  
+import InfoForm from '../../containers/NewCard/InfoForm/InfoForm.jsx'      
         
 import Login from '../Login/Login.jsx'
 import Register from '../Register/Register.jsx'
@@ -105,6 +106,7 @@ class App extends Component {
               {/* <Route exact path = {`${url}/wallet/:id`} /> */}
 
               <Route exact path = "/wallet/:id" component={MyCard} />
+              <Route exact path = "/wallet" component = {InfoForm} />
 
             </Switch>
 

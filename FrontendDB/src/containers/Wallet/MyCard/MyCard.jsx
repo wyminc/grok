@@ -19,6 +19,7 @@ class MyCard extends Component {
 
   componentDidMount = () => {
     const { id } = this.props.match.params;
+    console.log('this.props.match.params', id)
 
     this.props.dispatch(getMyCard(id))
   }
@@ -35,6 +36,8 @@ class MyCard extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log('state', state)
+  console.log('mycard', state.myCard)
   return {
     myCard: state.myCard
   }
