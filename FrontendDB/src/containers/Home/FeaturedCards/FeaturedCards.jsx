@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles.css';
 
-import {Card} from '../../../CardComponent/CardComponent.jsx'
+import {DisplayCard} from '../../../CardComponent/CardComponent.jsx'
 import {cardContainer, name, address, phone, email} from '../../../CardComponent/CardClassing.js'
 
 import { generateKeyPair } from 'crypto';
@@ -37,7 +37,7 @@ class FeaturedCards extends Component {
       
       <div className="featured-card-container">
         <div className="featured-card">
-          <Card
+          <DisplayCard
             cardContainer={cardContainer}
             back ={"card-back one-back"}
             title={"one-title"}
@@ -50,7 +50,7 @@ class FeaturedCards extends Component {
           />
         </div>
         <div className="featured-card">
-          <Card
+          <DisplayCard
             cardContainer={cardContainer}
             back={"card-back two-back"}
             title={"two-title"}
@@ -63,7 +63,7 @@ class FeaturedCards extends Component {
           />
         </div>
         <div className="featured-card">
-          <Card
+          <DisplayCard
             cardContainer={cardContainer}
             back={"card-back three-back"}
             title={"three-title"}
@@ -76,7 +76,7 @@ class FeaturedCards extends Component {
           />
         </div>
         <div className="featured-card">
-          <Card
+          <DisplayCard
             cardContainer={cardContainer}
             back={"card-back four-back"}
             title={"four-title"}

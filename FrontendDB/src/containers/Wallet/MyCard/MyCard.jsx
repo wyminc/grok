@@ -26,11 +26,23 @@ class MyCard extends Component {
     
     
   render() {
+    console.log("PROPS", this.props);
+
+    const { myCardData } = this.props;
 
     return (
-      <div>
-        Hihi
-      </div>
+      <Card 
+        cardContainer={cardContainer} 
+        front={front}
+        title={title}
+        back={back}
+        info={info}
+        name={name}
+        address={address}
+        phone={phone}
+        email={email}
+        data={myCardData}
+      />
     )
   }
 }
@@ -39,11 +51,10 @@ const mapStateToProps = state => {
   console.log('state', state)
   console.log('mycard', state.myCard)
   return {
-    myCard: state.myCard
+    myCardData: state.myCardData,
+    myCardCSS: state.myCardCSS
   }
 }
 
 export default connect(mapStateToProps)(MyCard)
-
-// export default MyCard
 

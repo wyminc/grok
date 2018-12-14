@@ -9,11 +9,15 @@ import { connect } from 'react-redux'
 import Header from '../Header/HeaderComponent.jsx'
 import Footer from '../Footer/FooterComponent.jsx'
 
+//~~~~ Actions ~~~~//
+import {authenticated} from '../../actions/actions.js'
+
 //~~~~ CONTAINERS ~~~~//
 
-import Home from '../Home/index.jsx'
-import MyCard from "../../containers/Wallet/MyCard/MyCard.jsx"  
-import InfoForm from '../../containers/NewCard/InfoForm/InfoForm.jsx'      
+import Home from '../Home/index.jsx';
+import MyCard from "../../containers/Wallet/MyCard/MyCard.jsx";
+import OtherCards from "../../containers/Wallet/OtherCards/OtherCards.jsx";
+import InfoForm from "../../containers/NewCard/InfoForm/InfoForm.jsx";
         
 import Login from '../Login/Login.jsx'
 import Register from '../Register/Register.jsx'
@@ -28,21 +32,20 @@ class App extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        isAuthenticated: false,
-        user:{}
       }
   }
 
   componentWillMount () {
     // console.log("APP state", this.state)
-    console.log("session", Auth.currentUserInfo().then(data => console.log(data)))
+    // console.log("session", Auth.currentUserInfo().then(data => console.log(data)))
 
-    console.log("APP MOUNT STATE", this.state)
+    // console.log("APP MOUNT STATE", this.state)
     Auth.currentUserInfo()
       .then(data => {
-      console.log("AUTH CHECK", data)
-      this.setState({user: data.username, isAuthenticated: true})
-      console.log("NEW APP STATE", this.state)
+      console.log("AUTH DATA", data);
+      this.props.dispatch(
+        authenticated(data.attributes.sub)
+        )
       })
       .catch(err => {
       console.log(err)
@@ -72,14 +75,10 @@ class App extends Component {
   
 
   render() {
-    const childProps = {
-      isAuthenticated: this.state.isAuthenticated,
-      user: this.state.user
-    };
+    const { authInfo } = this.props;
+    const childProps = authInfo;
 
-
-    console.log("MATCH?", this.props.match)
-
+    console.log("MATCH?", this.props)
 
     return (
       <div className="App">
@@ -106,6 +105,9 @@ class App extends Component {
               {/* <Route exact path = {`${url}/wallet/:id`} /> */}
               <Route exact path = "/info-form" component = {InfoForm} />
 
+              <Route exact path = "/wallet/mycard/:id" component={MyCard} />
+              <Route exact path = "/wallet/othercards/:id" component={OtherCards} />
+
             </Switch>
 
           </Router>
@@ -117,7 +119,7 @@ class App extends Component {
 }
 
 const mapStateToProps= state => ({
-  auth: state.isAuthenticated
+  authInfo: state.authInfo
 })
 
 export default connect(mapStateToProps)(App);
