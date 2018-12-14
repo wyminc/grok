@@ -104,9 +104,7 @@ class App extends Component {
               <Route path='/signup' component={Register} props={childProps} />
 
               {/* <Route exact path = {`${url}/wallet/:id`} /> */}
-
-              <Route exact path = "/wallet/:id" component={MyCard} />
-              <Route exact path = "/wallet" component = {InfoForm} />
+              <Route exact path = "/info-form" component = {InfoForm} />
 
             </Switch>
 

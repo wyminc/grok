@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './InfoForm.css';
 
-import {addNewCardInfo} from '../../../actions/actions.js';
+import {newCardData} from '../../../actions/actions.js';
+import { strictEqual } from 'assert';
 // import {getAllCards} from '../../../actions/actions.js';
 
 
@@ -20,9 +21,9 @@ class InfoForm extends Component {
     
     componentDidMount =() => {
         // const {id} = this.props.match.params;
-        console.log('adding new card info', this.state)
-        this.props.dispatch(addNewCardInfo(this.state))
-        console.log('what is ... this.props.history: ', this.props.history )
+        console.log('adding new card info - this.state: ', this.state)
+        // this.props.dispatch(addNewCardInfo(this.state))
+        console.log('what is ... this.props: ', this.props )
     }
 
     handleChange = (event) => {
@@ -33,44 +34,30 @@ class InfoForm extends Component {
         // console.log('event target name: ', name)
         event.preventDefault();
         const {name, value} = event.target;
+        console.log('what is ... event.target: ', event.target)
+        console.log('what is the event.target name? ', name)
+        console.log('what is the event.target value? ', value)
         this.setState({
             [name]: value
         })
-            console.log('event state', this.state)
-        }
+            console.log('what is this ... add event state: ', this.state)
+        } 
 
         handleSubmit = (event) => {
             console.log('adding new card info - submit: ', this.props);
             event.preventDefault();
-            // this.props.addNewCardInfo(this.state);
+            // addNewCardInfo(this.state)
+            this.props.dispatch(newCardData(this.state))
         }
-    
-
-    // handleChange = (event) => {
-    //     event.preventDefault();
-    //     console.log('event for adding', event)
-    //     const {name, value} = event.target;
-    //     this.setState ({
-    //         [name] : value
-    //     })
-    //     console.log('onChange - handleChange - this.state adding: ', this.state)
-    // }
-
-    // handleSubmit = (event) => {
-    //     console.log('HandleSubmit - this.props', this.props)
-    //     event.preventDefault();
-    //     this.props.
-    // }
-
 
 
     render(){
-        return (
+        return (    
             <div className="info-form-container">
                 <div className="info-form">
-                    <form action="">
+                    <form action="/add" method="POST" onSubmit={this.handleSubmit}>
                         <div className="info-field">
-                            <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name"/>
+                            <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name}/>
                         </div>
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Name" name="name"/>
@@ -97,9 +84,10 @@ class InfoForm extends Component {
 
 
 const mapStateToProps = state => {
-    console.log('get all state', state)
-    console.log('all cards', state.add)
+    console.log('mapStateToProps State', state)
+    console.log('all cards', state.addInfo)
     return {
+        // isAuthenticated: state.isAuthenticated,
         addInfo: state.addInfo
     }
 }
