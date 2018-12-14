@@ -21,7 +21,7 @@ const reducers = (state = {
     case GET_MY_CARD:
       return { ...state, myCardData: action.payload.data, myCardCSS: action.payload.css }
     case ADD_CARD_INFO: 
-      return { ...state, addInfo: action.payload} //missing something here?
+      return { ...state, addInfo: action.payload} 
     case NEW_CARD_DATA:
       const newData = {
         user_id: action.id,
