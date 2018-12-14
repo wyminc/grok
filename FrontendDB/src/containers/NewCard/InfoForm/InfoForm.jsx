@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import './InfoForm.css';
 
 import {newCardData} from '../../../actions/actions.js';
-import { strictEqual } from 'assert';
-// import {getAllCards} from '../../../actions/actions.js';
 
 
 class InfoForm extends Component {
@@ -21,23 +19,16 @@ class InfoForm extends Component {
     }
     
     componentDidMount =() => {
-        // const {id} = this.props.match.params;
         console.log('adding new card info - this.state: ', this.state)
-        // this.props.dispatch(addNewCardInfo(this.state))
         console.log('what is ... this.props: ', this.props )
     }
 
     handleChange = (event) => {
-        // const target = event.target;
-        // const value = target.value;
-        // const name = target.name;
-        // console.log('event target value: ', value)
-        // console.log('event target name: ', name)
         event.preventDefault();
         const {name, value} = event.target;
-        console.log('what is ... event.target: ', event.target)
-        console.log('what is the event.target name? ', name)
-        console.log('what is the event.target value? ', value)
+        // console.log('what is ... event.target: ', event.target)
+        // console.log('what is the event.target name? ', name)
+        // console.log('what is the event.target value? ', value)
         this.setState({
             [name]: value
         })
@@ -48,7 +39,6 @@ class InfoForm extends Component {
             const { user } = this.props.authInfo;
             console.log('adding new card info - submit: ', this.state);
             event.preventDefault();
-            // addNewCardInfo(this.state)
             this.props.dispatch(newCardData(user,this.state))
         }
 
@@ -56,7 +46,7 @@ class InfoForm extends Component {
         return (    
             <div className="info-form-container">
                 <div className="info-form">
-                    <form action="/add" method="POST" onSubmit={this.handleSubmit}>
+                    <form action="" onSubmit={this.handleSubmit}>
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name}/>
                         </div>
