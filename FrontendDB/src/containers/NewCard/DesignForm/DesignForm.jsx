@@ -12,8 +12,7 @@ class DesignForm extends Component {
     render() {
         return (
             <div className="design-form-container">
-                <div className="templates">
-                </div>
+                TEST
             </div>
         )
     }

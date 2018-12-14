@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import './InfoForm.css';
 
@@ -44,8 +45,8 @@ class InfoForm extends Component {
 
     render(){
         return (    
-            <div className="info-form-container">
-                <div className="info-form">
+            <div className="info-form-container" onSubmit={this.handleSubmit}>
+                <div className="info-form" >
                     <form action="">
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name}/>
@@ -66,7 +67,9 @@ class InfoForm extends Component {
                             <input onChange={this.handleChange} type="text" placeholder="Email" name="email"/>
                         </div>
                         <div className="submit">
-                            <input onClick={this.handleSubmit} type="submit" value="NEXT"/>
+                           {/* <Link to="/design-form"> */}
+                                <button> NEXT </button>
+                           {/* </Link>  */}
                         </div>
                     </form>
                 </div>
