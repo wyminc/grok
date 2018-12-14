@@ -1,7 +1,19 @@
 import axios from "axios";
 
+export const AUTH_INFO = 'AUTH_INFO';
+
 export const GET_ALL_CARDS = 'GET_ALL_CARDS';
 export const GET_MY_CARD = "GET_MY_CARD";
+
+//Auth Actions 
+export const authenticated = (data) => {
+  return dispatch => {
+    dispatch({
+      type: AUTH_INFO,
+      payload: data
+    })
+  }
+}
 
 //~~~~~~~~~~ CARD ACTIONS ~~~~~~~~~~//
 
