@@ -46,7 +46,7 @@ class InfoForm extends Component {
         return (    
             <div className="info-form-container">
                 <div className="info-form">
-                    <form action="" onSubmit={this.handleSubmit}>
+                    <form action="">
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name}/>
                         </div>
@@ -58,7 +58,6 @@ class InfoForm extends Component {
                         </div>
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Address" name="address"/>
-                            {/* <textarea name="Address" placeholder="Address" id="" cols="18" rows="5"></textarea> */}
                         </div>
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Phone Number" name="phone"/>
@@ -86,4 +85,3 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps)(InfoForm)
-// export default InfoForm

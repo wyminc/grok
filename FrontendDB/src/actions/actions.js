@@ -54,19 +54,6 @@ export const getMyCard = (id) => {
 
 export const newCardData = (id, info) => {
     return dispatch => {
-        // axios
-        // .post('/add', info)
-        // .then((response) => {
-        //     console.log("ADDING NEW CARD INFO: ", response.data )
-        //     console.log("Add Card - Do I need this info? ", info)
-        //     dispatch({
-        //         type: ADD_CARD_INFO,
-        //         payload: response.data
-        //     })
-        // })
-        // .catch ( err => {
-        //     console.log("Error adding new card info: ", err)
-        // })
         dispatch({
             type: NEW_CARD_DATA,
             id: id,
