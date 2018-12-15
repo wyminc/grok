@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Auth } from 'aws-amplify'
 import { connect } from 'react-redux'
 // import { withAuthenticator, includeGreetings } from 'aws-amplify-react'
@@ -10,14 +10,15 @@ import Header from '../Header/HeaderComponent.jsx'
 import Footer from '../Footer/FooterComponent.jsx'
 
 //~~~~ Actions ~~~~//
-import {authenticated} from '../../actions/actions.js'
+import { authenticated } from '../../actions/actions.js'
 
 //~~~~ CONTAINERS ~~~~//
 
 import Home from '../Home/index.jsx';
-import MyCard from "../../containers/Wallet/MyCard/MyCard.jsx";
-import OtherCards from "../../containers/Wallet/OtherCards/OtherCards.jsx";        
-        
+import Wallet from "../../containers/Wallet/index.jsx";
+// import MyCard from "../../containers/Wallet/MyCard/MyCard.jsx";
+// import OtherCards from "../../containers/Wallet/OtherCards/OtherCards.jsx";        
+
 import Login from '../Login/Login.jsx'
 import Register from '../Register/Register.jsx'
 // import Logout from '../../components/LogoutButton.jsx';
@@ -30,28 +31,28 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-      this.state = {
-      }
+    this.state = {
+    }
   }
 
-  componentWillMount () {
+  componentWillMount() {
     // console.log("APP state", this.state)
     // console.log("session", Auth.currentUserInfo().then(data => console.log(data)))
 
     // console.log("APP MOUNT STATE", this.state)
     Auth.currentUserInfo()
       .then(data => {
-      this.props.dispatch(
-        authenticated(data.username)
+        this.props.dispatch(
+          authenticated(data.attributes.sub)
         )
       })
       .catch(err => {
-      console.log(err)
-      this.setState({user:{}})
+        console.log(err)
+        this.setState({ user: {} })
       })
-    
+
   }
-  
+
   // userHasAuthenticated = authenticated => {
   //   this.setState({ isAuthenticated: this });
   // }
@@ -70,13 +71,13 @@ class App extends Component {
   //   });
   // }
 
-  
+
 
   render() {
+    console.log("HOME PROPS", this.props)
     const { authInfo } = this.props;
+    const { user } = authInfo;
     const childProps = authInfo;
-
-    console.log("MATCH?", this.props)
 
     return (
       <div className="App">
@@ -92,22 +93,23 @@ class App extends Component {
         </Router> */}
         <Header />
 
-          <Router>
+        <Router>
 
-            <Switch>
+          <Switch>
 
-              <Route exact path='/' component={Home} />
-              <Route path='/login' component={Login} props={childProps} />
-              <Route path='/signup' component={Register} props={childProps} />
+            <Route exact path='/' component={Home} />
+            <Route path='/login' component={Login} props={childProps} />
+            <Route path='/signup' component={Register} props={childProps} />
 
-              {/* <Route exact path = {`${url}/wallet/:id`} /> */}
+            {/* <Route exact path = {`${url}/wallet/:id`} /> */}
 
-              <Route exact path = "/wallet/mycard/:id" component={MyCard} />
-              <Route exact path = "/wallet/othercards/:id" component={OtherCards} />
+            <Route exact path='/wallet' component={Wallet} />
+            <Route exact path='/wallet/mycard' component={Wallet} />
+            <Route exact path='/wallet/othercards' component={Wallet} />
 
-            </Switch>
+          </Switch>
 
-          </Router>
+        </Router>
 
         <Footer />
       </div>
@@ -115,7 +117,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps= state => ({
+const mapStateToProps = state => ({
   authInfo: state.authInfo
 })
 
