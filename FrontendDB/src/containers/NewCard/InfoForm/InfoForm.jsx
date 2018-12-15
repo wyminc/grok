@@ -67,9 +67,9 @@ class InfoForm extends Component {
                             <input onChange={this.handleChange} type="text" placeholder="Email" name="email"/>
                         </div>
                         <div className="submit">
-                           {/* <Link to="/design-form"> */}
+                           <Link to="/design-form">
                                 <button> NEXT </button>
-                           {/* </Link>  */}
+                           </Link> 
                         </div>
                     </form>
                 </div>

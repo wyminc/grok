@@ -12,7 +12,48 @@ class DesignForm extends Component {
     render() {
         return (
             <div className="design-form-container">
-                TEST
+                <div className="template-options-container">
+                    <select name="design-templates" id="design-templates">
+                        <option value="option-1">
+                            OPTION 1
+                        </option>
+                        <option value="option-2">
+                            OPTION 2
+                        </option>
+                        <option value="option-3">
+                            OPTION 3
+                        </option>
+                        <option value="option-4">
+                            OPTION 4
+                        </option>
+                        <option value="option-5">
+                            OPTION 5
+                        </option>
+                        <option value="option-6">
+                            OPTION 6
+                        </option>
+                        <option value="option-7">
+                            OPTION 7
+                        </option>
+                        <option value="option-8">
+                            OPTION 8
+                        </option>
+                        <option value="option-9">
+                            OPTION 9
+                        </option>
+                        <option value="option-10">
+                            OPTION 10
+                        </option>
+                    </select>
+                </div>
+                <div className="card-view-container">
+                    <div className="front-view">
+                        
+                    </div>
+                    <div className="back-view">
+                    
+                    </div>
+                </div>
             </div>
         )
     }
