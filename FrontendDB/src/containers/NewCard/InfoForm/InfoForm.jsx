@@ -86,5 +86,4 @@ const mapStateToProps = state => {
     }
 }
 
-
-export default connect(mapStateToProps)(InfoForm)
+export default connect(mapStateToProps)(InfoForm);

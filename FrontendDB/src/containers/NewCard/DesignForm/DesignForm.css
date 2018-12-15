@@ -8,6 +8,10 @@
     animation: exit-right 2x cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 } */
 
+.template {
+    width: 25vw;
+    height: 25vh;
+}
 
 /***** Animations *****/
  @keyframes enter-left {
