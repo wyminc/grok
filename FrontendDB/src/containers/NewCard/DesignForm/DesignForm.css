@@ -10,7 +10,7 @@
 
 
 /***** Animations *****/
-@keyframes enter-left {
+ @keyframes enter-left {
     0% {
         transform: translateX(-1000px);
         opacity: 0;
@@ -20,7 +20,7 @@
         opacity: 1;
     }
 }
-
+/*
 @keyframes exit-right {
     0% {
         transform: translateX(0);
@@ -30,4 +30,4 @@
         transform: translateX(1000px);
         opacity: 0;
     }
-}
+} */

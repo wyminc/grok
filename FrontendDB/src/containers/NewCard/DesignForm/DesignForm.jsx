@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './DesignForm.css';
 
+// import {Card} from '../../../CardComponent/CardComponent.jsx'
+
 class DesignForm extends Component {
     constructor(props) {
         super(props)
@@ -13,7 +15,8 @@ class DesignForm extends Component {
         return (
             <div className="design-form-container">
                 <div className="template-options-container">
-                    <select name="design-templates" id="design-templates">
+                {/* NOTE: dropdown options vs. button options */}
+                    {/* <select name="design-templates" id="design-templates">
                         <option value="option-1">
                             OPTION 1
                         </option>
@@ -44,14 +47,16 @@ class DesignForm extends Component {
                         <option value="option-10">
                             OPTION 10
                         </option>
-                    </select>
+                    </select> */}
                 </div>
-                <div className="card-view-container">
+                <div className="card-preview-container">
                     <div className="front-view">
-                        
+                        <div className="company_name">
+                        </div>
                     </div>
                     <div className="back-view">
-                    
+
+
                     </div>
                 </div>
             </div>
