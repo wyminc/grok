@@ -3,7 +3,7 @@ import React from 'react';
 export const FrontPreview = (props) => {
     return (
         <div className="front-preview" style={props.style.front}>
-            <div className="company" style={props.style.company}>{props.data.company_name}</div>
+            <div className="company" style={props.style.company}>company name</div>
         </div>
     )
 }

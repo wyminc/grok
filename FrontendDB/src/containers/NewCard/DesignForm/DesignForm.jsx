@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import './DesignForm.css';
 import {connect} from 'react-redux';
 
-import {Template} from './TemplateSelector.jsx';
+import {Template} from './Template.jsx';
 import {template1} from './CardCssTemplates.js';
-// import {FrontPreview} from './TemplatePreview.jsx';
+import {FrontPreview} from './TemplatePreview.jsx';
 // import {cardContainer, front, title, back, info, name, address, phone, email} from '../../../CardComponent/CardClassing.js';
 
 import {newCardCss} from '../../../actions/actions.js';
@@ -19,11 +19,13 @@ class DesignForm extends Component {
         }
     }
 
+
     chosenTemplate = (style) => {
         this.props.dispatch(newCardCss(style))
     }
 
     render() {
+        console.log("design form props", this.props)
         return (
             <div className="design-form-container">
                 <div className="template-options-container">
@@ -35,17 +37,7 @@ class DesignForm extends Component {
                 <div className="card-preview-container">
                     <div className="front-view">
                         {/* <FrontPreview 
-                            style={this.props.css}
-                            // cardContainer={cardContainer} 
-                            // front={front}
-                            // title={title}
-                            // back={back}
-                            // info={info}
-                            // name={name}
-                            // address={address}
-                            // phone={phone}
-                            // email={email}
-                            // data={this.props.addInfo.data}
+                            style={this.props.addInfo.css}
                         /> */}
                     </div>
                     <div className="back-view" style={this.props.addInfo.css}>
@@ -61,7 +53,7 @@ class DesignForm extends Component {
 
 const mapStateToProps = state => {
     // console.log("design form add Info", addInfo);
-    console.log("design form state", state)
+    console.log("design form state/store", state)
     return {
         addInfo: state.addInfo
     }

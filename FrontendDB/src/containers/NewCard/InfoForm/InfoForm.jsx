@@ -38,14 +38,14 @@ class InfoForm extends Component {
 
         handleSubmit = (event) => {
             const { user } = this.props.authInfo;
-            console.log('adding new card info - submit: ', this.state);
+            console.log('adding new card info - handleSubmit: ', this.state);
             event.preventDefault();
             this.props.dispatch(newCardData(user,this.state))
         }
 
     render(){
         return (    
-            <div className="info-form-container" onSubmit={this.handleSubmit}>
+            <div className="info-form-container">
                 <div className="info-form" >
                     <form action="">
                         <div className="info-field">
@@ -66,9 +66,9 @@ class InfoForm extends Component {
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Email" name="email"/>
                         </div>
-                        <div className="submit">
+                        <div className="submit"> 
                            {/* <Link to="/design-form"> */}
-                                <button> NEXT </button>
+                                <button onClick={this.handleSubmit}> NEXT </button>
                            {/* </Link>  */}
                         </div>
                     </form>
@@ -80,7 +80,7 @@ class InfoForm extends Component {
 
 
 const mapStateToProps = state => {
-    console.log("info-form state", state)
+    console.log("info form state/store", state)
     return {
         authInfo: state.authInfo,
         addInfo: state.addInfo

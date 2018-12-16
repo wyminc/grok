@@ -64,7 +64,6 @@ export const newCardData = (id, info) => {
 }
 
 
-
 export const newCardCss = (style) => {
     return dispatch => {
         dispatch({
@@ -73,3 +72,4 @@ export const newCardCss = (style) => {
         })
     }
 }
+
