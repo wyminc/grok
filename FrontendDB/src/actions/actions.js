@@ -63,6 +63,8 @@ export const newCardData = (id, info) => {
     }
 }
 
+
+
 export const newCardCss = (style) => {
     return dispatch => {
         dispatch({

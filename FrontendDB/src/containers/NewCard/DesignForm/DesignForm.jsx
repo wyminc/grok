@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 
 import {Template} from './TemplateSelector.jsx';
 import {template1} from './CardCssTemplates.js';
+// import {FrontPreview} from './TemplatePreview.jsx';
+// import {cardContainer, front, title, back, info, name, address, phone, email} from '../../../CardComponent/CardClassing.js';
 
 import {newCardCss} from '../../../actions/actions.js';
 
@@ -27,18 +29,29 @@ class DesignForm extends Component {
                 <div className="template-options-container">
                     <Template 
                         style={template1}
-                        // On Click - want to dispatch the template css to the addInfo 
                         chosenTemplate={this.chosenTemplate}
-                        // onClick={this.props.dispatch(chosenTemplate())}
                     />
                 </div>
                 <div className="card-preview-container">
                     <div className="front-view">
-
+                        {/* <FrontPreview 
+                            style={this.props.css}
+                            // cardContainer={cardContainer} 
+                            // front={front}
+                            // title={title}
+                            // back={back}
+                            // info={info}
+                            // name={name}
+                            // address={address}
+                            // phone={phone}
+                            // email={email}
+                            // data={this.props.addInfo.data}
+                        /> */}
                     </div>
-                    <div className="back-view">
-
-
+                    <div className="back-view" style={this.props.addInfo.css}>
+                        {/* <BackPreview 
+                        
+                        /> */}
                     </div>
                 </div>
             </div>
@@ -47,6 +60,8 @@ class DesignForm extends Component {
 }
 
 const mapStateToProps = state => {
+    // console.log("design form add Info", addInfo);
+    console.log("design form state", state)
     return {
         addInfo: state.addInfo
     }
