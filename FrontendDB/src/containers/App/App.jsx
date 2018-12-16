@@ -105,7 +105,7 @@ class App extends Component {
 
               {/* <Route exact path = {`${url}/wallet/:id`} /> */}
               <Route exact path = "/info-form" component = {InfoForm} />
-              <Route exact path="/design-form" component = {DesignForm}/>
+              {/* <Route exact path="/design-form" component = {DesignForm}/> */}
 
               <Route exact path = "/wallet/mycard/:id" component={MyCard} />
               <Route exact path = "/wallet/othercards/:id" component={OtherCards} />

@@ -3,7 +3,14 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import './InfoForm.css';
 
-import {newCardData} from '../../../actions/actions.js';
+import {Template} from './Template.jsx';
+import {template1} from './CardCssTemplates.js';
+import {FrontPreview, BackPreview} from './TemplatePreview.jsx';
+// import {front, title, back, info, name, address, phone, email} from '../../../CardComponent/CardClassing.js';
+
+import {newCardData, newCardCss, newCard} from '../../../actions/actions.js';
+// import {newCardCss} from '../../../actions/actions.js';
+
 
 
 class InfoForm extends Component {
@@ -15,7 +22,10 @@ class InfoForm extends Component {
             title: "",
             address: "",
             phone: "",
-            email: ""
+            email: "",
+            previous: false,
+            next: false,
+
         }
     }
     
@@ -39,15 +49,39 @@ class InfoForm extends Component {
         handleSubmit = (event) => {
             const { user } = this.props.authInfo;
             console.log('adding new card info - handleSubmit: ', this.state);
-            event.preventDefault();
             this.props.dispatch(newCardData(user,this.state))
+            this.setState({
+                next: true
+            })
         }
 
+
+    chosenTemplate = (style) => {
+        console.log('chosen template: ', style)
+        this.props.dispatch(newCardCss(style))
+    }
+    
+    postCard = (body) => {
+        console.log("FORM BODY", body)
+        body.users = [];
+        body.is_deleted = false;
+        let newStyle = {};
+        for (var key in body.css) {
+            newStyle[key] = JSON.stringify(body.css[key])
+        }
+        console.log("WHAT IS NEW STYLE", newStyle)
+        body.css = newStyle
+        this.props.dispatch(newCard(body))
+
+    }
+
     render(){
+        console.log("info form this.props before return", this.props)
         return (    
-            <div className="info-form-container">
+            <div>
+            {this.state.next === false ? (
+                <div className="info-form-container">
                 <div className="info-form" >
-                    <form action="">
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name}/>
                         </div>
@@ -66,13 +100,41 @@ class InfoForm extends Component {
                         <div className="info-field">
                             <input onChange={this.handleChange} type="text" placeholder="Email" name="email"/>
                         </div>
-                        <div className="submit"> 
-                           {/* <Link to="/design-form"> */}
-                                <button onClick={this.handleSubmit}> NEXT </button>
-                           {/* </Link>  */}
+                        {/* <div className="previous">
+                            <button>PREVIOUS</button>
+                        </div> */}
+                        <div className="next"> 
+                            <button onClick={this.handleSubmit}> NEXT </button>
                         </div>
-                    </form>
                 </div>
+            </div>
+            ) : (
+            <div className="design-form-container">
+                <div className="template-options-container">
+                    <Template 
+                        style={template1}
+                        chosenTemplate={this.chosenTemplate}
+                    />
+                </div>
+                <div className="card-preview-container">
+                    <div className="back-view">
+                        <BackPreview 
+                            style={this.props.addInfo.css}
+                            data={this.props.addInfo.data}
+                        />
+                    </div>
+                    <div className="front-view" style={this.props.addInfo.css}>
+                        <FrontPreview 
+                            style={this.props.addInfo.css}
+                            data={this.props.addInfo.data}
+                        />
+                    </div>
+                </div>
+                <div className="done">
+                    <button onClick={() => {this.postCard(this.props.addInfo)}}> DONE </button>
+                </div>
+            </div>
+            )}
             </div>
         )
     }

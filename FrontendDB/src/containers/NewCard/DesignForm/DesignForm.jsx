@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import './DesignForm.css';
 import {connect} from 'react-redux';
 
-import {Template} from './Template.jsx';
-import {template1} from './CardCssTemplates.js';
-import {FrontPreview} from './TemplatePreview.jsx';
+import {Template} from '../InfoForm/Template.jsx';
+import {template1} from '../InfoForm/CardCssTemplates.js';
+import {FrontPreview, BackPreview} from '../InfoForm/TemplatePreview.jsx';
 // import {cardContainer, front, title, back, info, name, address, phone, email} from '../../../CardComponent/CardClassing.js';
 
 import {newCardCss} from '../../../actions/actions.js';
@@ -21,6 +21,7 @@ class DesignForm extends Component {
 
 
     chosenTemplate = (style) => {
+        console.log('chosen template: ', style)
         this.props.dispatch(newCardCss(style))
     }
 
@@ -36,14 +37,14 @@ class DesignForm extends Component {
                 </div>
                 <div className="card-preview-container">
                     <div className="front-view">
-                        {/* <FrontPreview 
+                        <FrontPreview 
                             style={this.props.addInfo.css}
-                        /> */}
+                        />
                     </div>
                     <div className="back-view" style={this.props.addInfo.css}>
-                        {/* <BackPreview 
-                        
-                        /> */}
+                        <BackPreview 
+                            style={this.props.addInfo.css}
+                        />
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 .design-form-container {
+    padding: 5%;
     height: 100%;
     width: 50%;
     margin: auto;
@@ -9,14 +10,11 @@
     /* animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
 
-/* .info-form-container-exit  {
-    animation: exit-right 2x cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-} */
-
 .template {
-    margin: 5%;
-    width: 25vw;
-    height: 25vh;
+    margin: 7%;
+    width: 15vw;
+    height: 15vh;
+    /* border: 1px solid black; */
     animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
@@ -27,9 +25,9 @@
     animation: enter-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.front-view, .back-view {
+.front-preview, .back-preview {
     width: 25vw;
-    height: 25vh;
+    height: 20vh;
     margin: 5%;
     border: 1px solid black;
 }
