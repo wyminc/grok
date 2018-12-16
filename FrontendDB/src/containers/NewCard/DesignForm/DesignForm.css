@@ -1,7 +1,12 @@
 .design-form-container {
+    height: 100%;
+    width: 50%;
     margin: auto;
     text-align: center;
-    animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around;
+    /* animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
 
 /* .info-form-container-exit  {
@@ -9,9 +14,26 @@
 } */
 
 .template {
+    margin: 5%;
     width: 25vw;
     height: 25vh;
+    animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+.card-preview-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    animation: enter-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.front-view, .back-view {
+    width: 25vw;
+    height: 25vh;
+    margin: 5%;
+    border: 1px solid black;
+}
+
 
 /***** Animations *****/
  @keyframes enter-left {

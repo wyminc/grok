@@ -1,4 +1,4 @@
-import { AUTH_INFO, GET_ALL_CARDS, GET_MY_CARD, NEW_CARD_DATA, ADD_CARD_INFO } from '../actions/actions.js'
+import { AUTH_INFO, GET_ALL_CARDS, GET_MY_CARD, NEW_CARD_DATA, NEW_CARD_CSS, ADD_CARD_INFO } from '../actions/actions.js'
 
 const reducers = (state = {
   allCardsData: [], allCardsCSS:[], myCardData: {}, myCardCSS: {}, authInfo: {}, addInfo: {}
@@ -29,10 +29,10 @@ const reducers = (state = {
       }
       console.log("WHAT IM ADDING:", newData)
       return {...state, addInfo: newData }
-    // case NEW_CARD_CSS:
-    //   const nextInfo = {...state.addInfo, css: action.payload}
-
-      // return {...state, addInfo: nextInfo}
+    case NEW_CARD_CSS:
+      const nextInfo = {...state.addInfo, css: action.payload}
+      console.log("NEXT INFO: ", nextInfo);
+      return {...state, addInfo: nextInfo}
     default:
       return state
   }

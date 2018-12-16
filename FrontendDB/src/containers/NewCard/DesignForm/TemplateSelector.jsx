@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Template = (props) => {
     return (
-        <div className="template" style={props.style.back}>
+        <div className="template" style={props.style.back} onClick={() => {props.chosenTemplate(props.style)}}>
             
         </div>
     )

@@ -6,6 +6,7 @@ export const AUTH_INFO = 'AUTH_INFO';
 export const GET_ALL_CARDS = 'GET_ALL_CARDS';
 export const GET_MY_CARD = "GET_MY_CARD";
 export const NEW_CARD_DATA = "NEW_CARD_DATA";
+export const NEW_CARD_CSS = "NEW_CARD_CSS";
 export const ADD_CARD_INFO = "ADD_NEW_CARD";
 
 //Auth Actions 
@@ -58,6 +59,15 @@ export const newCardData = (id, info) => {
             type: NEW_CARD_DATA,
             id: id,
             payload: info
+        })
+    }
+}
+
+export const newCardCss = (style) => {
+    return dispatch => {
+        dispatch({
+            type: NEW_CARD_CSS,
+            payload: style
         })
     }
 }

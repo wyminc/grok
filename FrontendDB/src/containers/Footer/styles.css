@@ -2,6 +2,8 @@
   background-color: black;
   color: white;
   font-family: 'Ubuntu', sans-serif;
+  top: 100vh;
+  display: fixed;
 }
 
 .footer p {
