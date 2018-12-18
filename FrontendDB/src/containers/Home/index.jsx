@@ -25,10 +25,9 @@ class Home extends Component {
         </div>
         <div className="nav-bar-container">
           <div className="nav-bar">
-            <a href="#cards" className="nav-items">Design Your Own Cards</a>
-            <a href="#premium" className="nav-items">Premium</a>
-            <a href="#about" className="nav-items">About</a>
-            <a href="#signup" className="nav-items">Get Started</a>
+            <a href="#about" className="nav-items">ABOUT GROK</a>
+            <a href="#cards" className="nav-items">DESIGN YOUR OWN CARD</a>
+            <a href="#social" className="nav-items">JOIN THE FAMILY</a> {/* Note: Social Media footer section*/}
           </div>
         </div>
         <div id="cards">
@@ -54,10 +53,8 @@ class Home extends Component {
           </p> */}
           
         </div>
-        <div id="signup" className="signup-info">
-          [Maybe Insert Something About Sign Up Here?]
-        </div>
-        <div className="footer">
+        <div id="social" className="social-media-footer">
+          {/* [Add social media handles here] */}
         </div>
       </div>
     )
