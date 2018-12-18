@@ -37,7 +37,7 @@ class Home extends Component {
               <h2>Design Your Own Card</h2>
               <p>Choose from one of our templates or customize it and make it your own!</p>
             </div>
-            <FeaturedCards />       
+            <FeaturedCards />      {/* Note: change card styles to match the templates*/} 
           </div>
         </div>
         {/* <div id="premium" className="premium-info">
