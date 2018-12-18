@@ -39,7 +39,7 @@ class FeaturedCards extends Component {
       <div className="featured-card-container">
         <div className="featured-card">
           <a href="/newcardform">
-            <Card
+            <DisplayCard
               cardContainer={cardContainer}
               back={"card-back one-back"}
               title={"one-title"}
@@ -54,7 +54,7 @@ class FeaturedCards extends Component {
         </div>
         <div className="featured-card">
           <a href="/newcardform">
-            <Card
+            <DisplayCard
               cardContainer={cardContainer}
               back={"card-back two-back"}
               title={"two-title"}
@@ -69,7 +69,7 @@ class FeaturedCards extends Component {
         </div>
         <div className="featured-card">
           <a href="/newcardform">
-            <Card
+            <DisplayCard
               cardContainer={cardContainer}
               back={"card-back three-back"}
               title={"three-title"}
@@ -84,7 +84,7 @@ class FeaturedCards extends Component {
         </div>
         <div className="featured-card">
           <a href="/newcardform">
-            <Card
+            <DisplayCard
               cardContainer={cardContainer}
               back={"card-back four-back"}
               title={"four-title"}
