@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 //Card
 import { Card, AllCards } from "../../CardComponent/CardComponent.jsx";
-import { cardContainer, front, title, back, info, company_name, name, address, phone, email } from '../../CardComponent/CardClassing.js';
+import { cardContainer, front, title, back, info, company, name, address, phone, email } from '../../CardComponent/CardClassing.js';
 
 //Actions
 import { getMyCard, getAllCards } from "../../actions/actions.js";
@@ -36,7 +36,6 @@ class Wallet extends Component {
     this.props.dispatch(getAllCards("A100001001"))
   }
 
-
   render() {
     console.log("PROPS", this.props);
 
@@ -60,7 +59,7 @@ class Wallet extends Component {
                 title={title}
                 back={back}
                 info={info}
-                company_name={company_name}
+                company_name={company}
                 name={name}
                 address={address}
                 phone={phone}
@@ -76,6 +75,7 @@ class Wallet extends Component {
                 title={title}
                 back={back}
                 info={info}
+                company_name={company}
                 name={name}
                 address={address}
                 phone={phone}
@@ -91,12 +91,12 @@ class Wallet extends Component {
                 title={title}
                 back={back}
                 info={info}
+                company_name={company}
                 name={name}
                 address={address}
                 phone={phone}
                 email={email}
                 cards={allCards}
-              // data={myCardData}
               />}
             />
 

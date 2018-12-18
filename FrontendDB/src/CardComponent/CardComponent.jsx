@@ -7,7 +7,7 @@ export const Card = (props) => {
   return (
     <div key={props.user_id} className={props.cardContainer}>
       <div className={props.back}>
-        <div className={props.company_name}>{data.company_name}</div>
+        <div className={props.company}>{data.company_name}</div>
       </div>
       <div className={props.front}>
         <div className={props.info}>
@@ -23,12 +23,11 @@ export const Card = (props) => {
 }
 
 export const AllCards = (props) => {
-  // const { data } = props;
 
   return props.cards.map(card =>
     <div key={card.user_id} className={props.cardContainer}>
       <div className={props.back}>
-        <div className={props.company_name}>{card.data.company_name}</div>
+        <div className={props.company}>{card.data.company_name}</div>
       </div>
       <div className={props.front}>
         <div className={props.info}>
