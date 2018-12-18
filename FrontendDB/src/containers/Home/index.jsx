@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-import FeaturedCards from './FeaturedCards/FeaturedCards.jsx'
+import FeaturedCards from './FeaturedCards/FeaturedCards.jsx';
 
 class Home extends Component {
 
@@ -10,7 +10,7 @@ class Home extends Component {
     return (
       <div id="top" className="home-body-container">
         <div className="banner-container">
-          <a href="/design">
+          <a href="/newcardform">
             <button className="getStarted">GET STARTED</button>
           </a>  
               <div className="grok-definition">
@@ -25,10 +25,9 @@ class Home extends Component {
         </div>
         <div className="nav-bar-container">
           <div className="nav-bar">
-            <a href="#cards" className="nav-items">Design Your Own Cards</a>
-            <a href="#premium" className="nav-items">Premium</a>
-            <a href="#about" className="nav-items">About</a>
-            <a href="#signup" className="nav-items">Get Started</a>
+            <a href="#about" className="nav-items">ABOUT GROK</a>
+            <a href="#signup" className="nav-items">JOIN THE FAMILY</a>
+            <a href="#cards" className="nav-items">DESIGN YOUR OWN CARD</a>
           </div>
         </div>
         <div id="cards">
@@ -41,9 +40,6 @@ class Home extends Component {
             <FeaturedCards />       
           </div>
         </div>
-        {/* <div id="premium" className="premium-info">
-          <PremiumSectionComponent/>
-        </div> */}
         <div id="about" className="about-info">
           {/* <AboutSectionComponent/> */}
           {/* <p className="definition-title">
@@ -55,9 +51,7 @@ class Home extends Component {
           
         </div>
         <div id="signup" className="signup-info">
-          [Maybe Insert Something About Sign Up Here?]
-        </div>
-        <div className="footer">
+          {/* [Maybe Insert Something About Sign Up Here?] */}
         </div>
       </div>
     )
