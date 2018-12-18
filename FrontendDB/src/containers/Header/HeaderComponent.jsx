@@ -61,14 +61,20 @@ class Header extends Component {
           </div>
           <div className="options">
             <div className="signup">
-              <a href="/signup"><h3>SIGN UP</h3></a>
+              <a href="/signup">
+                <div>SIGN UP</div>
+              </a>
             </div>
             {/* {!this.state.isAuthenticated */}
             <div className="login">
-              <a href="/login"><h3>LOG IN </h3></a>
+              <a href="/login">
+                <div>LOG IN</div>
+              </a>
             </div>
             <div className="logout">
-              <a href="/" onClick={this.handleLogout}><h3>LOG OUT</h3></a>
+              <a href="/" onClick={this.handleLogout}>
+                <div>LOG OUT</div>
+              </a>
             </div>
 
             {/* <div className="login">

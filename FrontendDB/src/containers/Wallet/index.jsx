@@ -5,11 +5,12 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 //Card
 import { Card, AllCards } from "../../CardComponent/CardComponent.jsx";
 import { cardContainer, front, title, back, info, company, name, address, phone, email } from '../../CardComponent/CardClassing.js';
+import './styles.css';
 
 //Actions
 import { getMyCard, getAllCards } from "../../actions/actions.js";
 
-
+// 
 //Function to create links
 const LinkButton = (props) => {
   return (
@@ -43,14 +44,16 @@ class Wallet extends Component {
 
     const { data } = myCard;
 
-
     return (
-      <div className="walletContainer">
-        <div className="walletNav">
-          <LinkButton to='/wallet/mycard' title={"Mines"} />
-
-          <LinkButton to='/wallet/othercards' title={"Theirs"} />
-
+      <div className="wallet-container">
+        <div className="wallet-nav">
+          <div className="nav-button">
+            <LinkButton to='/wallet/mycard' title={"MINES"} />  
+          </div>
+          <div className="nav-button">
+            <LinkButton to='/wallet/othercards' title={"THEIRS"} />
+          </div>
+        </div>
           <Switch>
             <Route exact path='/wallet' render={() =>
               <Card
@@ -101,7 +104,7 @@ class Wallet extends Component {
             />
 
           </Switch>
-        </div>
+        {/* </div> */}
       </div>
 
 

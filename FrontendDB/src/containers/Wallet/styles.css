@@ -1,0 +1,31 @@
+.wallet-nav {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: flex-start;
+    box-shadow: 2px 2px 2px lightgrey;
+    padding: 1% 0 2.5% 0;
+    width: 100%;
+    height: 7vh;
+    border-top: 15px solid #273746;
+    /* background-color: #273746 */
+}
+
+.nav-button {
+    margin-left: 2%;
+    padding: 0 0.5% 2.2% 0.5%;
+    font-size: 16px;
+} 
+
+.nav-button:hover {
+    animation: border-fadein 2s forwards;
+}
+
+@keyframes border-fadein {
+    from {
+      border-bottom: 3px solid white;
+    }
+    to {
+      /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
+      border-bottom: 3px solid #73C6B6;
+    }
+  }
