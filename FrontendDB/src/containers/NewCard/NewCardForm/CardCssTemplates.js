@@ -23,13 +23,30 @@ export const template1 = {
     }
 }
 
+export const template2 = {
+    back: {
+        backgroundImage: "url('https://i.pinimg.com/originals/15/13/75/151375946e2b6a9e43a5c6b108631ee0.jpg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover"
+        ba
+    },
+    company: 
+
+    },
+    front: {
+
+    },
+    info: {
+
+    }
+}
 
 
 // export const templates = [ 
     
-//     {template1:{
+//     {
 //         back: {
-//             backgroundImage: "url('https://dspncdn.com/a1/media/originals/c6/f7/be/c6f7be1cbf52a360067f6bc2ab2122af.jpg')",
+//             backgroundImage: "url('https://i.pinimg.com/originals/15/13/75/151375946e2b6a9e43a5c6b108631ee0.jpg')",
 //             backgroundRepeat: "no-repeat", 
 //             backgroundSize: "contain"
 //         },
@@ -48,5 +65,19 @@ export const template1 = {
 //             fontWeight: "bold", 
 //             fontSize: "14px"
 //         }
-//     }}
+//     },
+//     {
+//         back: {
+            
+//         },
+//         company: {
+
+//         },
+//         front: {
+
+//         },
+//         info: {
+
+//         }
+//     }
 //     ]

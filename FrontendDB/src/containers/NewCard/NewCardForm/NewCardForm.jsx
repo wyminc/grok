@@ -25,7 +25,6 @@ class InfoForm extends Component {
             email: "",
             previous: false,
             next: false,
-
         }
     }
     
