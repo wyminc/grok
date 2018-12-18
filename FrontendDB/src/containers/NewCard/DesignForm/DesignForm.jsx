@@ -38,12 +38,12 @@ class DesignForm extends Component {
                 <div className="card-preview-container">
                     <div className="front-view">
                         <FrontPreview 
-                            style={this.props.addInfo.css}
+                            // style={this.props.addInfo.css}
                         />
                     </div>
-                    <div className="back-view" style={this.props.addInfo.css}>
+                    <div className="back-view">
                         <BackPreview 
-                            style={this.props.addInfo.css}
+                            // style={this.props.addInfo.css}
                         />
                     </div>
                 </div>

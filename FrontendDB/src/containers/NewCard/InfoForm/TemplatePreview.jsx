@@ -6,12 +6,12 @@ export const BackPreview = (props) => {
             className="front-preview" 
             style={props.style.front}
         >
-            {/* <div 
+            <div 
             className="company" 
             style={props.style.company}
             >
             {props.data.company_name}
-            </div> */}
+            </div>
         </div>
     )
 }
