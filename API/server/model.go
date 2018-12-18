@@ -21,10 +21,10 @@ type data struct {
 }
 
 type style struct {
-	Front string `json:"front" bson:"front"`
-	Title string `json:"title" bson:"title"`
-	Back  string `json:"back" bson:"back"`
-	Info  string `json:"info" bson:"info"`
+	Back    string `json:"back" bson:"back"`
+	Company string `json:"title" bson:"title"`
+	Front   string `json:"front" bson:"front"`
+	Info    string `json:"info" bson:"info"`
 }
 
 type newCard struct {
@@ -45,8 +45,8 @@ type newData struct {
 }
 
 type newStyle struct {
-	Front string
-	Title string
-	Back  string
-	Info  string
+	Back    string
+	Company string
+	Front   string
+	Info    string
 }

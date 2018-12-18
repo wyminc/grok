@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import '../styles.css';
+import { Link } from 'react-router-dom';
 
-import {DisplayCard} from '../../../CardComponent/CardComponent.jsx'
-import {cardContainer, name, address, phone, email} from '../../../CardComponent/CardClassing.js'
+import { DisplayCard } from '../../../CardComponent/CardComponent.jsx'
+import { cardContainer, name, address, phone, email } from '../../../CardComponent/CardClassing.js'
 
 import { generateKeyPair } from 'crypto';
 import cardBackground1 from "../../../assets/card-background1.jpg";
@@ -13,8 +14,8 @@ const background1 = `url(${cardBackground1})`;
 const background3 = `url(${cardBackground3})`;
 
 class FeaturedCards extends Component {
-  constructor (props) {
-    super(props) 
+  constructor(props) {
+    super(props)
     this.state = {
       hover: false
     }
@@ -29,64 +30,72 @@ class FeaturedCards extends Component {
     console.log(React.version)
   }
 
-  
+
 
   render() {
     console.log("this.state", this.state)
     return (
-      
+
       <div className="featured-card-container">
         <div className="featured-card">
-          <DisplayCard
-            cardContainer={cardContainer}
-            back ={"card-back one-back"}
-            title={"one-title"}
-            front={"card-info one-front"}
-            info={"one-info"}
-            name={name}
-            address={address}
-            phone={phone}
-            email={email}
-          />
+          <a href="/newcardform">
+            <DisplayCard
+              cardContainer={cardContainer}
+              back={"card-back one-back"}
+              title={"one-title"}
+              front={"card-info one-front"}
+              info={"one-info"}
+              name={name}
+              address={address}
+              phone={phone}
+              email={email}
+            />
+          </a>
         </div>
         <div className="featured-card">
-          <DisplayCard
-            cardContainer={cardContainer}
-            back={"card-back two-back"}
-            title={"two-title"}
-            front={"card-info two-front"}
-            info={"two-info"}
-            name={name}
-            address={address}
-            phone={phone}
-            email={email}          
-          />
+          <a href="/newcardform">
+            <DisplayCard
+              cardContainer={cardContainer}
+              back={"card-back two-back"}
+              title={"two-title"}
+              front={"card-info two-front"}
+              info={"two-info"}
+              name={name}
+              address={address}
+              phone={phone}
+              email={email}
+            />
+          </a>
         </div>
         <div className="featured-card">
-          <DisplayCard
-            cardContainer={cardContainer}
-            back={"card-back three-back"}
-            title={"three-title"}
-            front={"card-info three-front"}
-            info={"three-info"}
-            name={name}
-            address={address}
-            phone={phone}
-            email={email}
-          />
+          <a href="/newcardform">
+            <DisplayCard
+              cardContainer={cardContainer}
+              back={"card-back three-back"}
+              title={"three-title"}
+              front={"card-info three-front"}
+              info={"three-info"}
+              name={name}
+              address={address}
+              phone={phone}
+              email={email}
+            />
+          </a>
         </div>
         <div className="featured-card">
-          <DisplayCard
-            cardContainer={cardContainer}
-            back={"card-back four-back"}
-            title={"four-title"}
-            front={"card-info four-front"}
-            info={"four-info"}
-            name={name}
-            address={address}
-            phone={phone}
-            email={email}         
-          />
+          <a href="/newcardform">
+            <DisplayCard
+              cardContainer={cardContainer}
+              back={"card-back four-back"}
+              title={"four-title"}
+              front={"card-info four-front"}
+              info={"four-info"}
+              name={name}
+              address={address}
+              phone={phone}
+              email={email}
+            />
+          </a>
         </div>
         {/* <div className="featured-card">
           <div className=cardContainer>
@@ -115,7 +124,7 @@ class FeaturedCards extends Component {
 
 // card styling 
 const styles = {
-  front: {  
+  front: {
     backgroundImage: background1,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat"
@@ -128,8 +137,8 @@ const styles = {
   back: {
     backgroundImage: background3,
     backgroundSize: "cover",
-    backgroundRepeat: "no-repeat", 
-    color: "white"  
+    backgroundRepeat: "no-repeat",
+    color: "white"
   },
   info: {
 

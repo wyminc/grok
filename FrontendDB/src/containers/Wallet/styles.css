@@ -1,0 +1,74 @@
+.wallet-nav {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: flex-start;
+    box-shadow: 2px 2px 2px lightgrey;
+    padding: 1% 0 2.5% 0;
+    width: 100%;
+    height: 7vh;
+    border-top: 15px solid #273746;
+    /* background-color: #273746 */
+}
+
+ .card-container {
+    width: 80%;
+    margin: auto;
+}
+
+.card {
+    top: 20vh;
+    height: 25vh;
+    width: 25vw;
+    margin: auto;
+}
+
+.card:hover {
+    animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+}
+
+.card-info, .card-front {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.card-front {
+    z-index: 1;
+}
+
+.card-info {
+    z-index: 2;
+}
+
+
+.nav-button {
+    margin-left: 2%;
+    padding: 0 0.5% 2.2% 0.5%;
+    font-size: 16px;
+} 
+
+.nav-button:hover {
+    animation: border-fadein 2s forwards;
+}
+
+@keyframes border-fadein {
+    from {
+      border-bottom: 3px solid white;
+    }
+    to {
+      /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
+      border-bottom: 3px solid #73C6B6;
+    }
+  }
+
+  @keyframes flip {
+      0% {
+          transform: rotateX(0);
+      }
+      100% {
+          transform: scale(1.5) rotateX(180deg);
+      }
+  }
+
