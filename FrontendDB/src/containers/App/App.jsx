@@ -17,8 +17,8 @@ import {authenticated} from '../../actions/actions.js'
 import Home from '../Home/index.jsx';
 import MyCard from "../../containers/Wallet/MyCard/MyCard.jsx";
 import OtherCards from "../../containers/Wallet/OtherCards/OtherCards.jsx";
-import InfoForm from "../../containers/NewCard/InfoForm/InfoForm.jsx";
-import DesignForm from "../../containers/NewCard/DesignForm/DesignForm.jsx";  
+import NewCardForm from "../NewCard/NewCardForm/NewCardForm.jsx";
+// import DesignForm from "../../containers/NewCard/DesignForm/DesignForm.jsx";  
 
 import Login from '../Login/Login.jsx'
 import Register from '../Register/Register.jsx'
@@ -104,7 +104,7 @@ class App extends Component {
               <Route path='/signup' component={Register} props={childProps} />
 
               {/* <Route exact path = {`${url}/wallet/:id`} /> */}
-              <Route exact path = "/info-form" component = {InfoForm} />
+              <Route exact path = "/newcardform" component = {NewCardForm} />
               {/* <Route exact path="/design-form" component = {DesignForm}/> */}
 
               <Route exact path = "/wallet/mycard/:id" component={MyCard} />

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './styles.css';
 
 import FeaturedCards from './FeaturedCards/FeaturedCards.jsx';
-import InfoForm from '../NewCard/InfoForm/InfoForm.jsx'
 
 class Home extends Component {
 
@@ -46,7 +45,6 @@ class Home extends Component {
           <PremiumSectionComponent/>
         </div> */}
         <div id="about" className="about-info">
-          <InfoForm/>
           {/* <AboutSectionComponent/> */}
           {/* <p className="definition-title">
             GROK

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import './InfoForm.css';
+import './NewCardForm.css';
 
 import {Template} from './Template.jsx';
 import {template1} from './CardCssTemplates.js';
