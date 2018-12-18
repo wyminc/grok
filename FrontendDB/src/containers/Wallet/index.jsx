@@ -54,8 +54,10 @@ class Wallet extends Component {
             <LinkButton to='/wallet/othercards' title={"THEIRS"} />
           </div>
         </div>
-          <Switch>
+        <div className="card-container">
+        <Switch>
             <Route exact path='/wallet' render={() =>
+            <div className="mycard">
               <Card
                 cardContainer={cardContainer}
                 front={front}
@@ -68,7 +70,9 @@ class Wallet extends Component {
                 phone={phone}
                 email={email}
                 data={data}
-              />}
+              />
+            </div>
+            }
             />
 
             <Route exact path='/wallet/mycard' render={() =>
@@ -104,6 +108,7 @@ class Wallet extends Component {
             />
 
           </Switch>
+        </div>
         {/* </div> */}
       </div>
 
