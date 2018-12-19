@@ -28,13 +28,13 @@ class Wallet extends Component {
     }
   }
 
-  componentDidMount = () => {
+  componentWillMount = () => {
     const { user } = this.props.authInfo;
 
-    console.log("HIHI");
+    console.log("HIHI", this.props);
 
-    this.props.dispatch(getMyCard("A100001001"))
-    this.props.dispatch(getAllCards("A100001001"))
+    this.props.dispatch(getMyCard(user))
+    this.props.dispatch(getAllCards(user))
   }
 
   render() {

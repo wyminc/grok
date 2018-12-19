@@ -36,7 +36,7 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // console.log("APP state", this.state)
     // console.log("session", Auth.currentUserInfo().then(data => console.log(data)))
 
