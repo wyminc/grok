@@ -9,9 +9,6 @@ import {
 
 const reducers = (state = {
   allCards: [],
-  allCardsData: [],
-  allCardsCSS: [],
-  allCardsId: [],
   myCard: {
     user_id: "",
     data: {},
@@ -33,14 +30,32 @@ const reducers = (state = {
         authInfo: newAuthInfo
       }
     case GET_ALL_CARDS:
-      return { ...state,
-        allCards: action.payload
+      if (!action.payload) {
+        return { ...state
+        }
+      } else {
+        const newPayload = action.payload.map(card => {
+          let parsedAllCss = {};
+          for (var key in card.css) {
+            parsedAllCss[key] = JSON.parse(card.css[key])
+          }
+          return { ...card,
+            css: parsedAllCss
+          }
+        })
+        return { ...state,
+          allCards: newPayload
+        }
       }
     case GET_MY_CARD:
+      let parsedMyCss = {};
+      for (var key in action.payload.css) {
+        parsedMyCss[key] = JSON.parse(action.payload.css[key])
+      }
       const myData = {
         user_id: action.payload.user_id,
         data: action.payload.data,
-        css: action.payload.css
+        css: parsedMyCss
       }
       return { ...state,
         myCard: myData
