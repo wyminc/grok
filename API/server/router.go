@@ -7,7 +7,11 @@ import (
 func AllCards(c *gin.Context) {
 	i := (c.Param("id"))
 
-	data, _ := getAll(i)
+	data, err := getAll(i)
+
+	if err != nil {
+		c.JSON(400, "Card does not exist")
+	}
 
 	c.JSON(200, data)
 }
@@ -15,7 +19,11 @@ func AllCards(c *gin.Context) {
 func Card(c *gin.Context) {
 	i := (c.Param("id"))
 
-	data, _ := getSpecific(i)
+	data, err := getSpecific(i)
+
+	if err != nil {
+		c.JSON(400, "Cards do not exist")
+	}
 
 	c.JSON(200, data)
 }
