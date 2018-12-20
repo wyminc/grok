@@ -97,6 +97,7 @@ class Wallet extends Component {
                 phone={phone}
                 email={email}
                 data={data}
+                styles={css}
               />}
             />
 

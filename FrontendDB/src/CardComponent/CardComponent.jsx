@@ -3,7 +3,8 @@ import './styles.css'
 
 export const Card = (props) => {
   const { data, styles } = props;
-
+  console.log('card data', data)
+  console.log('card styles', styles)
   return (
     <div key={props.user_id} className={props.cardContainer}>
       <div className={props.back} style={styles.back}>
