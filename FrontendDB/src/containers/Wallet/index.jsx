@@ -48,7 +48,7 @@ class Wallet extends Component {
     }
   }
 
-  editRedirect = (event) => {
+  editRedirect = () => {
     this.setState({
       toEditCard: true
     })
