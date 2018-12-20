@@ -12,7 +12,12 @@ const reducers = (state = {
   myCard: {
     user_id: "",
     data: {},
-    css: {},
+    css: {
+      back: {},
+      company: {},
+      front: {},
+      info: {}
+    },
     users: [],
     addInfo: {}
   },

@@ -53,7 +53,7 @@ class Wallet extends Component {
 
     const { myCard, allCards } = this.props;
 
-    const { data } = myCard;
+    const { data, css } = myCard;
 
     return (
       <div className="wallet-container">
@@ -81,6 +81,7 @@ class Wallet extends Component {
                   phone={phone}
                   email={email}
                   data={data}
+                  styles={css}
                 />
               </div>
             }
@@ -99,6 +100,7 @@ class Wallet extends Component {
                 phone={phone}
                 email={email}
                 data={data}
+                styles={css}
               />}
             />
 
