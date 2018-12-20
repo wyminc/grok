@@ -41,8 +41,20 @@ const reducers = (state = {
         authInfo: newAuthInfo
       }
     case NO_CARD:
-      const noCard = { ...state.myCard };
-      noCard.no_card = true;
+      const noCard = {
+        user_id: "",
+        data: {},
+        css: {
+          back: {},
+          company: {},
+          front: {},
+          info: {}
+        },
+        users: [],
+        addInfo: {},
+        editInfo: {},
+        no_card: true
+      };
       return { ...state, myCard: noCard }
     case GET_ALL_CARDS:
       if (!action.payload) {
@@ -126,7 +138,21 @@ const reducers = (state = {
         editInfo: editCss
       }
     case DELETE_CARD:
-      return { ...state, myCard: {} }
+      return {
+        ...state, myCard: {
+          user_id: "",
+          data: {},
+          css: {
+            back: {},
+            company: {},
+            front: {},
+            info: {}
+          },
+          users: [],
+          addInfo: {},
+          editInfo: {},
+        }
+      }
     default:
       return {
         ...state
