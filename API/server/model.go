@@ -22,7 +22,7 @@ type data struct {
 
 type style struct {
 	Back    string `json:"back" bson:"back"`
-	Company string `json:"title" bson:"title"`
+	Company string `json:"company" bson:"company"`
 	Front   string `json:"front" bson:"front"`
 	Info    string `json:"info" bson:"info"`
 }

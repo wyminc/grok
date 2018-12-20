@@ -22,6 +22,7 @@ import NewCardForm from "../NewCard/NewCardForm/NewCardForm.jsx";
 
 import Login from '../Login/Login.jsx'
 import Register from '../Register/Register.jsx'
+import EditCardForm from '../EditCard/EditCardForm/EditCardForm.jsx';
 // import Logout from '../../components/LogoutButton.jsx';
 // import { NOTFOUND } from 'dns';
 
@@ -36,7 +37,7 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // console.log("APP state", this.state)
     // console.log("session", Auth.currentUserInfo().then(data => console.log(data)))
 
@@ -103,9 +104,8 @@ class App extends Component {
             <Route path='/login' component={Login} props={childProps} />
             <Route path='/signup' component={Register} props={childProps} />
 
-            {/* <Route exact path = {`${url}/wallet/:id`} /> */}
             <Route exact path="/newcardform" component={NewCardForm} />
-            {/* <Route exact path="/design-form" component = {DesignForm}/> */}
+            <Route exact path="/editcardform" component={EditCardForm} />
 
             <Route exact path='/wallet' component={Wallet} />
             <Route exact path='/wallet/mycard' component={Wallet} />

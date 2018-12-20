@@ -1,6 +1,8 @@
 package server
 
 import (
+	"os"
+
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -15,13 +17,14 @@ func createSession(addr string) (*mgo.Session, error) {
 }
 
 func getSpecific(id string) (card, error) {
-	session, err := createSession("mongo:27017")
+	session, err := createSession("mongo:" + os.Getenv("MONGO"))
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
 
 	result := card{}
 	err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
+
 	if err != nil {
 		panic(err)
 	}
@@ -31,13 +34,14 @@ func getSpecific(id string) (card, error) {
 
 //Get all cards that is in the id's (the id that is being passed through) users key
 func getAll(id string) ([]card, error) {
-	session, err := createSession("mongo:27017")
+	session, err := createSession("mongo:" + os.Getenv("MONGO"))
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
 
 	result := card{}
 	err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
+
 	if err != nil {
 		panic(err)
 	}
@@ -49,7 +53,7 @@ func getAll(id string) ([]card, error) {
 }
 
 func addCard(data *newCard) (card, error) {
-	session, err := createSession("mongo:27017")
+	session, err := createSession("mongo:" + os.Getenv("MONGO"))
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
@@ -66,7 +70,7 @@ func addCard(data *newCard) (card, error) {
 }
 
 func updateCard(id string, data *newCard) (card, error) {
-	session, err := createSession("mongo:27017")
+	session, err := createSession("mongo:" + os.Getenv("MONGO"))
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
@@ -83,7 +87,7 @@ func updateCard(id string, data *newCard) (card, error) {
 }
 
 func deleteCard(id string) (card, error) {
-	session, err := createSession("mongo:27017")
+	session, err := createSession("mongo:" + os.Getenv("MONGO"))
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Route, Link, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 //Card
 import { Card, AllCards } from "../../CardComponent/CardComponent.jsx";
@@ -8,7 +9,7 @@ import { cardContainer, front, title, back, info, company, name, address, phone,
 import './styles.css';
 
 //Actions
-import { getMyCard, getAllCards } from "../../actions/actions.js";
+import { getMyCard, getAllCards, deleteCard } from "../../actions/actions.js";
 
 // 
 //Function to create links
@@ -24,54 +25,98 @@ class Wallet extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      toEditCard: false,
+      toHome: false
     }
   }
 
   componentDidMount = () => {
-    const { user } = this.props.authInfo;
+    if (this.props.authInfo.user) {
+      const { user } = this.props.authInfo;
+      this.props.dispatch(getMyCard(user))
+      this.props.dispatch(getAllCards(user))
+    }
+  }
 
-    console.log("HIHI");
+  componentDidUpdate = (prevProps) => {
+    // console.log("previous props", prevProps);
 
-    this.props.dispatch(getMyCard("A100001001"))
-    this.props.dispatch(getAllCards("A100001001"))
+    if (this.props.authInfo.user !== prevProps.authInfo.user) {
+      const { user } = this.props.authInfo;
+      this.props.dispatch(getMyCard(user))
+      this.props.dispatch(getAllCards(user))
+    }
+  }
+
+  editRedirect = () => {
+    this.setState({
+      toEditCard: true
+    })
+  }
+
+  deleteCard = (id) => {
+    // const {user} = this.props.authInfo;
+    this.props.dispatch(deleteCard(id));
+    this.setState({
+      toHome: true
+    })
   }
 
   render() {
     console.log("PROPS", this.props);
+    const { user } = this.props.authInfo;
 
     const { myCard, allCards } = this.props;
 
-    const { data } = myCard;
+    const { data, css } = myCard;
+
+    // if (myCard.no_card === true) {
+    //   return <Redirect to='/' />
+    // }
+
+    if (this.state.toHome === true) {
+      return <Redirect to='/' />
+    }
+
+    if (this.state.toEditCard === true) {
+      return <Redirect to='/editcardform' />
+    }
 
     return (
       <div className="wallet-container">
         <div className="wallet-nav">
           <div className="nav-button">
-            <LinkButton to='/wallet/mycard' title={"MINES"} />  
+            <LinkButton to='/wallet/mycard' title={"MINES"} />
           </div>
           <div className="nav-button">
             <LinkButton to='/wallet/othercards' title={"THEIRS"} />
           </div>
         </div>
         <div className="card-container">
-        <Switch>
+          <Switch>
             <Route exact path='/wallet' render={() =>
-            <div className="mycard">
-              <Card
-                cardContainer={cardContainer}
-                front={front}
-                title={title}
-                back={back}
-                info={info}
-                company_name={company}
-                name={name}
-                address={address}
-                phone={phone}
-                email={email}
-                data={data}
-              />
-            </div>
+              <div className="mycard">
+                <Card
+                  cardContainer={cardContainer}
+                  front={front}
+                  title={title}
+                  back={back}
+                  info={info}
+                  company_name={company}
+                  name={name}
+                  address={address}
+                  phone={phone}
+                  email={email}
+                  data={data}
+                  styles={css}
+                />
+                <div className="editbutton">
+                  <button onClick={this.editRedirect}>EDIT</button>
+                </div>
+                <div className="deletebutton">
+                  <button onClick={() => { this.deleteCard(user) }}>DELETE</button>
+                </div>
+              </div>
             }
             />
 
@@ -88,6 +133,7 @@ class Wallet extends Component {
                 phone={phone}
                 email={email}
                 data={data}
+                styles={css}
               />}
             />
 

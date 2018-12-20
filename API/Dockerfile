@@ -16,7 +16,7 @@ COPY . .
 # RUN go get ./vendor/database
 
 RUN go get github.com/gin-gonic/gin
-# RUN go get github.com/joho/godotenv
+RUN go get github.com/joho/godotenv
 RUN go get gopkg.in/mgo.v2
 RUN go get github.com/gin-contrib/cors
 # RUN go get github.com/pilu/fresh

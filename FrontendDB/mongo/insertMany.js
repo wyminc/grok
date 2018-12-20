@@ -15,15 +15,12 @@ MongoClient.connect(url, function (err, db) {
         email: "fake@gmail.com"
       },
       css: {
-        container: "'{test': 'test'}",
-        containerHover: "{'test': 'test'}",
-        card: "{'test': 'test', 'test2' : 'test2'}",
-        front: "{'test': 'test'}",
-        title: "{'test': 'test'}",
-        back: "{'test': 'test'}",
-        info: "{'test': 'test'}"
+        front: "{\"backgroundImage\":\"url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')\",\"backgroundRepeat\":\"no-repeat\",\"backgroundSize\":\"cover\"}",
+        company: "{\"color\":\"black\",\"fontWeight\":\"bold\",\"fontSize\":\"24px\"}",
+        back: "{\"backgroundImage\":\"url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')\",\"backgroundRepeat\":\"no-repeat\",\"backgroundSize\":\"cover\",\"textAlign\":\"center\"}",
+        info: "{\"color\":\"black\",\"fontWeight\":\"bold\",\"fontSize\":\"14px\"}"
       },
-      users: [],
+      users: ["A100001002", "A100001003", "A100001004"],
       is_deleted: false
     },
     {
@@ -37,13 +34,10 @@ MongoClient.connect(url, function (err, db) {
         email: "fake@gmail.com"
       },
       css: {
-        container: "'{test': 'test'}",
-        containerHover: "{'test': 'test'}",
-        card: "{'test': 'test', 'test2' : 'test2'}",
-        front: "{'test': 'test'}",
-        title: "{'test': 'test'}",
-        back: "{'test': 'test'}",
-        info: "{'test': 'test'}"
+        front: "{\"backgroundImage\":\"url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')\",\"backgroundRepeat\":\"no-repeat\",\"backgroundSize\":\"cover\"}",
+        company: "{\"color\":\"black\",\"fontWeight\":\"bold\",\"fontSize\":\"24px\"}",
+        back: "{\"backgroundImage\":\"url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')\",\"backgroundRepeat\":\"no-repeat\",\"backgroundSize\":\"cover\",\"textAlign\":\"center\"}",
+        info: "{\"color\":\"black\",\"fontWeight\":\"bold\",\"fontSize\":\"14px\"}"
       },
       users: ["A100001001", "A100001003", "A100001004"],
       is_deleted: false
@@ -58,13 +52,10 @@ MongoClient.connect(url, function (err, db) {
         email: "fake@gmail.com"
       },
       css: {
-        container: "'{test': 'test'}",
-        containerHover: "{'test': 'test'}",
-        card: "{'test': 'test', 'test2' : 'test2'}",
-        front: "{'test': 'test'}",
-        title: "{'test': 'test'}",
-        back: "{'test': 'test'}",
-        info: "{'test': 'test'}"
+        front: "{\"backgroundImage\":\"url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')\",\"backgroundRepeat\":\"no-repeat\",\"backgroundSize\":\"cover\"}",
+        company: "{\"color\":\"black\",\"fontWeight\":\"bold\",\"fontSize\":\"24px\"}",
+        back: "{\"backgroundImage\":\"url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')\",\"backgroundRepeat\":\"no-repeat\",\"backgroundSize\":\"cover\",\"textAlign\":\"center\"}",
+        info: "{\"color\":\"black\",\"fontWeight\":\"bold\",\"fontSize\":\"14px\"}"
       },
       users: ["A100001001", "A100001002", "A100001004"],
       is_deleted: false
@@ -79,13 +70,10 @@ MongoClient.connect(url, function (err, db) {
         email: "fake@gmail.com"
       },
       css: {
-        container: "'{test': 'test'}",
-        containerHover: "{'test': 'test'}",
-        card: "{'test': 'test', 'test2' : 'test2'}",
-        front: "{'test': 'test'}",
-        title: "{'test': 'test'}",
-        back: "{'test': 'test'}",
-        info: "{'test': 'test'}"
+        front: "{\"backgroundImage\":\"url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')\",\"backgroundRepeat\":\"no-repeat\",\"backgroundSize\":\"cover\"}",
+        company: "{\"color\":\"black\",\"fontWeight\":\"bold\",\"fontSize\":\"24px\"}",
+        back: "{\"backgroundImage\":\"url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')\",\"backgroundRepeat\":\"no-repeat\",\"backgroundSize\":\"cover\",\"textAlign\":\"center\"}",
+        info: "{\"color\":\"black\",\"fontWeight\":\"bold\",\"fontSize\":\"14px\"}"
       },
       users: ["A100001001", "A100001002", "A100001003"],
       is_deleted: false

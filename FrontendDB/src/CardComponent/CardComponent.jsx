@@ -2,15 +2,16 @@ import React from 'react';
 import './styles.css'
 
 export const Card = (props) => {
-  const { data } = props;
-
+  const { data, styles } = props;
+  console.log('card data', data)
+  console.log('card styles', styles)
   return (
     <div key={props.user_id} className={props.cardContainer}>
-      <div className={props.back}>
-        <div className={props.company}>{data.company_name}</div>
+      <div className={props.back} style={styles.back}>
+        <div className={props.company} style={styles.company}>{data.company_name}</div>
       </div>
-      <div className={props.front}>
-        <div className={props.info}>
+      <div className={props.front} style={styles.front}>
+        <div className={props.info} style={styles.info}>
           <div className={props.name}>{data.name}</div>
           <div className={props.title}>{data.title}</div>
           <div className={props.address}>{data.address}</div>
@@ -23,14 +24,16 @@ export const Card = (props) => {
 }
 
 export const AllCards = (props) => {
+  console.log('all cards props', props);
+
 
   return props.cards.map(card =>
     <div key={card.user_id} className={props.cardContainer}>
-      <div className={props.back}>
-        <div className={props.company}>{card.data.company_name}</div>
+      <div className={props.back} style={card.css.back}>
+        <div className={props.company} style={card.css.company}>{card.data.company_name}</div>
       </div>
-      <div className={props.front}>
-        <div className={props.info}>
+      <div className={props.front} style={card.css.front}>
+        <div className={props.info} style={card.css.info}>
           <div className={props.name}>{card.data.name}</div>
           <div className={props.title}>{card.data.title}</div>
           <div className={props.address}>{card.data.address}</div>
