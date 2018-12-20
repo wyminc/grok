@@ -24,6 +24,7 @@ func getSpecific(id string) (card, error) {
 
 	result := card{}
 	err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
+
 	if err != nil {
 		panic(err)
 	}
@@ -40,6 +41,7 @@ func getAll(id string) ([]card, error) {
 
 	result := card{}
 	err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
+
 	if err != nil {
 		panic(err)
 	}

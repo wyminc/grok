@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import {Redirect} from 'react-router-dom';
+import { BrowserRouter as Route, Link, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 //Card
 import { Card, AllCards } from "../../CardComponent/CardComponent.jsx";
@@ -64,16 +64,20 @@ class Wallet extends Component {
 
   render() {
     console.log("PROPS", this.props);
-    const {user} = this.props.authInfo;
+    const { user } = this.props.authInfo;
 
     const { myCard, allCards } = this.props;
 
     const { data, css } = myCard;
 
+    // if (myCard.no_card === true) {
+    //   return <Redirect to='/' />
+    // }
+
     if (this.state.toHome === true) {
       return <Redirect to='/' />
     }
-    
+
     if (this.state.toEditCard === true) {
       return <Redirect to='/editcardform' />
     }
@@ -110,7 +114,7 @@ class Wallet extends Component {
                   <button onClick={this.editRedirect}>EDIT</button>
                 </div>
                 <div className="deletebutton">
-                  <button onClick={() => {this.deleteCard(user)}}>DELETE</button>
+                  <button onClick={() => { this.deleteCard(user) }}>DELETE</button>
                 </div>
               </div>
             }
