@@ -28,10 +28,20 @@ class Wallet extends Component {
     }
   }
 
+  componentDidMount = () => {
+    if (!this.props.authInfo.user) {
+      return
+    } else {
+      const { user } = this.props.authInfo;
+      this.props.dispatch(getMyCard(user))
+      this.props.dispatch(getAllCards(user))
+    }
+  }
+
   componentDidUpdate = (prevProps) => {
     // console.log("previous props", prevProps);
 
-    if (this.props.authInfo.user !== prevProps.authInfo.user ) {
+    if (this.props.authInfo.user !== prevProps.authInfo.user) {
       const { user } = this.props.authInfo;
       this.props.dispatch(getMyCard(user))
       this.props.dispatch(getAllCards(user))
@@ -49,30 +59,30 @@ class Wallet extends Component {
       <div className="wallet-container">
         <div className="wallet-nav">
           <div className="nav-button">
-            <LinkButton to='/wallet/mycard' title={"MINES"} />  
+            <LinkButton to='/wallet/mycard' title={"MINES"} />
           </div>
           <div className="nav-button">
             <LinkButton to='/wallet/othercards' title={"THEIRS"} />
           </div>
         </div>
         <div className="card-container">
-        <Switch>
+          <Switch>
             <Route exact path='/wallet' render={() =>
-            <div className="mycard">
-              <Card
-                cardContainer={cardContainer}
-                front={front}
-                title={title}
-                back={back}
-                info={info}
-                company_name={company}
-                name={name}
-                address={address}
-                phone={phone}
-                email={email}
-                data={data}
-              />
-            </div>
+              <div className="mycard">
+                <Card
+                  cardContainer={cardContainer}
+                  front={front}
+                  title={title}
+                  back={back}
+                  info={info}
+                  company_name={company}
+                  name={name}
+                  address={address}
+                  phone={phone}
+                  email={email}
+                  data={data}
+                />
+              </div>
             }
             />
 
