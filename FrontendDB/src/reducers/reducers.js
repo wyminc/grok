@@ -88,6 +88,7 @@ const reducers = (state = {
       return { ...state,
         addInfo: action.payload
       }
+    case D
     default:
       return { ...state
       }
