@@ -2,15 +2,15 @@ import React from 'react';
 import './styles.css'
 
 export const Card = (props) => {
-  const { data } = props;
+  const { data, styles } = props;
 
   return (
     <div key={props.user_id} className={props.cardContainer}>
-      <div className={props.back}>
-        <div className={props.company}>{data.company_name}</div>
+      <div className={props.back} style={styles.back}>
+        <div className={props.company} style={styles.company}>{data.company_name}</div>
       </div>
-      <div className={props.front}>
-        <div className={props.info}>
+      <div className={props.front} style={styles.front}>
+        <div className={props.info} style={styles.info}>
           <div className={props.name}>{data.name}</div>
           <div className={props.title}>{data.title}</div>
           <div className={props.address}>{data.address}</div>

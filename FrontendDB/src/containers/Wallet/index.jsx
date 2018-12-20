@@ -28,14 +28,21 @@ class Wallet extends Component {
     }
   }
 
-  componentDidUpdate = (prevProps) => {
+  // componentDidUpdate = (prevProps) => {
+  //   // console.log("previous props", prevProps);
+
+  //   if (this.props.authInfo.user !== prevProps.authInfo.user ) {
+  //     const { user } = this.props.authInfo;
+  //     this.props.dispatch(getMyCard(user))
+  //     this.props.dispatch(getAllCards(user))
+  //   }
+  // }
+
+  componentDidMount = () => {
     // console.log("previous props", prevProps);
 
-    if (this.props.authInfo.user !== prevProps.authInfo.user ) {
-      const { user } = this.props.authInfo;
-      this.props.dispatch(getMyCard(user))
-      this.props.dispatch(getAllCards(user))
-    }
+      this.props.dispatch(getMyCard("A100001002"))
+      this.props.dispatch(getAllCards("A100001002"))
   }
 
   render() {
@@ -43,7 +50,7 @@ class Wallet extends Component {
 
     const { myCard, allCards } = this.props;
 
-    const { data } = myCard;
+    const { data, css } = myCard;
 
     return (
       <div className="wallet-container">
@@ -71,6 +78,7 @@ class Wallet extends Component {
                 phone={phone}
                 email={email}
                 data={data}
+                styles={css}
               />
             </div>
             }
