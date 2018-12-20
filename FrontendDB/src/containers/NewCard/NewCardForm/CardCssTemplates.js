@@ -97,7 +97,6 @@ export const template4 = {
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% 100%",
         backgroundPosition: "50% 50%",
-        // backgroundColor: "black"
     },
     company: {
         color: "#aadfe9",
