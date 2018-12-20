@@ -66,7 +66,7 @@ class NewCardForm extends Component {
         for (var key in body.css) {
             newStyle[key] = JSON.stringify(body.css[key])
         }
-        body.css = newStyle
+        body.css = newStyle;
         this.props.dispatch(newCard(body))
         this.setState({
             toWallet: true

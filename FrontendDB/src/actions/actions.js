@@ -93,9 +93,40 @@ export const newCard = (body) => {
   }
 }
 
+//put - edit info of specific card 
+export const editCardData = (id, info) => {
+  return dispatch => {
+    dispatch({
+      type: EDIT_CARD_DATA,
+      id: id,
+      payload: info
+    })
+  }
+}
 
+export const editCardCss = (style) => {
+  return dispatch => {
+    dispatch({
+      type: EDIT_CARD_CSS,
+      payload: style
+    })
+  }
+}
 
-
-
-
+export const editCard = (id, body) => {
+  console.log("body at action", body)
+  return dispatch => {
+    axios 
+    .put(`/update/${id}`, body) 
+    .then (response => {
+      dispatch({
+        type: GET_MY_CARD,
+        payload: response.data
+      })
+    })
+    .catch(err => {
+      console.log("Error updating card", err)
+    })
+  }
+}
 
