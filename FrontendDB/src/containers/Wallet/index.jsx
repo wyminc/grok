@@ -51,6 +51,7 @@ class Wallet extends Component {
     const { myCard, allCards } = this.props;
 
     const { data, css } = myCard;
+    
 
     return (
       <div className="wallet-container">
@@ -87,7 +88,6 @@ class Wallet extends Component {
             <Route exact path='/wallet/mycard' render={() =>
               <Card
                 cardContainer={cardContainer}
-                front={front}
                 title={title}
                 back={back}
                 info={info}
@@ -114,7 +114,6 @@ class Wallet extends Component {
                 phone={phone}
                 email={email}
                 cards={allCards}
-                styles={css}
               />}
             />
 
