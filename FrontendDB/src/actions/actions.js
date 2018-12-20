@@ -9,6 +9,7 @@ export const NEW_CARD_CSS = "NEW_CARD_CSS";
 export const ADD_NEW_CARD = "ADD_NEW_CARD";
 export const EDIT_CARD_DATA = "EDIT_CARD_DATA";
 export const EDIT_CARD_CSS = "EDIT_CARD_CSS";
+export const DELETE_CARD = "DELETE_CARD";
 
 //Auth Actions 
 export const authenticated = (data) => {
@@ -93,7 +94,6 @@ export const newCard = (body) => {
   }
 }
 
-//put - edit info of specific card 
 export const editCardData = (id, info) => {
   return dispatch => {
     dispatch({
@@ -130,3 +130,17 @@ export const editCard = (id, body) => {
   }
 }
 
+export const deleteCard = (id) => {
+  return dispatch => {
+    axios
+    .delete(`/delete/${id}`)
+    .then(() => {
+      dispatch({
+        type: DELETE_CARD
+      })
+    })
+    .catch(err => {
+      console.log("Error deleting card", err)
+    })
+  }
+}

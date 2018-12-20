@@ -8,7 +8,7 @@ import { cardContainer, front, title, back, info, company, name, address, phone,
 import './styles.css';
 
 //Actions
-import { getMyCard, getAllCards } from "../../actions/actions.js";
+import { getMyCard, getAllCards, deleteCard } from "../../actions/actions.js";
 
 // 
 //Function to create links
@@ -48,6 +48,7 @@ class Wallet extends Component {
 
   render() {
     console.log("PROPS", this.props);
+    const {user} = this.props.authInfo;
 
     const { myCard, allCards } = this.props;
 
@@ -86,6 +87,7 @@ class Wallet extends Component {
             />
 
             <Route exact path='/wallet/mycard' render={() =>
+            <div>
               <Card
                 cardContainer={cardContainer}
                 front={front}
@@ -99,7 +101,12 @@ class Wallet extends Component {
                 email={email}
                 data={data}
                 styles={css}
-              />}
+              />
+              <div className="deletebutton">
+                <button onClick={() => {this.props.dispatch(deleteCard(user))}}>DELETE</button>
+              </div>
+            </div>
+            }
             />
 
             <Route exact path='/wallet/othercards' render={() =>

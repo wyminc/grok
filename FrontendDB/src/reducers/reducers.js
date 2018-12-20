@@ -6,7 +6,8 @@ import {
   NEW_CARD_CSS,
   ADD_NEW_CARD,
   EDIT_CARD_DATA,
-  EDIT_CARD_CSS
+  EDIT_CARD_CSS,
+  DELETE_CARD
 } from '../actions/actions.js'
 
 const reducers = (state = {
@@ -109,6 +110,8 @@ const reducers = (state = {
         ...state,
         editInfo: editCss
       }
+    case DELETE_CARD: 
+      return { ...state, myCard: {}}
     default:
       return { ...state
       }
