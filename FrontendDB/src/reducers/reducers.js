@@ -7,7 +7,8 @@ import {
   ADD_NEW_CARD,
   EDIT_CARD_DATA,
   EDIT_CARD_CSS,
-  DELETE_CARD
+  DELETE_CARD,
+  NO_CARD
 } from '../actions/actions.js'
 
 const reducers = (state = {
@@ -35,12 +36,18 @@ const reducers = (state = {
         isAuthenticated: true,
         user: action.payload
       }
-      return { ...state,
+      return {
+        ...state,
         authInfo: newAuthInfo
       }
+    case NO_CARD:
+      const noCard = { ...state.myCard };
+      noCard.no_card = true;
+      return { ...state, myCard: noCard }
     case GET_ALL_CARDS:
       if (!action.payload) {
-        return { ...state
+        return {
+          ...state
         }
       } else {
         const newPayload = action.payload.map(card => {
@@ -48,11 +55,13 @@ const reducers = (state = {
           for (var key in card.css) {
             parsedAllCss[key] = JSON.parse(card.css[key])
           }
-          return { ...card,
+          return {
+            ...card,
             css: parsedAllCss
           }
         })
-        return { ...state,
+        return {
+          ...state,
           allCards: newPayload
         }
       }
@@ -61,8 +70,9 @@ const reducers = (state = {
       for (var key in action.payload.css) {
         parsedMyCss[key] = JSON.parse(action.payload.css[key])
       }
-      const myData = { ...action.payload, css: parsedMyCss}
-      return { ...state,
+      const myData = { ...action.payload, css: parsedMyCss }
+      return {
+        ...state,
         myCard: myData
       }
     case NEW_CARD_DATA:
@@ -72,23 +82,27 @@ const reducers = (state = {
         css: {}
       }
       console.log("WHAT IM ADDING:", newData)
-      return { ...state,
+      return {
+        ...state,
         addInfo: newData
       }
     case NEW_CARD_CSS:
-      const nextInfo = { ...state.addInfo,
+      const nextInfo = {
+        ...state.addInfo,
         css: action.payload
       }
       console.log("NEXT INFO: ", nextInfo);
-      return { ...state,
+      return {
+        ...state,
         addInfo: nextInfo
       }
     case ADD_NEW_CARD:
       console.log("ADD CARD", action.payload)
-      return { ...state,
+      return {
+        ...state,
         addInfo: action.payload
       }
-    case EDIT_CARD_DATA: 
+    case EDIT_CARD_DATA:
       console.log("EDIT CARD DATA: ", action.payload)
       const editData = {
         user_id: action.id,
@@ -96,13 +110,14 @@ const reducers = (state = {
         css: {}
       }
       console.log("WHAT I'M EDITIING: ", editData)
-      return {...state,
+      return {
+        ...state,
         editInfo: editData
       }
-    case EDIT_CARD_CSS: 
+    case EDIT_CARD_CSS:
       console.log("EDIT CARD CSS: ", action.payload)
       const editCss = {
-        ...state.editInfo, 
+        ...state.editInfo,
         css: action.payload
       }
       console.log("editCss", editCss)
@@ -110,10 +125,11 @@ const reducers = (state = {
         ...state,
         editInfo: editCss
       }
-    case DELETE_CARD: 
-      return { ...state, myCard: {}}
+    case DELETE_CARD:
+      return { ...state, myCard: {} }
     default:
-      return { ...state
+      return {
+        ...state
       }
   }
 }

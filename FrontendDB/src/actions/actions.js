@@ -10,6 +10,7 @@ export const ADD_NEW_CARD = "ADD_NEW_CARD";
 export const EDIT_CARD_DATA = "EDIT_CARD_DATA";
 export const EDIT_CARD_CSS = "EDIT_CARD_CSS";
 export const DELETE_CARD = "DELETE_CARD";
+export const NO_CARD = ""
 
 //Auth Actions 
 export const authenticated = (data) => {
@@ -50,7 +51,13 @@ export const getMyCard = (id) => {
         })
       })
       .catch(err => {
-        console.log("Error at getting my card", err)
+        if (err.response.status = 500) {
+          dispatch({
+            type: NO_CARD
+          })
+        } else {
+          console.log("Error at getting my card", err)
+        }
       })
   }
 }
@@ -116,31 +123,31 @@ export const editCardCss = (style) => {
 export const editCard = (id, body) => {
   console.log("body at action", body)
   return dispatch => {
-    axios 
-    .put(`/update/${id}`, body) 
-    .then (response => {
-      dispatch({
-        type: GET_MY_CARD,
-        payload: response.data
+    axios
+      .put(`/update/${id}`, body)
+      .then(response => {
+        dispatch({
+          type: GET_MY_CARD,
+          payload: response.data
+        })
       })
-    })
-    .catch(err => {
-      console.log("Error updating card", err)
-    })
+      .catch(err => {
+        console.log("Error updating card", err)
+      })
   }
 }
 
 export const deleteCard = (id) => {
   return dispatch => {
     axios
-    .delete(`/delete/${id}`)
-    .then(() => {
-      dispatch({
-        type: DELETE_CARD
+      .delete(`/delete/${id}`)
+      .then(() => {
+        dispatch({
+          type: DELETE_CARD
+        })
       })
-    })
-    .catch(err => {
-      console.log("Error deleting card", err)
-    })
+      .catch(err => {
+        console.log("Error deleting card", err)
+      })
   }
 }

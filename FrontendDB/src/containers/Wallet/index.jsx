@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { BrowserRouter as Route, Link, Switch } from 'react-router-dom';
 
 //Card
 import { Card, AllCards } from "../../CardComponent/CardComponent.jsx";
@@ -48,11 +49,15 @@ class Wallet extends Component {
 
   render() {
     console.log("PROPS", this.props);
-    const {user} = this.props.authInfo;
+    const { user } = this.props.authInfo;
 
     const { myCard, allCards } = this.props;
 
     const { data, css } = myCard;
+
+    // if (myCard.no_card === true) {
+    //   return <Redirect to='/' />
+    // }
 
     return (
       <div className="wallet-container">
@@ -87,25 +92,25 @@ class Wallet extends Component {
             />
 
             <Route exact path='/wallet/mycard' render={() =>
-            <div>
-              <Card
-                cardContainer={cardContainer}
-                front={front}
-                title={title}
-                back={back}
-                info={info}
-                company_name={company}
-                name={name}
-                address={address}
-                phone={phone}
-                email={email}
-                data={data}
-                styles={css}
-              />
-              <div className="deletebutton">
-                <button onClick={() => {this.props.dispatch(deleteCard(user))}}>DELETE</button>
+              <div>
+                <Card
+                  cardContainer={cardContainer}
+                  front={front}
+                  title={title}
+                  back={back}
+                  info={info}
+                  company_name={company}
+                  name={name}
+                  address={address}
+                  phone={phone}
+                  email={email}
+                  data={data}
+                  styles={css}
+                />
+                <div className="deletebutton">
+                  <button onClick={() => { this.props.dispatch(deleteCard(user)) }}>DELETE</button>
+                </div>
               </div>
-            </div>
             }
             />
 
