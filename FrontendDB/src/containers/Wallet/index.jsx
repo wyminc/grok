@@ -114,6 +114,7 @@ class Wallet extends Component {
                 phone={phone}
                 email={email}
                 cards={allCards}
+                styles={css}
               />}
             />
 
