@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 //Card
 import { Card, AllCards } from "../../CardComponent/CardComponent.jsx";
@@ -24,7 +25,8 @@ class Wallet extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      toEditCard: false,
+      toHome: false
     }
   }
 
@@ -46,6 +48,20 @@ class Wallet extends Component {
     }
   }
 
+  editRedirect = (event) => {
+    this.setState({
+      toEditCard: true
+    })
+  }
+
+  deleteCard = (id) => {
+    // const {user} = this.props.authInfo;
+    this.props.dispatch(deleteCard(id));
+    this.setState({
+      toHome: true
+    })
+  }
+
   render() {
     console.log("PROPS", this.props);
     const {user} = this.props.authInfo;
@@ -53,6 +69,14 @@ class Wallet extends Component {
     const { myCard, allCards } = this.props;
 
     const { data, css } = myCard;
+
+    if (this.state.toHome === true) {
+      return <Redirect to='/' />
+    }
+    
+    if (this.state.toEditCard === true) {
+      return <Redirect to='/editcardform' />
+    }
 
     return (
       <div className="wallet-container">
@@ -82,12 +106,17 @@ class Wallet extends Component {
                   data={data}
                   styles={css}
                 />
+                <div className="editbutton">
+                  <button onClick={this.editRedirect}>EDIT</button>
+                </div>
+                <div className="deletebutton">
+                  <button onClick={() => {this.deleteCard(user)}}>DELETE</button>
+                </div>
               </div>
             }
             />
 
             <Route exact path='/wallet/mycard' render={() =>
-            <div>
               <Card
                 cardContainer={cardContainer}
                 front={front}
@@ -101,12 +130,7 @@ class Wallet extends Component {
                 email={email}
                 data={data}
                 styles={css}
-              />
-              <div className="deletebutton">
-                <button onClick={() => {this.props.dispatch(deleteCard(user))}}>DELETE</button>
-              </div>
-            </div>
-            }
+              />}
             />
 
             <Route exact path='/wallet/othercards' render={() =>
