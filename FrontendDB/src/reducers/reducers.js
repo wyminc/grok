@@ -4,7 +4,10 @@ import {
   GET_MY_CARD,
   NEW_CARD_DATA,
   NEW_CARD_CSS,
-  ADD_NEW_CARD
+  ADD_NEW_CARD,
+  EDIT_CARD_DATA,
+  EDIT_CARD_CSS,
+  DELETE_CARD
 } from '../actions/actions.js'
 
 const reducers = (state = {
@@ -19,7 +22,8 @@ const reducers = (state = {
       info: {}
     },
     users: [],
-    addInfo: {}
+    addInfo: {},
+    editInfo: {}
   },
   authInfo: {}
 }, action) => {
@@ -57,11 +61,7 @@ const reducers = (state = {
       for (var key in action.payload.css) {
         parsedMyCss[key] = JSON.parse(action.payload.css[key])
       }
-      const myData = {
-        user_id: action.payload.user_id,
-        data: action.payload.data,
-        css: parsedMyCss
-      }
+      const myData = { ...action.payload, css: parsedMyCss}
       return { ...state,
         myCard: myData
       }
@@ -88,7 +88,30 @@ const reducers = (state = {
       return { ...state,
         addInfo: action.payload
       }
-    case D
+    case EDIT_CARD_DATA: 
+      console.log("EDIT CARD DATA: ", action.payload)
+      const editData = {
+        user_id: action.id,
+        data: action.payload,
+        css: {}
+      }
+      console.log("WHAT I'M EDITIING: ", editData)
+      return {...state,
+        editInfo: editData
+      }
+    case EDIT_CARD_CSS: 
+      console.log("EDIT CARD CSS: ", action.payload)
+      const editCss = {
+        ...state.editInfo, 
+        css: action.payload
+      }
+      console.log("editCss", editCss)
+      return {
+        ...state,
+        editInfo: editCss
+      }
+    case DELETE_CARD: 
+      return { ...state, myCard: {}}
     default:
       return { ...state
       }

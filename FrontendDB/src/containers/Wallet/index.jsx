@@ -29,9 +29,7 @@ class Wallet extends Component {
   }
 
   componentDidMount = () => {
-    if (!this.props.authInfo.user) {
-      return
-    } else {
+    if (this.props.authInfo.user) {
       const { user } = this.props.authInfo;
       this.props.dispatch(getMyCard(user))
       this.props.dispatch(getAllCards(user))

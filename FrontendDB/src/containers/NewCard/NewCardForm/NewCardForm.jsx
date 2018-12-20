@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
-// import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
-import './NewCardForm.css';
 
 import { Template } from './Template.jsx';
 import { template1 } from './CardCssTemplates.js';
 import { FrontPreview, BackPreview } from './TemplatePreview.jsx';
-// import {front, title, back, info, name, address, phone, email} from '../../../CardComponent/CardClassing.js';
-
 import { newCardData, newCardCss, newCard } from '../../../actions/actions.js';
-// import {newCardCss} from '../../../actions/actions.js';
+
+import './NewCardForm.css';
 
 
-
-class InfoForm extends Component {
+class NewCardForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -39,9 +34,6 @@ class InfoForm extends Component {
     handleChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
-        // console.log('what is ... event.target: ', event.target)
-        // console.log('what is the event.target name? ', name)
-        // console.log('what is the event.target value? ', value)
         this.setState({
             [name]: value
         })
@@ -74,12 +66,11 @@ class InfoForm extends Component {
         for (var key in body.css) {
             newStyle[key] = JSON.stringify(body.css[key])
         }
-        body.css = newStyle
+        body.css = newStyle;
         this.props.dispatch(newCard(body))
         this.setState({
             toWallet: true
         })
-
     }
 
     render() {
@@ -161,4 +152,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(InfoForm);
+export default connect(mapStateToProps)(NewCardForm);

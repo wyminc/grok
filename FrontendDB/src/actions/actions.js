@@ -7,7 +7,9 @@ export const GET_MY_CARD = "GET_MY_CARD";
 export const NEW_CARD_DATA = "NEW_CARD_DATA";
 export const NEW_CARD_CSS = "NEW_CARD_CSS";
 export const ADD_NEW_CARD = "ADD_NEW_CARD";
-export const 
+export const EDIT_CARD_DATA = "EDIT_CARD_DATA";
+export const EDIT_CARD_CSS = "EDIT_CARD_CSS";
+export const DELETE_CARD = "DELETE_CARD";
 
 //Auth Actions 
 export const authenticated = (data) => {
@@ -92,15 +94,53 @@ export const newCard = (body) => {
   }
 }
 
+export const editCardData = (id, info) => {
+  return dispatch => {
+    dispatch({
+      type: EDIT_CARD_DATA,
+      id: id,
+      payload: info
+    })
+  }
+}
+
+export const editCardCss = (style) => {
+  return dispatch => {
+    dispatch({
+      type: EDIT_CARD_CSS,
+      payload: style
+    })
+  }
+}
+
+export const editCard = (id, body) => {
+  console.log("body at action", body)
+  return dispatch => {
+    axios 
+    .put(`/update/${id}`, body) 
+    .then (response => {
+      dispatch({
+        type: GET_MY_CARD,
+        payload: response.data
+      })
+    })
+    .catch(err => {
+      console.log("Error updating card", err)
+    })
+  }
+}
+
 export const deleteCard = (id) => {
   return dispatch => {
     axios
     .delete(`/delete/${id}`)
-    .then(response => {
+    .then(() => {
       dispatch({
-        type: DELETE_CARD,
-        payload: response.data
+        type: DELETE_CARD
       })
+    })
+    .catch(err => {
+      console.log("Error deleting card", err)
     })
   }
 }
