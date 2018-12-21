@@ -7,38 +7,42 @@ export const templates = [
             backgroundPosition:"top"
         },
         company: {
-            fontFamily: "'Quicksand', sans-serif",
-            fontWeight: "bold", 
-            fontSize: "2-px", 
-            textAlign: "right",
-            textShadow: "2px 2px 1px #F1D572", 
             textTransform: "uppercase",
+            fontFamily: "'Quicksand', sans-serif",
+            color: "black",
+            textShadow: "2px 2px 1px #F1D572", 
+            fontWeight: "bold", 
+            fontSize: "20px", 
+            textAlign: "right",
             position:"relative",
             top: "5%",
-            right: "5%",
-            color: "black"
+            right: "5%"
         },
         front: {
-            backgroundColor: "black", 
+            fontFamily:"'Quicksand', sans-serif",
+            color: "black", 
+            textShadow: "1px 1px 1px #F1D572",
+            backgroundImage: "url('https://thumbs.dreamstime.com/t/details-golden-texture-background-gold-color-paint-wall-luxury-golden-background-wallpaper-gold-foil-details-golden-106104759.jpg')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
         },
         name: {
-            fontFamily:"'Quicksand', sans-serif",
-            fontWeight: "bold",
-            fontSize: "24px",
-            textAlign: "left",
-            textShadow: "1px 1px 1px #F1D572",
             textTransform: "uppercase",
             borderTop: "20px solid transparent",
             borderImage: "url('https://i.pinimg.com/564x/b5/3b/49/b53b490548338a9fc3c076e6ac69bf7c.jpg') 10% round",
-            color: "black"
+            fontSize: "24px",
+            fontWeight: "bold",
+            textAlign: "left",
+            padding: "5% 0 0 5%",
         },
         info: {
             position: "relative",
             fontSize: "14px",
             textAlign: "left", 
             top: "15%",
-            left: "1%"
-        } 
+            left: "1%",
+            padding: "0 0 0 5%"
+        }
     },
     {
         back: {
@@ -47,16 +51,16 @@ export const templates = [
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
             backgroundPosition: "left", 
+            fontFamily: "'Lobster', cursive",
+            textAlign: "right"
         },
         company: {
-            fontFamily: "'Lobster', cursive",
-            fontWeight: "bold",
-            fontSize: "24px",
-            textAlign: "right",
             position: "relative", 
             top: "25%",
             right: "5%",
             color: "black",
+            fontSize: "24px",
+            fontWeight: "bold",
         },
         front: {
             backgroundColor: "black",
@@ -73,6 +77,46 @@ export const templates = [
         info: {
             fontSize: "14px",
             letterSpacing: "3px"
+        }
+    },
+    {
+        back: {
+            backgroundImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg')",
+            backgroundRepeat: "no-repeat", 
+            backgroundSize: "cover"
+        }, 
+        company: {
+            position: "relative",
+            fontFamily: "'Lobster', cursive",
+            fontSize: "20px",
+            textAlign: "left",
+            top: "70%",
+            left: "5%",
+            color: "#717892"
+        },
+        front: {
+            backgroundColor: "#717892",
+            borderLeft: "30px solid transparent",
+            borderImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg') 10% round",
+            fontFamily: "'Lobster', cursive",
+            textAlign: "left",
+            color: "#F4F4F2"
+        },
+        name: {
+            position: "relative",
+            padding: "0 0 5% 0",
+            fontSize: "20px",
+            letterSpacing: "5px",
+            top: "20%",
+            left: "5%"
+        },
+        info: {
+            position: "relative",
+            fontSize: "14px",
+            textAlign: "left",
+            letterSpacing: "3px",
+            top: "25%",
+            left: "5%"
         }
     },
     {
@@ -102,7 +146,6 @@ export const template1 = {
         right: "5%"
     },
     front: {
-        // backgroundColor: "black", 
         fontFamily:"'Quicksand', sans-serif",
         color: "black", 
         textShadow: "1px 1px 1px #F1D572",
@@ -165,33 +208,30 @@ export const template2 = {
     }
 }
 
-// export const template3 = {
-//     back: {
-//         backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",
-//         backgroundRepeat: "no-repeat",
-//         backgroundSize: "cover", 
-//         backgroundPosition: "center"
-//     },
-//     company: {
+export const template3 = {
+    back: {
+        backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover", 
+        backgroundPosition: "center"
+    },
+    company: {
 
-//     },
-//     front: {
+    },
+    front: {
         
 
-//     },
-//     name: {
+    },
+    name: {
 
-//     },
-//     info: {
+    },
+    info: {
 
-//     }
-// }
+    }
+}
 
 export const template4 = {
     back: {
-        // backgroundColor: "#717892",
-        // borderTop: "30px solid transparent",
-        // borderImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg') 10% round",
         backgroundImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg')",
         backgroundRepeat: "no-repeat", 
         backgroundSize: "cover"
@@ -233,18 +273,27 @@ export const template4 = {
 
 export const template5 = {
     back: {
-        backgroundImage: "url('https://i.pinimg.com/564x/0c/66/2e/0c662eaf628e82fac41a25d3edddffe7.jpg')",
+        backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover", 
     },
     company: {
-    
+        position: "relative",
+        fontFamily: "'Thasadith', sans-serif",
+        fontSize: "24px", 
+        color: "lightgrey",
+        textShadow: "1px 1px 5px grey",
+        top: "30%"
     },
     front: {
-
+        backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",
+        backgroundRepeat: "no-repeat", 
+        backgroundSize: "cover",
+        color: "lightgrey",
+        textShadow: "1px 1px 5px grey",   
     },
     name: {
-
+       
     },
     info: {
 

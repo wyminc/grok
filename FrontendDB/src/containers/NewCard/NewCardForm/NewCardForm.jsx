@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { Template } from './Template.jsx';
-import { template1, template2, template3, template4 } from './CardCssTemplates.js';
+import { template1, template2, template3, template4, template5, template6, template7, template8, template9, template10 } from './CardCssTemplates.js';
 import { FrontPreview, BackPreview } from './TemplatePreview.jsx';
 import { newCardData, newCardCss, newCard } from '../../../actions/actions.js';
 
@@ -126,6 +126,10 @@ class NewCardForm extends Component {
                                     style={template4}
                                     chosenTemplate={this.chosenTemplate}
                                 />
+                                <Template
+                                    style={template5}
+                                    chosenTemplate={this.chosenTemplate}
+                                />                                
                                 {/* Note: Map through the templates */}
                             </div>
                             <div className="card-preview-container">
