@@ -1,8 +1,24 @@
 /***** INFO FORM  *****/
 .info-form-container {
-    margin: auto;
     text-align: center;
-    animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    /* border-top: 15px solid #273746; */
+    animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    padding: 5% 0 0 0;
+}
+
+.info-field {
+    margin: auto;
+    width: 50%;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 5vh;
+    text-align: left;
+    padding: 0 0 0 2%;
+    margin: 1% 0 0 0;
+    border: transparent;
+    box-shadow: 2px 2px 8px #273746;
 }
 
 /***** DESIGN FORM  *****/
@@ -39,10 +55,6 @@
 }
 
 .front-preview, .back-preview {
-    /* background-image: url('../../../assets/card-background1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
     width: 30vw;
     height: 25vh;
     margin: 5% 0 5% 0;
@@ -51,9 +63,9 @@
 
 
 /***** Animations *****/
- @keyframes enter-left {
+ @keyframes enter-right {
     0% {
-        transform: translateX(-1000px);
+        transform: translateX(1000px);
         opacity: 0;
     }
     100% {
