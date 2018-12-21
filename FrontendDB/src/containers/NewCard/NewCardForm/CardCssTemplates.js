@@ -12,18 +12,23 @@ export const template1 = {
         color: "white", 
         fontWeight: "bold", 
         fontSize: "24px", 
-        borderImage: "url('https://thumbs.dreamstime.com/t/details-golden-texture-background-gold-color-paint-wall-luxury-golden-background-wallpaper-gold-foil-details-golden-106104759.jpg') 30 round",
-        borderRadius: "50%"
     },
     front: {
-        backgroundColor: "black", 
+        backgroundImage: "url('https://i.pinimg.com/564x/b5/3b/49/b53b490548338a9fc3c076e6ac69bf7c.jpg')",
+        backgroundRepeat: "no-repeat", 
+        backgroundSize: "cover",
+        fontFamily:"'Quicksand', sans-serif",
+        textAlign: "left"
     },
     name: {
-
+        textAlign: "left",
+        color: "white",
+        fontSize: "24px",
     },
     info: {
-        fontFamily: "'Quicksand', sans-serif",
+        // fontFamily: "'Quicksand', sans-serif",
         color: "white",
+        bottom: "0"
     }
 }
 

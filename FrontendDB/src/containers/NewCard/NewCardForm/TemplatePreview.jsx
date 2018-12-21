@@ -3,7 +3,7 @@ import React from 'react';
 export const BackPreview = (props) => {
     return (
         <div 
-            className="front-preview" 
+            className="back-preview" 
             style={props.style.back}
         >
             <div 
@@ -19,13 +19,13 @@ export const BackPreview = (props) => {
 export const FrontPreview = (props) => {
     return (
         <div 
-            className="back-preview" 
+            className="front-preview" 
             style={props.style.front}
         >
+            <div style={props.style.name} >
+                {props.data.name}
+            </div>
             <div className={props.info} style={props.style.info}>
-                <div >
-                   <h1> {props.data.name} </h1>
-                </div>
                 <div >
                     {props.data.title}
                 </div>

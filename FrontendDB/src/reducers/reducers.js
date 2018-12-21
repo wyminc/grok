@@ -20,6 +20,7 @@ const reducers = (state = {
       back: {},
       company: {},
       front: {},
+      name: {},
       info: {}
     },
     users: [],
@@ -48,6 +49,7 @@ const reducers = (state = {
           back: {},
           company: {},
           front: {},
+          name: {},
           info: {}
         },
         users: [],
@@ -146,6 +148,7 @@ const reducers = (state = {
             back: {},
             company: {},
             front: {},
+            name: {},
             info: {}
           },
           users: [],
