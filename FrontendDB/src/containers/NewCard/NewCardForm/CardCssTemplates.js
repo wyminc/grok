@@ -1,25 +1,29 @@
 
 export const template1 = {
     back: {
-        backgroundImage: "url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')",
+        backgroundImage: "url('https://i.pinimg.com/564x/b5/3b/49/b53b490548338a9fc3c076e6ac69bf7c.jpg')",
         backgroundRepeat: "no-repeat", 
-        backgroundSize: "cover",
-        textAlign: "center"
+        backgroundSize: "cover", 
+        textAlign: "center",
+        backgroundPosition: "center"
     },
     company: {
-        color: "black", 
+        fontFamily: "'Quicksand', sans-serif",
+        color: "white", 
         fontWeight: "bold", 
-        fontSize: "24px"
+        fontSize: "24px", 
+        borderImage: "url('https://thumbs.dreamstime.com/t/details-golden-texture-background-gold-color-paint-wall-luxury-golden-background-wallpaper-gold-foil-details-golden-106104759.jpg') 30 round",
+        borderRadius: "50%"
     },
     front: {
-        backgroundImage: "url('https://st2.depositphotos.com/1098803/11208/v/950/depositphotos_112082970-stock-illustration-subtle-grain-texture-overlay-vector.jpg')",
-        backgroundRepeat: "no-repeat", 
-        backgroundSize: "cover"
+        backgroundColor: "black", 
+    },
+    name: {
+
     },
     info: {
-        color: "black", 
-        fontWeight: "bold", 
-        fontSize: "14px"
+        fontFamily: "'Quicksand', sans-serif",
+        color: "white",
     }
 }
 
@@ -28,14 +32,17 @@ export const template2 = {
         backgroundImage: "url('https://i.pinimg.com/originals/15/13/75/151375946e2b6a9e43a5c6b108631ee0.jpg')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "50% 50%"
+        backgroundPosition: "50% 50%",
+        textAlign: "center"
     },
     company: {
         color: "#abf4f2",
         fontSize: "24px",
         fontWeight: "bold",
-        textAlign: "center",
-        margin: "15% 0 0 0",
+        // textAlign: "center",
+        margin: "auto", 
+        display: "inline-block",
+        // margin: "15% 0 0 0",
         textShadow: "2px 2px 5px #352b61"
     },
     front: {
@@ -209,7 +216,7 @@ export const templates =
             
         },
         info: {
-            color: ""
+            color: "white",
         }
     }
 ]
