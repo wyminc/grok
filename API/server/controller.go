@@ -23,7 +23,8 @@ func getSpecific(id string) (card, error) {
 	c := session.DB("grok").C("cards")
 
 	result := card{}
-	err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
+	// err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
+	err = c.Find(bson.M{"user_id": id}).One(&result)
 
 	if err != nil {
 		panic(err)

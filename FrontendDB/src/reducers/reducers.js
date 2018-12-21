@@ -8,6 +8,7 @@ import {
   EDIT_CARD_DATA,
   EDIT_CARD_CSS,
   DELETE_CARD,
+  MY_DELETED_CARD,
   NO_CARD
 } from '../actions/actions.js'
 
@@ -60,9 +61,7 @@ const reducers = (state = {
       return { ...state, myCard: noCard }
     case GET_ALL_CARDS:
       if (!action.payload) {
-        return {
-          ...state
-        }
+        return { ...state }
       } else {
         const newPayload = action.payload.map(card => {
           let parsedAllCss = {};
@@ -157,9 +156,7 @@ const reducers = (state = {
         }
       }
     default:
-      return {
-        ...state
-      }
+      return { ...state }
   }
 }
 

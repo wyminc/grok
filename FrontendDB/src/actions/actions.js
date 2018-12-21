@@ -10,7 +10,8 @@ export const ADD_NEW_CARD = "ADD_NEW_CARD";
 export const EDIT_CARD_DATA = "EDIT_CARD_DATA";
 export const EDIT_CARD_CSS = "EDIT_CARD_CSS";
 export const DELETE_CARD = "DELETE_CARD";
-export const NO_CARD = ""
+export const MY_DELETED_CARD = "MY_DELETED_CARD";
+export const NO_CARD = "NO_CARD";
 
 //Auth Actions 
 export const authenticated = (data) => {
@@ -27,7 +28,7 @@ export const authenticated = (data) => {
 export const getAllCards = (id) => {
   return dispatch => {
     axios
-      .get(`/all/${id}`)
+      .get(`http://34.216.211.92:8000/all/${id}`)
       .then(response => {
         dispatch({
           type: GET_ALL_CARDS,
@@ -43,15 +44,22 @@ export const getAllCards = (id) => {
 export const getMyCard = (id) => {
   return dispatch => {
     axios
-      .get(`/specific/${id}`)
+      .get(`http://34.216.211.92:8000/specific/${id}`)
       .then(response => {
-        dispatch({
-          type: GET_MY_CARD,
-          payload: response.data
-        })
+        if (response.data.is_deleted === true) {
+          dispatch({
+            type: MY_DELETED_CARD,
+            payload: response.data
+          })
+        } else {
+          dispatch({
+            type: GET_MY_CARD,
+            payload: response.data
+          })
+        }
       })
       .catch(err => {
-        if (err.response.status = 500) {
+        if (err.response.status === 500) {
           dispatch({
             type: NO_CARD
           })
@@ -83,12 +91,9 @@ export const newCardCss = (style) => {
 }
 
 export const newCard = (body) => {
-  // body.users = [];
-  // body.is_deleted = false;
-  console.log("submit body", body)
   return dispatch => {
     axios
-      .post('/add', body)
+      .post('http://34.216.211.92:8000/add', body)
       .then(response => {
         dispatch({
           type: ADD_NEW_CARD,
@@ -121,10 +126,9 @@ export const editCardCss = (style) => {
 }
 
 export const editCard = (id, body) => {
-  console.log("body at action", body)
   return dispatch => {
     axios
-      .put(`/update/${id}`, body)
+      .put(`http://34.216.211.92:8000/update/${id}`, body)
       .then(response => {
         dispatch({
           type: GET_MY_CARD,
@@ -140,7 +144,7 @@ export const editCard = (id, body) => {
 export const deleteCard = (id) => {
   return dispatch => {
     axios
-      .delete(`/delete/${id}`)
+      .delete(`http://34.216.211.92:8000/delete/${id}`)
       .then(() => {
         dispatch({
           type: DELETE_CARD

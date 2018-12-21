@@ -24,6 +24,7 @@ type style struct {
 	Back    string `json:"back" bson:"back"`
 	Company string `json:"company" bson:"company"`
 	Front   string `json:"front" bson:"front"`
+	Name    string `json:"name" bson:"name"`
 	Info    string `json:"info" bson:"info"`
 }
 
@@ -48,5 +49,6 @@ type newStyle struct {
 	Back    string
 	Company string
 	Front   string
+	Name    string
 	Info    string
 }
