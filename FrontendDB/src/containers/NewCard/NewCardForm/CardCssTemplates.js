@@ -102,10 +102,13 @@ export const template1 = {
         right: "5%"
     },
     front: {
-        backgroundColor: "black", 
+        // backgroundColor: "black", 
         fontFamily:"'Quicksand', sans-serif",
         color: "black", 
         textShadow: "1px 1px 1px #F1D572",
+        backgroundImage: "url('https://thumbs.dreamstime.com/t/details-golden-texture-background-gold-color-paint-wall-luxury-golden-background-wallpaper-gold-foil-details-golden-106104759.jpg')",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
     },
     name: {
         textTransform: "uppercase",
@@ -114,14 +117,15 @@ export const template1 = {
         fontSize: "24px",
         fontWeight: "bold",
         textAlign: "left",
-        padding: "5% 0 0 0",
+        padding: "5% 0 0 5%",
     },
     info: {
         position: "relative",
         fontSize: "14px",
         textAlign: "left", 
         top: "15%",
-        left: "1%"
+        left: "1%",
+        padding: "0 0 0 5%"
     }
 }
 
@@ -185,49 +189,56 @@ export const template2 = {
 
 export const template4 = {
     back: {
-        backgroundColor: "#717892",
-        borderTop: "30px solid transparent",
-        borderImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg') 10% round",
+        // backgroundColor: "#717892",
+        // borderTop: "30px solid transparent",
+        // borderImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg') 10% round",
+        backgroundImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg')",
+        backgroundRepeat: "no-repeat", 
+        backgroundSize: "cover"
     }, 
     company: {
         position: "relative",
         fontFamily: "'Lobster', cursive",
         fontSize: "20px",
-        textAlign: "center",
-        top: "20%",
-        color: "#F4F4F2"
+        textAlign: "left",
+        top: "70%",
+        left: "5%",
+        color: "#717892"
     },
     front: {
         backgroundColor: "#717892",
-        borderTop: "30px solid transparent",
+        borderLeft: "30px solid transparent",
         borderImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg') 10% round",
         fontFamily: "'Lobster', cursive",
-        textAlign: "center",
+        textAlign: "left",
         color: "#F4F4F2"
     },
     name: {
         position: "relative",
+        padding: "0 0 5% 0",
         fontSize: "20px",
         letterSpacing: "5px",
-        top: "15%"
+        top: "20%",
+        left: "5%"
     },
     info: {
         position: "relative",
         fontSize: "14px",
-        textAlign: "center",
+        textAlign: "left",
         letterSpacing: "3px",
-        top: "20%"
+        top: "25%",
+        left: "5%"
     }
 }
 
-export const template = {
+export const template5 = {
     back: {
         backgroundImage: "url('https://i.pinimg.com/564x/0c/66/2e/0c662eaf628e82fac41a25d3edddffe7.jpg')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover", 
     },
     company: {
-        
+    
     },
     front: {
 
