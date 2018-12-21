@@ -8,6 +8,7 @@ import {
   EDIT_CARD_DATA,
   EDIT_CARD_CSS,
   DELETE_CARD,
+  MY_DELETED_CARD,
   NO_CARD
 } from '../actions/actions.js'
 
@@ -41,26 +42,28 @@ const reducers = (state = {
         authInfo: newAuthInfo
       }
     case NO_CARD:
-      const noCard = {
-        user_id: "",
-        data: {},
-        css: {
-          back: {},
-          company: {},
-          front: {},
-          info: {}
-        },
-        users: [],
-        addInfo: {},
-        editInfo: {},
-        no_card: true
-      };
-      return { ...state, myCard: noCard }
+      let noCard = { ...state.myCard };
+      noCard.no_card = true;
+      return {
+        ...state,
+        myCard: noCard
+      }
+    case MY_DELETED_CARD:
+      let deletedCard = { ...action.payload }
+      delete deletedCard.data;
+      deletedCard.css = {
+        back: {},
+        company: {},
+        front: {},
+        info: {}
+      }
+      return {
+        ...state,
+        myCard: deletedCard
+      }
     case GET_ALL_CARDS:
       if (!action.payload) {
-        return {
-          ...state
-        }
+        return { ...state }
       } else {
         const newPayload = action.payload.map(card => {
           let parsedAllCss = {};
@@ -154,9 +157,7 @@ const reducers = (state = {
         }
       }
     default:
-      return {
-        ...state
-      }
+      return { ...state }
   }
 }
 

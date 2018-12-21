@@ -10,7 +10,8 @@ export const ADD_NEW_CARD = "ADD_NEW_CARD";
 export const EDIT_CARD_DATA = "EDIT_CARD_DATA";
 export const EDIT_CARD_CSS = "EDIT_CARD_CSS";
 export const DELETE_CARD = "DELETE_CARD";
-export const NO_CARD = ""
+export const MY_DELETED_CARD = "MY_DELETED_CARD";
+export const NO_CARD = "NO_CARD";
 
 //Auth Actions 
 export const authenticated = (data) => {
@@ -45,13 +46,20 @@ export const getMyCard = (id) => {
     axios
       .get(`/specific/${id}`)
       .then(response => {
-        dispatch({
-          type: GET_MY_CARD,
-          payload: response.data
-        })
+        if (response.data.is_deleted === true) {
+          dispatch({
+            type: MY_DELETED_CARD,
+            payload: response.data
+          })
+        } else {
+          dispatch({
+            type: GET_MY_CARD,
+            payload: response.data
+          })
+        }
       })
       .catch(err => {
-        if (err.response.status = 500) {
+        if (err.response.status === 500) {
           dispatch({
             type: NO_CARD
           })

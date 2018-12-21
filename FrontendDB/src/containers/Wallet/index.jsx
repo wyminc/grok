@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { BrowserRouter as Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 
 //Card
@@ -48,7 +48,7 @@ class Wallet extends Component {
     }
   }
 
-  editRedirect = (event) => {
+  editRedirect = () => {
     this.setState({
       toEditCard: true
     })
@@ -70,9 +70,9 @@ class Wallet extends Component {
 
     const { data, css } = myCard;
 
-    // if (myCard.no_card === true) {
-    //   return <Redirect to='/' />
-    // }
+    if (myCard.no_card === true) {
+      return <Redirect to='/' />
+    }
 
     if (this.state.toHome === true) {
       return <Redirect to='/' />
@@ -93,6 +93,7 @@ class Wallet extends Component {
           </div>
         </div>
         <div className="card-container">
+
           <Switch>
             <Route exact path='/wallet' render={() =>
               <div className="mycard">
@@ -111,7 +112,7 @@ class Wallet extends Component {
                   styles={css}
                 />
                 <div className="editbutton">
-                  <button onClick={this.editRedirect}>EDIT</button>
+                  <button onClick={() => { this.editRedirect() }}>EDIT</button>
                 </div>
                 <div className="deletebutton">
                   <button onClick={() => { this.deleteCard(user) }}>DELETE</button>
@@ -157,8 +158,6 @@ class Wallet extends Component {
         </div>
         {/* </div> */}
       </div>
-
-
 
     )
   }
