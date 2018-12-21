@@ -118,6 +118,7 @@ class NewCardForm extends Component {
                                     style={template1}
                                     chosenTemplate={this.chosenTemplate}
                                 />
+                                {/* Note: Map through the templates */}
                             </div>
                             <div className="card-preview-container">
                                 <div className="back-view">
