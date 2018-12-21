@@ -3,8 +3,8 @@ import React from 'react';
 
 export const Template = (props) => {
     console.log('template props', props)
-    return (
-        <div className="template" style={props.style.back} onClick={() => {props.chosenTemplate(props.style)}}>
+    return props.templates.map( styles => 
+        <div className="template" style={props.styles.back} onClick={() => {props.chosenTemplate(props.styles)}}>
             
         </div>
     )
