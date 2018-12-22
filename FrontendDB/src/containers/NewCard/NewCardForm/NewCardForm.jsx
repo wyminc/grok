@@ -115,10 +115,10 @@ class NewCardForm extends Component {
                         <div className="design-form-container">
                             <div className="template-options-container">
                                 <Template
-                                    templates={templates}
+                                    templates={template1}
                                     chosenTemplate={this.chosenTemplate}
                                 />
-                                {/* <Template
+                                <Template
                                     style={template2}
                                     chosenTemplate={this.chosenTemplate}
                                 />
@@ -129,7 +129,7 @@ class NewCardForm extends Component {
                                 <Template
                                     style={template5}
                                     chosenTemplate={this.chosenTemplate}
-                                />                                 */}
+                                />                                
                                 {/* Note: Map through the templates */}
                             </div>
                             <div className="card-preview-container">
