@@ -62,12 +62,13 @@ class NewCardForm extends Component {
     postCard = (body) => {
         body.users = [];
         body.is_deleted = false;
-        let newStyle = {};
-        for (var key in body.css) {
-            newStyle[key] = JSON.stringify(body.css[key])
+        let newCss = {};
+        for (var key in body.style.css) {
+            newCss[key] = JSON.stringify(body.style.css[key])
         }
-        body.css = newStyle;
-        this.props.dispatch(newCard(body))
+        body.style.css = newCss;
+        console.log("WHat is post body", body);
+        this.props.dispatch(newCard(body));
         this.setState({
             toWallet: true
         })
