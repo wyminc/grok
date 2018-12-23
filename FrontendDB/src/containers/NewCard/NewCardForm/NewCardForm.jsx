@@ -108,14 +108,14 @@ class NewCardForm extends Component {
                                 <button onClick={this.handleSubmit}> NEXT </button>
                             </div>
                     </div>
-                ) : this.state.previous === false ? (
+                ) :  (
                         <div className="design-form-container">
                             <div className="previous">
-                                <button onClick={() => this.setState({previous: true})}> PREVIOUS</button>
+                                <button> PREVIOUS</button>
                             </div>
                             <div className="template-options-container">
                                 <Template
-                                    templates={template1}
+                                    style={template1}
                                     chosenTemplate={this.chosenTemplate}
                                 />
                                 <Template
@@ -150,32 +150,6 @@ class NewCardForm extends Component {
                                 <button onClick={() => { this.postCard(this.props.addInfo) }}> DONE </button>
                             </div>
                         </div>
-                    ) :  (
-                        <div className="info-form-container">
-                        <div className="info-form" >
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name} />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Name" name="name" />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Title" name="title" />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Address" name="address" />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Phone Number" name="phone" />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Email" name="email" />
-                            </div>
-                        </div>
-                            <div className="next">
-                                <button onClick={this.handleSubmit}> NEXT </button>
-                            </div>
-                    </div>
                     )}
                     {/* {this.state.previous === false (
                         <div className="design-form-container">
