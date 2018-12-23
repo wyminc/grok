@@ -7,6 +7,7 @@ import {
   ADD_NEW_CARD,
   EDIT_CARD_DATA,
   EDIT_CARD_CSS,
+  EDIT_MY_CARD,
   DELETE_CARD,
   MY_DELETED_CARD,
   NO_CARD
@@ -30,6 +31,8 @@ const reducers = (state = {
     addInfo: {},
     editInfo: {}
   },
+  added: false,
+  edited: false,
   authInfo: {}
 }, action) => {
 
@@ -123,14 +126,14 @@ const reducers = (state = {
       console.log("ADD CARD", action.payload)
       return {
         ...state,
-        addInfo: action.payload
+        addInfo: action.payload, added: true
       }
     case EDIT_CARD_DATA:
       console.log("EDIT CARD DATA: ", action.payload)
       const editData = {
         user_id: action.id,
-        data: action.payload,
-        style: {}
+        data: action.payload.data,
+        style: action.payload.style
       }
       console.log("WHAT I'M EDITIING: ", editData)
       return {
@@ -141,12 +144,18 @@ const reducers = (state = {
       console.log("EDIT CARD CSS: ", action.payload)
       const editCss = {
         ...state.editInfo,
-        css: action.payload
+        style: action.payload
       }
       console.log("editCss", editCss)
       return {
         ...state,
         editInfo: editCss
+      }
+    case EDIT_MY_CARD:
+      console.log("EDIT CARD", action.payload)
+      return {
+        ...state,
+        editInfo: action.payload, edited: true
       }
     case DELETE_CARD:
       return {

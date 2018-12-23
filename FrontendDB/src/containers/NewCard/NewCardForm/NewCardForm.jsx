@@ -223,7 +223,8 @@ const mapStateToProps = state => {
     console.log("info form state/store", state)
     return {
         authInfo: state.authInfo,
-        addInfo: state.addInfo
+        addInfo: state.addInfo,
+        added: state.added
     }
 }
 

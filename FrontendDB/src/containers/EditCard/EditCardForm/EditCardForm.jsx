@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import { Template } from '../../NewCard/NewCardForm/Template.jsx';
-import { template1 } from '../../NewCard/NewCardForm/CardCssTemplates.js'
+import { AllTemplates } from '../../NewCard/NewCardForm/Template.jsx';
+import { templates } from '../../NewCard/NewCardForm/CardCssTemplates.js'
 import { FrontPreview, BackPreview } from '../../NewCard/NewCardForm/TemplatePreview.jsx';
 import { getMyCard, editCardData, editCard, editCardCss } from '../../../actions/actions.js'
 
@@ -19,7 +19,7 @@ class EditCardForm extends Component {
             email: "",
             previous: false,
             next: false,
-            toWallet: false
+            // toWallet: false
         }
     }
 
@@ -52,15 +52,17 @@ class EditCardForm extends Component {
 
     handleSubmit = (event) => {
         const { user } = this.props.authInfo;
-        const body = { ...this.state };
+        const body = {};
+        body.data = { ...this.state };
         delete body.previous;
         delete body.next;
-        delete body.toWallet;
-        for (var key in body) {
-            if (body[key] === "") {
-                body[key] = this.props.myCard.data[key]
+        // delete body.toWallet;
+        for (var key in body.data) {
+            if (body.data[key] === "") {
+                body.data[key] = this.props.myCard.data[key]
             }
         }
+        body.style = this.props.myCard.style
         console.log("body", body)
         console.log('EditCardForm handleSubmit state: ', this.state);
         this.props.dispatch(editCardData(user, body))
@@ -178,23 +180,23 @@ class EditCardForm extends Component {
                 ) : (
                         <div className="edit-design-form-container">
                             <div className="template-options-container">
-                                <Template
-                                    style={template1}
+                                <AllTemplates
+                                    templates={templates}
                                     chosenTemplate={this.chosenTemplate}
                                 />
                             </div>
                             <div className="card-preview-container">
                                 <div className="back-view">
                                     <BackPreview
-                                        style={this.props.myCard.css}
+                                        style={this.props.editInfo.style.css}
                                         data={this.props.editInfo.data}
                                     />
                                 </div>
                                 <div
                                     className="front-view"
-                                    style={this.props.myCard.css}>
+                                    style={this.props.editInfo.style.css}>
                                     <FrontPreview
-                                        style={this.props.myCard.css}
+                                        style={this.props.editInfo.style.css}
                                         data={this.props.editInfo.data}
                                     />
                                 </div>

@@ -30,18 +30,25 @@ class Wallet extends Component {
     }
   }
 
-  componentDidMount = () => {
-    if (this.props.authInfo.user) {
-      const { user } = this.props.authInfo;
-      this.props.dispatch(getMyCard(user))
-      this.props.dispatch(getAllCards(user))
-    }
-  }
+  // componentDidMount = () => {
+  //   if (this.props.authInfo.user) {
+  //     const { user } = this.props.authInfo;
+  //     this.props.dispatch(getMyCard(user))
+  //     this.props.dispatch(getAllCards(user))
+  //   }
+  // }
 
   componentDidUpdate = (prevProps) => {
     // console.log("previous props", prevProps);
-
-    if (this.props.authInfo.user !== prevProps.authInfo.user) {
+    if(this.props.added !== prevProps.added) {
+      const { user } = this.props.authInfo;
+      this.props.dispatch(getMyCard(user))
+      this.props.dispatch(getAllCards(user))
+    } else if (this.props.edited !== prevProps.edited) {
+      const { user } = this.props.authInfo;
+      this.props.dispatch(getMyCard(user))
+      this.props.dispatch(getAllCards(user))
+    } else if (this.props.authInfo.user !== prevProps.authInfo.user) {
       const { user } = this.props.authInfo;
       this.props.dispatch(getMyCard(user))
       this.props.dispatch(getAllCards(user))
@@ -167,7 +174,9 @@ const mapStateToProps = state => {
   return {
     authInfo: state.authInfo,
     myCard: state.myCard,
-    allCards: state.allCards
+    allCards: state.allCards,
+    added: state.added,
+    edited: state.edited
   }
 }
 

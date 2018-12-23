@@ -9,6 +9,7 @@ export const NEW_CARD_CSS = "NEW_CARD_CSS";
 export const ADD_NEW_CARD = "ADD_NEW_CARD";
 export const EDIT_CARD_DATA = "EDIT_CARD_DATA";
 export const EDIT_CARD_CSS = "EDIT_CARD_CSS";
+export const EDIT_MY_CARD = "EDIT_MY_CARD";
 export const DELETE_CARD = "DELETE_CARD";
 export const MY_DELETED_CARD = "MY_DELETED_CARD";
 export const NO_CARD = "NO_CARD";
@@ -132,7 +133,7 @@ export const editCard = (id, body) => {
       .put(`http://34.216.211.92:8000/update/${id}`, body)
       .then(response => {
         dispatch({
-          type: GET_MY_CARD,
+          type: EDIT_MY_CARD,
           payload: response.data
         })
       })
