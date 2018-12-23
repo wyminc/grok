@@ -26,7 +26,7 @@ class Wallet extends Component {
     super(props)
     this.state = {
       toEditCard: false,
-      toHome: false
+      toWallet: false
     }
   }
 
@@ -40,7 +40,7 @@ class Wallet extends Component {
 
   componentDidUpdate = (prevProps) => {
     // console.log("previous props", prevProps);
-    if(this.props.added !== prevProps.added) {
+    if (this.props.added !== prevProps.added) {
       const { user } = this.props.authInfo;
       this.props.dispatch(getMyCard(user))
       this.props.dispatch(getAllCards(user))
@@ -65,7 +65,7 @@ class Wallet extends Component {
     // const {user} = this.props.authInfo;
     this.props.dispatch(deleteCard(id));
     this.setState({
-      toHome: true
+      toWallet: true
     })
   }
 
@@ -81,8 +81,8 @@ class Wallet extends Component {
       return <Redirect to='/newcardform' />
     }
 
-    if (this.state.toHome === true) {
-      return <Redirect to='/' />
+    if (this.state.toWallet === true) {
+      return <Redirect to='/wallet' />
     }
 
     if (this.state.toEditCard === true) {
