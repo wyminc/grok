@@ -21,6 +21,7 @@ const reducers = (state = {
       back: {},
       company: {},
       front: {},
+      name: {},
       info: {}
     },
     users: [],
@@ -42,25 +43,22 @@ const reducers = (state = {
         authInfo: newAuthInfo
       }
     case NO_CARD:
-      let noCard = { ...state.myCard };
-      noCard.no_card = true;
-      return {
-        ...state,
-        myCard: noCard
-      }
-    case MY_DELETED_CARD:
-      let deletedCard = { ...action.payload }
-      delete deletedCard.data;
-      deletedCard.css = {
-        back: {},
-        company: {},
-        front: {},
-        info: {}
-      }
-      return {
-        ...state,
-        myCard: deletedCard
-      }
+      const noCard = {
+        user_id: "",
+        data: {},
+        css: {
+          back: {},
+          company: {},
+          front: {},
+          name: {},
+          info: {}
+        },
+        users: [],
+        addInfo: {},
+        editInfo: {},
+        no_card: true
+      };
+      return { ...state, myCard: noCard }
     case GET_ALL_CARDS:
       if (!action.payload) {
         return { ...state }
@@ -149,6 +147,7 @@ const reducers = (state = {
             back: {},
             company: {},
             front: {},
+            name: {},
             info: {}
           },
           users: [],
