@@ -1,14 +1,26 @@
 /***** INFO FORM  *****/
-.info-form-container {
+.info-form-container{
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
     text-align: center;
     /* border-top: 15px solid #273746; */
     animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     padding: 5% 0 0 0;
 }
 
+.info-form {
+    width: 50%;
+} 
+
 .info-field {
     margin: auto;
-    width: 50%;
+    width: 100%;
+}
+
+.next button, .previous button, .done button {
+    position: relative;
+    top: 50%;
 }
 
 input[type="text"] {
@@ -19,7 +31,12 @@ input[type="text"] {
     margin: 1% 0 0 0;
     border: transparent;
     box-shadow: 2px 2px 8px #273746;
+    background-color: transparent;
 }
+
+/* .info-field input:focus-within {
+    
+} */
 
 /***** DESIGN FORM  *****/
 .design-form-container {
@@ -60,7 +77,6 @@ input[type="text"] {
     margin: 5% 0 5% 0;
     border: 1px solid black;
 }
-
 
 /***** Animations *****/
  @keyframes enter-right {
