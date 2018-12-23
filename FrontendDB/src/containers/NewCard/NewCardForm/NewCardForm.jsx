@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import { Template } from './Template.jsx';
+import { AllTemplates } from './Template.jsx';
 import { templates,template1, template2, template3, template4, template5 } from './CardCssTemplates.js';
 import { FrontPreview, BackPreview } from './TemplatePreview.jsx';
 import { newCardData, newCardCss, newCard } from '../../../actions/actions.js';
@@ -116,7 +116,7 @@ class NewCardForm extends Component {
                             </div>
                             <div className="template-options-container">
                                 {/* <Template/> */}
-                                <Template
+                                {/* <Template
                                     style={template1}
                                     chosenTemplate={this.chosenTemplate}
                                 />
@@ -131,19 +131,20 @@ class NewCardForm extends Component {
                                 <Template
                                     style={template4}
                                     chosenTemplate={this.chosenTemplate}
-                                />                                
+                                />                                 */}
+                                <AllTemplates templates={templates} chosenTemplate={this.chosenTemplate} />
                                 {/* Note: Map through the templates */}
                             </div>
                             <div className="card-preview-container">
                                 <div className="back-view">
                                     <BackPreview
-                                        style={this.props.addInfo.css}
+                                        style={this.props.addInfo.style.css}
                                         data={this.props.addInfo.data}
                                     />
                                 </div>
-                                <div className="front-view" style={this.props.addInfo.css}>
+                                <div className="front-view" style={this.props.addInfo.style.css}>
                                     <FrontPreview
-                                        style={this.props.addInfo.css}
+                                        style={this.props.addInfo.style.css}
                                         data={this.props.addInfo.data}
                                     />
                                 </div>

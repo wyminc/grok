@@ -91,6 +91,7 @@ export const newCardCss = (style) => {
 }
 
 export const newCard = (body) => {
+  console.log("WHAT IS ACTION BODY AT POST", body)
   return dispatch => {
     axios
       .post('http://34.216.211.92:8000/add', body)

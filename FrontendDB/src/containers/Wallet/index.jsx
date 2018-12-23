@@ -68,7 +68,7 @@ class Wallet extends Component {
 
     const { myCard, allCards } = this.props;
 
-    const { data, css } = myCard;
+    const { data, style } = myCard;
 
     if (myCard.no_card === true) {
       return <Redirect to='/newcardform' />
@@ -109,7 +109,7 @@ class Wallet extends Component {
                   phone={phone}
                   email={email}
                   data={data}
-                  styles={css}
+                  styles={style.css}
                 />
                 <div className="editbutton">
                   <button onClick={() => { this.editRedirect() }}>EDIT</button>
@@ -134,7 +134,7 @@ class Wallet extends Component {
                 phone={phone}
                 email={email}
                 data={data}
-                styles={css}
+                styles={style.css}
               />}
             />
 

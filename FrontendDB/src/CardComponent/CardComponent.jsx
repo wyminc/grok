@@ -12,7 +12,7 @@ export const Card = (props) => {
       </div>
       <div className={props.front} style={styles.front}>
         <div className={props.info} style={styles.info}>
-          <div className={props.name}>{data.name}</div>
+          <div className={props.name} style={styles.name}>{data.name}</div>
           <div className={props.title}>{data.title}</div>
           <div className={props.address}>{data.address}</div>
           <div className={props.phone}>{data.phone}</div>
@@ -29,12 +29,12 @@ export const AllCards = (props) => {
 
   return props.cards.map(card =>
     <div key={card.user_id} className={props.cardContainer}>
-      <div className={props.back} style={card.css.back}>
-        <div className={props.company} style={card.css.company}>{card.data.company_name}</div>
+      <div className={props.back} style={card.style.css.back}>
+        <div className={props.company} style={card.style.css.company}>{card.data.company_name}</div>
       </div>
-      <div className={props.front} style={card.css.front}>
-        <div className={props.info} style={card.css.info}>
-          <div className={props.name}>{card.data.name}</div>
+      <div className={props.front} style={card.style.css.front}>
+        <div className={props.info} style={card.style.css.info}>
+          <div className={props.name} style={card.style.css.name}>{card.data.name}</div>
           <div className={props.title}>{card.data.title}</div>
           <div className={props.address}>{card.data.address}</div>
           <div className={props.phone}>{card.data.phone}</div>

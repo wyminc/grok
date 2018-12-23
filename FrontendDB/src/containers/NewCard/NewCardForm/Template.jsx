@@ -9,3 +9,11 @@ export const Template = (props) => {
         </div>
     )
 }
+
+export const AllTemplates = (props) => {
+    return props.templates.map(template => 
+        <div key={template.template} className="template" style={template.css.back} onClick={() => {props.chosenTemplate(template)}}>
+            
+        </div>
+    )
+}

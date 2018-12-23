@@ -6,7 +6,7 @@ type card struct {
 	Id         bson.ObjectId `json:"_id" bson:"_id"`
 	User_id    string        `json:"user_id" bson:"user_id"`
 	Data       data          `json:"data" bson:"data"`
-	Style      style         `json:"css" bson:"css"`
+	Style      style         `json:"style" bson:"style"`
 	Users      []string      `json:"users" bson:"users"`
 	Is_deleted bool          `json:"is_deleted" bson:"is_deleted"`
 }
@@ -36,7 +36,7 @@ type css struct {
 type newCard struct {
 	User_id    string
 	Data       newData
-	Css        newStyle
+	Style        newStyle
 	Users      []string
 	Is_deleted bool
 }

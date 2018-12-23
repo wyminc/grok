@@ -100,21 +100,24 @@ const reducers = (state = {
       const newData = {
         user_id: action.id,
         data: action.payload,
-        style: {}
+        style: {
+          template: "",
+          css: {}
+        }
       }
       return {
         ...state,
         addInfo: newData
       }
     case NEW_CARD_CSS:
-      const newCss = {
+      const newStyle = {
         ...state.addInfo,
-        css: action.payload
+        style: action.payload
       }
-      console.log("NEXT INFO: ", newCss);
+      // console.log("NEXT INFO: ", newCss);
       return {
         ...state,
-        addInfo: newCss
+        addInfo: newStyle
       }
     case ADD_NEW_CARD:
       console.log("ADD CARD", action.payload)
