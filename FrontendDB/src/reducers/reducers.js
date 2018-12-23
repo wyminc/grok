@@ -17,12 +17,14 @@ const reducers = (state = {
   myCard: {
     user_id: "",
     data: {},
-    css: {
-      back: {},
-      company: {},
-      front: {},
-      name: {},
-      info: {}
+    style: {
+      template: "",
+      css: {
+        back: {},
+        company: {},
+        front: {},
+        info: {}
+      }
     },
     users: [],
     addInfo: {},
@@ -43,34 +45,39 @@ const reducers = (state = {
         authInfo: newAuthInfo
       }
     case NO_CARD:
-      const noCard = {
-        user_id: "",
-        data: {},
-        css: {
-          back: {},
-          company: {},
-          front: {},
-          name: {},
-          info: {}
-        },
-        users: [],
-        addInfo: {},
-        editInfo: {},
-        no_card: true
-      };
-      return { ...state, myCard: noCard }
+      let noCard = { ...state.myCard };
+      noCard.no_card = true;
+      return {
+        ...state,
+        myCard: noCard
+      }
+    case MY_DELETED_CARD:
+      let deletedCard = { ...action.payload }
+      delete deletedCard.data;
+      deletedCard.stle.template = {};
+      deletedCard.style.css = {
+        back: {},
+        company: {},
+        front: {},
+        info: {}
+      }
+      return {
+        ...state,
+        myCard: deletedCard
+      }
     case GET_ALL_CARDS:
       if (!action.payload) {
         return { ...state }
       } else {
         const newPayload = action.payload.map(card => {
           let parsedAllCss = {};
-          for (var key in card.css) {
-            parsedAllCss[key] = JSON.parse(card.css[key])
+          for (var key in card.style.css) {
+            parsedAllCss[key] = JSON.parse(card.style.css[key])
           }
+          let allStyle = { ...card.style, css: parsedAllCss }
           return {
             ...card,
-            css: parsedAllCss
+            style: allStyle
           }
         })
         return {
@@ -80,10 +87,11 @@ const reducers = (state = {
       }
     case GET_MY_CARD:
       let parsedMyCss = {};
-      for (var key in action.payload.css) {
-        parsedMyCss[key] = JSON.parse(action.payload.css[key])
+      for (var key in action.payload.style.css) {
+        parsedMyCss[key] = JSON.parse(action.payload.style.css[key])
       }
-      const myData = { ...action.payload, css: parsedMyCss }
+      const myStyle = { ...action.payload.style, css: parsedMyCss };
+      const myData = { ...action.payload, style: myStyle };
       return {
         ...state,
         myCard: myData
@@ -92,22 +100,21 @@ const reducers = (state = {
       const newData = {
         user_id: action.id,
         data: action.payload,
-        css: {}
+        style: {}
       }
-      console.log("WHAT IM ADDING:", newData)
       return {
         ...state,
         addInfo: newData
       }
     case NEW_CARD_CSS:
-      const nextInfo = {
+      const newCss = {
         ...state.addInfo,
         css: action.payload
       }
-      console.log("NEXT INFO: ", nextInfo);
+      console.log("NEXT INFO: ", newCss);
       return {
         ...state,
-        addInfo: nextInfo
+        addInfo: newCss
       }
     case ADD_NEW_CARD:
       console.log("ADD CARD", action.payload)
@@ -120,7 +127,7 @@ const reducers = (state = {
       const editData = {
         user_id: action.id,
         data: action.payload,
-        css: {}
+        style: {}
       }
       console.log("WHAT I'M EDITIING: ", editData)
       return {
@@ -143,12 +150,14 @@ const reducers = (state = {
         ...state, myCard: {
           user_id: "",
           data: {},
-          css: {
-            back: {},
-            company: {},
-            front: {},
-            name: {},
-            info: {}
+          style: {
+            template: "",
+            css: {
+              back: {},
+              company: {},
+              front: {},
+              info: {}
+            }
           },
           users: [],
           addInfo: {},

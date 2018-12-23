@@ -6,7 +6,7 @@ type card struct {
 	Id         bson.ObjectId `json:"_id" bson:"_id"`
 	User_id    string        `json:"user_id" bson:"user_id"`
 	Data       data          `json:"data" bson:"data"`
-	Css        style         `json:"css" bson:"css"`
+	Style      style         `json:"css" bson:"css"`
 	Users      []string      `json:"users" bson:"users"`
 	Is_deleted bool          `json:"is_deleted" bson:"is_deleted"`
 }
@@ -21,6 +21,11 @@ type data struct {
 }
 
 type style struct {
+	Template string `json:"template" bson:"template"`
+	Css      css    `json:"css" bson:"css"`
+}
+
+type css struct {
 	Back    string `json:"back" bson:"back"`
 	Company string `json:"company" bson:"company"`
 	Front   string `json:"front" bson:"front"`
@@ -46,6 +51,11 @@ type newData struct {
 }
 
 type newStyle struct {
+	Template string
+	Css      newCss
+}
+
+type newCss struct {
 	Back    string
 	Company string
 	Front   string

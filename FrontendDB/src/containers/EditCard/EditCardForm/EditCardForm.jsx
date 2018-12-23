@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import { connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-import {Template} from '../../NewCard/NewCardForm/Template.jsx';
-import {template1} from '../../NewCard/NewCardForm/CardCssTemplates.js'
-import {FrontPreview, BackPreview} from '../../NewCard/NewCardForm/TemplatePreview.jsx';
-import {getMyCard, editCardData, editCard, editCardCss} from '../../../actions/actions.js'
+import { Template } from '../../NewCard/NewCardForm/Template.jsx';
+import { template1 } from '../../NewCard/NewCardForm/CardCssTemplates.js'
+import { FrontPreview, BackPreview } from '../../NewCard/NewCardForm/TemplatePreview.jsx';
+import { getMyCard, editCardData, editCard, editCardCss } from '../../../actions/actions.js'
 
 class EditCardForm extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class EditCardForm extends Component {
             email: "",
             previous: false,
             next: false,
-            toWallet: false            
+            toWallet: false
         }
     }
 
@@ -28,18 +28,18 @@ class EditCardForm extends Component {
         console.log('EditCardForm componentDidMount this.props: ', this.props)
         if (!this.props.authInfo.user) {
             return
-          } else {
+        } else {
             const { user } = this.props.authInfo;
             this.props.dispatch(getMyCard(user))
-          }
+        }
     }
 
     componentDidUpdate = (prevProps) => {
         if (this.props.authInfo.user !== prevProps.authInfo.user) {
-          const { user } = this.props.authInfo;
-          this.props.dispatch(getMyCard(user))
+            const { user } = this.props.authInfo;
+            this.props.dispatch(getMyCard(user))
         }
-      }
+    }
 
     handleChange = (event) => {
         event.preventDefault();
@@ -77,15 +77,15 @@ class EditCardForm extends Component {
     putCard = (body) => {
         body.users = this.props.myCard.users;
         body.is_deleted = this.props.myCard.is_deleted;
-        const {user} = this.props.authInfo
-        if (Object.keys(body.css).length === 0) {
-            body.css = this.props.myCard.css
+        const { user } = this.props.authInfo
+        if (Object.keys(body.style).length === 0) {
+            body.style = this.props.myCard.style
         }
-        let newStyle = {};
-        for (var key in body.css) {
-            newStyle[key] = JSON.stringify(body.css[key])
+        let newCss = {};
+        for (var key in body.style.css) {
+            newCss[key] = JSON.stringify(body.style.css[key])
         }
-        body.css = newStyle;
+        body.style.css = newCss;
         console.log("body at edit", body)
         this.props.dispatch(editCard(user, body));
         this.setState({
@@ -120,50 +120,50 @@ class EditCardForm extends Component {
                     <div className="edit-form-container">
                         <div className="edit-form" >
                             <div className="edit-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    name="company_name" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="company_name"
                                     defaultValue={this.props.myCard.data.company_name}
                                 />
                             </div>
                             <div className="edit-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    name="name" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="name"
                                     defaultValue={this.props.myCard.data.name}
                                 />
                             </div>
                             <div className="edit-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    name="title" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="title"
                                     defaultValue={this.props.myCard.data.title}
                                 />
                             </div>
                             <div className="edit-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    name="address" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="address"
                                     defaultValue={this.props.myCard.data.address}
                                 />
                             </div>
                             <div className="edit-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    name="phone" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="phone"
                                     defaultValue={this.props.myCard.data.phone}
                                 />
                             </div>
                             <div className="edit-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    name="email" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="email"
                                     defaultValue={this.props.myCard.data.email}
                                 />
                             </div>
@@ -190,10 +190,10 @@ class EditCardForm extends Component {
                                         data={this.props.editInfo.data}
                                     />
                                 </div>
-                                <div 
-                                    className="front-view" 
+                                <div
+                                    className="front-view"
                                     style={this.props.myCard.css}>
-                                        <FrontPreview
+                                    <FrontPreview
                                         style={this.props.myCard.css}
                                         data={this.props.editInfo.data}
                                     />

@@ -71,7 +71,7 @@ class Wallet extends Component {
     const { data, css } = myCard;
 
     if (myCard.no_card === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/newcardform' />
     }
 
     if (this.state.toHome === true) {
