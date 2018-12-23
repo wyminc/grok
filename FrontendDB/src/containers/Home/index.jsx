@@ -10,8 +10,8 @@ class Home extends Component {
     return (
       <div id="top" className="home-body-container">
         <div className="banner-container">
-          <a href="/newcardform">
-            <button className="getStarted">GET STARTED</button>
+          <a href="/newcardform" className="get-started">
+            <button>GET STARTED</button>
           </a>
           <div className="grok-definition">
             <p className="definition-title">

@@ -5,7 +5,7 @@
     justify-content: space-evenly;
     text-align: center;
     /* border-top: 15px solid #273746; */
-    animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: enter-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     padding: 5% 0 0 0;
 }
 
@@ -21,6 +21,34 @@
 .next button, .previous button, .done button {
     position: relative;
     top: 50%;
+    /* margin: 12vh 0 0 5vh; */
+    background-color:white;
+    padding: 15px;
+    border: 2px solid #273746;
+    border-radius: 15px;
+    font-size: 16px;
+    color: #273746;
+    font-weight: bold;
+}
+
+.previous button {
+    position: relative;
+    top: 41vh;
+}
+
+.next button:hover, .previous button:hover, .done button:hover {
+    animation: form-button-color-fade 1.5s forwards;
+}
+
+@keyframes form-button-color-fade {
+    from {
+        background-color: white;
+        color: #273746;
+    }
+    to {
+        background-color: #273746;
+        color: white;
+    }
 }
 
 input[type="text"] {
@@ -89,6 +117,18 @@ input[type="text"] {
         opacity: 1;
     }
 }
+
+@keyframes enter-left {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /*
 @keyframes exit-right {
     0% {

@@ -29,7 +29,7 @@
     font-size: 18px;
 }
 
-.getStarted button {
+.get-started button {
     margin: 12vh 0 0 5vh;
     background-color:#273746;
     padding: 15px;
@@ -40,7 +40,7 @@
     font-weight: bold;
 }
 
-.getStarted button:hover {
+.get-started button:hover {
     animation: button-color-fade 1.5s forwards;
 }
 
