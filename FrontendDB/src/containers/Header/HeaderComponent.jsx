@@ -53,6 +53,8 @@ class Header extends Component {
 
 
   render() {
+    console.log('this.props.authInfo', this.props.authInfo);
+    console.log('this.props', this.props)
 
     return (
       <div className="header-container">
@@ -62,7 +64,7 @@ class Header extends Component {
             <a href="/"><img src={logo} alt="logo" className="logo-image" /></a>
           </div>
           <div className="options">
-          {this.props.authInfo.isAuthenticated === false ? (
+          {!this.props.authInfo.isAuthenticated ? (
             <div className="options">
             <div className="signup">
               <a href="/signup">
