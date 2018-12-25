@@ -103,7 +103,7 @@ class Wallet extends Component {
 
           <Switch>
             <Route exact path='/wallet' render={() =>
-              <div className="mycard">
+              <div className="wallet">
                 <Card
                   cardContainer={cardContainer}
                   front={front}
@@ -129,6 +129,7 @@ class Wallet extends Component {
             />
 
             <Route exact path='/wallet/mycard' render={() =>
+            <div className="mycard">
               <Card
                 cardContainer={cardContainer}
                 front={front}
@@ -142,7 +143,15 @@ class Wallet extends Component {
                 email={email}
                 data={data}
                 styles={style.css}
-              />}
+              />
+              <div className="editbutton">
+              <button onClick={() => { this.editRedirect() }}>EDIT</button>
+            </div>
+            <div className="deletebutton">
+              <button onClick={() => { this.deleteCard(user) }}>DELETE</button>
+            </div>
+            </div>
+            }
             />
 
             <Route exact path='/wallet/othercards' render={() =>
