@@ -118,10 +118,10 @@ class Wallet extends Component {
                   data={data}
                   styles={style.css}
                 />
-                <div className="editbutton">
+                <div className="edit-button">
                   <button onClick={() => { this.editRedirect() }}>EDIT</button>
                 </div>
-                <div className="deletebutton">
+                <div className="delete-button">
                   <button onClick={() => { this.deleteCard(user) }}>DELETE</button>
                 </div>
               </div>
@@ -144,10 +144,10 @@ class Wallet extends Component {
                 data={data}
                 styles={style.css}
               />
-              <div className="editbutton">
+              <div className="edit-button">
               <button onClick={() => { this.editRedirect() }}>EDIT</button>
             </div>
-            <div className="deletebutton">
+            <div className="delete-button">
               <button onClick={() => { this.deleteCard(user) }}>DELETE</button>
             </div>
             </div>

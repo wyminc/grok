@@ -53,6 +53,11 @@
     animation: border-fadein 2s forwards;
 }
 
+.edit-button button, .delete-button button {
+    border: transparent;
+    background-color: grey;
+}
+
 @keyframes border-fadein {
     from {
       border-bottom: 3px solid white;
