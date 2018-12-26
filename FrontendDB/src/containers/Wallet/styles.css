@@ -24,13 +24,17 @@
 }
 
 .card {
+    /* position: relative; */
     top: 15vh;
     height: 30vh;
     width: 25vw;
     margin: auto;
+    animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; 
 }
 
 div.card-flip {
+    position: relative;
+    transform-style: preserve-3d;
     top: 15vh;
     height: 30vh;
     width: 25vw;
@@ -96,3 +100,11 @@ div.card-flip {
       }
   }
 
+  @keyframes flip-back {
+      100% {
+          transform: rotateX(0);
+      }
+      0% {
+          transform: rotateX(180deg);
+      }
+  }
