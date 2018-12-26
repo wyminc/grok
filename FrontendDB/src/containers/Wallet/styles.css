@@ -32,7 +32,7 @@
     height: 30vh;
     width: 25vw;
     margin: auto;
-    animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; 
+    /* animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;  */
 }
 
 div.card-flip {
@@ -43,6 +43,16 @@ div.card-flip {
     width: 25vw;
     margin: auto;
     animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+}
+
+.card-flip-back {
+    position: relative;
+    top: 15vh;
+    transform-style: preserve-3d;
+    height: 30vh;
+    width: 25vw;
+    margin: auto;
+    animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; 
 }
 
 /* .card:active  {

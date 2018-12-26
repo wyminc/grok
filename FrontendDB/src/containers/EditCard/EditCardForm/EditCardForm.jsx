@@ -7,6 +7,8 @@ import { templates } from '../../NewCard/NewCardForm/CardCssTemplates.js'
 import { FrontPreview, BackPreview } from '../../NewCard/NewCardForm/TemplatePreview.jsx';
 import { getMyCard, editCardData, editCard, editCardCss } from '../../../actions/actions.js'
 
+import './EditCardForm.css';
+
 class EditCardForm extends Component {
     constructor(props) {
         super(props)
