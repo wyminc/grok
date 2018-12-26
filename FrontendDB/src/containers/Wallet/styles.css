@@ -2,28 +2,36 @@
     display: flex;
     flex-direction: row wrap;
     justify-content: flex-start;
-    box-shadow: 2px 2px 2px lightgrey;
     padding: 1% 0 2.5% 0;
     width: 100%;
     height: 7vh;
-    /* border-top: 15px solid #273746; */
-    /* background-color: #273746 */
 }
 
- .card-container {
+.nav-button {
+    margin-left: 2%;
+    padding: 0 0.5% 2.2% 0.5%;
+    font-size: 16px;
+} 
+
+ .display-container {
     width: 80%;
     margin: auto;
 }
 
+.card-container {
+    display: flex; 
+    flex-direction: column;
+}
+
 .card {
-    top: 20vh;
-    height: 25vh;
+    top: 15vh;
+    height: 30vh;
     width: 25vw;
     margin: auto;
 }
 
-.card:hover {
-    animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+.card:active  {
+    animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .card-info, .card-front {
@@ -42,28 +50,31 @@
     z-index: 2;
 }
 
-
-.nav-button {
-    margin-left: 2%;
-    padding: 0 0.5% 2.2% 0.5%;
-    font-size: 16px;
-} 
-
-.nav-button:hover {
-    animation: border-fadein 2s forwards;
+.button-container {
+    position: relative;
+    top: -6vh;
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-end;
+    /* border: 1px solid black; */
 }
 
 .edit-button button, .delete-button button {
     border: transparent;
-    background-color: grey;
+    margin-left: 2vw;
 }
+
+.edit-button img, .delete-button img {
+    height: 3vh;
+    width: 3w;
+}
+
 
 @keyframes border-fadein {
     from {
       border-bottom: 3px solid white;
     }
     to {
-      /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
       border-bottom: 3px solid #73C6B6;
     }
   }
