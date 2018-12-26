@@ -30,9 +30,17 @@
     margin: auto;
 }
 
-.card:active  {
-    animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+div.card-flip {
+    top: 15vh;
+    height: 30vh;
+    width: 25vw;
+    margin: auto;
+    animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
 }
+
+/* .card:active  {
+    animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+} */
 
 .card-info, .card-front {
     position: absolute; 
@@ -84,7 +92,7 @@
           transform: rotateX(0);
       }
       100% {
-          transform: scale(1.5) rotateX(180deg);
+          transform: rotateX(180deg);
       }
   }
 

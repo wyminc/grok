@@ -10,6 +10,7 @@ import './styles.css';
 
 //Actions
 import { getMyCard, getAllCards, deleteCard } from "../../actions/actions.js";
+import { timingSafeEqual } from 'crypto';
 
 // 
 //Function to create links
@@ -26,7 +27,8 @@ class Wallet extends Component {
     super(props)
     this.state = {
       toEditCard: false,
-      toWallet: false
+      toWallet: false,
+      cardClassName: "card",
     }
   }
 
@@ -69,7 +71,21 @@ class Wallet extends Component {
     })
   }
 
+  cardClass = () => {
+    if (this.state.cardClassName === "card") {
+      this.setState({
+        cardClassName: "card-flip"
+      })
+    }
+    else if (this.state.cardClassName === "card-flip") {
+      this.setState({
+        cardClassName: "card"
+      })
+    }
+  }
+
   render() {
+    console.log("this.state.cardClassName", this.state.cardClassName)
     console.log("PROPS", this.props);
     const { user } = this.props.authInfo;
 
@@ -117,9 +133,9 @@ class Wallet extends Component {
                     </button>
                   </div>
                 </div>              
-                <div className="display-card">
-                  <Card
-                      cardContainer={cardContainer}
+                <div className="display-container" onClick={()=> {this.cardClass()}}>
+                  <Card 
+                      cardContainer={this.state.cardClassName}
                       front={front}
                       title={title}
                       back={back}
