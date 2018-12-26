@@ -94,7 +94,7 @@
 }
 
 /***** CARD FLIP EFFECT *****/
-.card, .card-flip {
+.card,  {
     position: relative;
     width: 100%;
     height: 100%;

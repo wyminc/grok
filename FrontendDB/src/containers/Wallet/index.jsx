@@ -168,9 +168,9 @@ class Wallet extends Component {
                   </button>
                 </div>
               </div>  
-              <div className="display-card">
+              <div className="display-container" onClick={()=> {this.cardClass()}}>
                 <Card
-                  cardContainer={cardContainer}
+                  cardContainer={this.state.cardClassName}
                   front={front}
                   title={title}
                   back={back}
