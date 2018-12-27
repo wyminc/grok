@@ -72,7 +72,7 @@ export const getMyCard = (id) => {
         dispatch({
           type: NO_CARD
         })
-        console.log("Error at getting my card", err.response.status)
+        console.log("Error at getting my card", err)
       })
   }
 }

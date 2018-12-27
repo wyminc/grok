@@ -11,14 +11,22 @@ import {
   EDIT_MY_CARD,
   DELETE_CARD,
   MY_DELETED_CARD,
-  NO_CARD
+  NO_CARD,
+  deleteCard
 } from '../actions/actions.js'
 
 const reducers = (state = {
   allCards: [],
   myCard: {
     user_id: "",
-    data: {},
+    data: {
+      company_name: "",
+      name: "",
+      title: "",
+      address: "",
+      phone: "",
+      email: ""
+    },
     style: {
       template: "",
       css: {
@@ -64,8 +72,15 @@ const reducers = (state = {
       }
     case MY_DELETED_CARD:
       let deletedCard = { ...action.payload }
-      delete deletedCard.data;
-      deletedCard.stle.template = {};
+      deleteCard.data = {
+        company_name: "",
+        name: "",
+        title: "",
+        address: "",
+        phone: "",
+        email: ""
+      }
+      deletedCard.style.template = {};
       deletedCard.style.css = {
         back: {},
         company: {},
