@@ -86,35 +86,40 @@ export default class Register extends Component {
 
   renderConfirmationForm() {
     return (
-      <form onSubmit={this.handleConfirmationSubmit}>
-        <FormGroup controlId="confirmationCode" bsSize="large">
-          <ControlLabel>Confirmation Code</ControlLabel>
-          <FormControl
-            autoFocus
-            type="tel"
-            value={this.state.confirmationCode}
-            onChange={this.handleChange}
+        <form onSubmit={this.handleConfirmationSubmit}>
+          <FormGroup controlId="confirmationCode" bsSize="large">
+            <ControlLabel>Confirmation Code</ControlLabel>
+            <FormControl
+              autoFocus
+              type="tel"
+              value={this.state.confirmationCode}
+              onChange={this.handleChange}
+            />
+            <HelpBlock>Please check your email for the code.</HelpBlock>
+          </FormGroup>
+          <LoaderButton
+            block
+            bsSize="large"
+            disabled={!this.validateConfirmationForm()}
+            type="submit"
+            isLoading={this.state.isLoading}
+            text="Verify"
+            loadingText="Verifying…"
           />
-          <HelpBlock>Please check your email for the code.</HelpBlock>
-        </FormGroup>
-        <LoaderButton
-          block
-          bsSize="large"
-          disabled={!this.validateConfirmationForm()}
-          type="submit"
-          isLoading={this.state.isLoading}
-          text="Verify"
-          loadingText="Verifying…"
-        />
-      </form>
+        </form>
     );
   }
 
   renderForm() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div className="signup-page-container">
+      <div className="signup-container">
+        <div className="signup-header">
+          <h3>CREATE AN ACCOUNT</h3>
+        </div>
+      <form onSubmit={this.handleSubmit} className="signup-form-container">
         <FormGroup controlId="email" bsSize="large">
-          <ControlLabel>Email</ControlLabel>
+          <ControlLabel>EMAIL</ControlLabel>
           <FormControl
             autoFocus
             type="email"
@@ -123,7 +128,7 @@ export default class Register extends Component {
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
-          <ControlLabel>Password</ControlLabel>
+          <ControlLabel>PASSWORD</ControlLabel>
           <FormControl
             value={this.state.password}
             onChange={this.handleChange}
@@ -131,7 +136,7 @@ export default class Register extends Component {
           />
         </FormGroup>
         <FormGroup controlId="confirmPassword" bsSize="large">
-          <ControlLabel>Confirm Password</ControlLabel>
+          <ControlLabel>CONFIRM PASSWORD</ControlLabel>
           <FormControl
             value={this.state.confirmPassword}
             onChange={this.handleChange}
@@ -144,10 +149,12 @@ export default class Register extends Component {
           disabled={!this.validateForm()}
           type="submit"
           isLoading={this.state.isLoading}
-          text="Signup"
+          text="SIGN UP"
           loadingText="Signing up…"
         />
       </form>
+      </div>
+    </div>
     );
   }
 
