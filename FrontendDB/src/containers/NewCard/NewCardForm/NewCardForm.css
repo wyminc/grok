@@ -1,8 +1,9 @@
 /***** INFO FORM  *****/
 .info-form-container{
+    margin: auto;
     display: flex;
-    flex-direction: row wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
 
     animation: enter-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -12,6 +13,8 @@
 
 .info-form {
     width: 50%;
+    border: 1px solid lightgrey;
+    box-shadow: 2px 2px 5px grey;
 } 
 
 .info-field {
