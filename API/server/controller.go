@@ -22,12 +22,30 @@ func getSpecific(id string) (card, error) {
 
 	c := session.DB("grok").C("cards")
 
-	result := card{}
+	// result := card{}
 	// err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
-	err = c.Find(bson.M{"user_id": id}).One(&result)
+	// err = c.Find(bson.M{"user_id": id}).One(&result)
+
+	var results []card
+	result := card{}
+
+	err = c.Find(bson.M{"user_id": id}).All(&results)
 
 	if err != nil {
 		panic(err)
+	}
+
+	if len(results) == 1 {
+		result = results[0]
+	} else {
+		for i, card := range results {
+			if card.Is_deleted == false {
+				result = results[i]
+				{
+					break
+				}
+			}
+		}
 	}
 
 	return result, err
@@ -60,12 +78,29 @@ func addCard(data *newCard) (card, error) {
 	c := session.DB("grok").C("cards")
 	err = c.Insert(data)
 
+	var results []card
 	result := card{}
-	err = c.Find(bson.M{"user_id": data.User_id}).One(&result)
+
+	err = c.Find(bson.M{"user_id": data.User_id}).All(&results)
 
 	if err != nil {
 		panic(err)
 	}
+
+	if len(results) == 1 {
+		result = results[0]
+	} else {
+		for i, card := range results {
+			if card.Is_deleted == false {
+				result = results[i]
+				{
+					break
+				}
+			}
+		}
+	}
+
+	// err = c.Find(bson.M{"user_id": data.User_id}).One(&result)
 
 	return result, err
 }
