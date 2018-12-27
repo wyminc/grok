@@ -4,9 +4,10 @@
     flex-direction: row wrap;
     justify-content: space-evenly;
     text-align: center;
-    /* border-top: 15px solid #273746; */
+
     animation: enter-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     padding: 5% 0 0 0;
+    
 }
 
 .info-form {
@@ -61,10 +62,6 @@ input[type="text"] {
     box-shadow: 2px 2px 8px #273746;
     background-color: transparent;
 }
-
-/* .info-field input:focus-within {
-    
-} */
 
 /***** DESIGN FORM  *****/
 .design-form-container {
