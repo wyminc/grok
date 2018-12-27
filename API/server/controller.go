@@ -16,21 +16,25 @@ func createSession(addr string) (*mgo.Session, error) {
 	return session.Copy(), err
 }
 
-func getSpecific(id string) (card, error) {
+func getSpecific(id string) ([]card, error) {
 	session, err := createSession("mongo:" + os.Getenv("MONGO"))
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
 
-	result := card{}
+	// result := card{}
 	// err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
-	err = c.Find(bson.M{"user_id": id}).One(&result)
+	// err = c.Find(bson.M{"user_id": id}).One(&result)
+
+	var results []card
+	err = c.Find(bson.M{"user_id": id}).All(&results)
 
 	if err != nil {
 		panic(err)
 	}
 
-	return result, err
+	// return result, err
+	return results, err
 }
 
 //Get all cards that is in the id's (the id that is being passed through) users key
