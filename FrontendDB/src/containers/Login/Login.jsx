@@ -3,6 +3,11 @@ import { Auth } from 'aws-amplify';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
 import { connect } from 'react-redux'
+
+import { Redirect } from 'react-router-dom';
+
+import { authBool } from '../../actions/actions.js';
+
 // import history from "../../history"
 
 class Login extends Component {
@@ -12,11 +17,12 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      isAuthenticated:""
+      isAuthenticated: "",
+      toHome: false
     };
   }
 
-  componentDidMount () {
+  componentDidMount() {
     console.log("LOGIN PAGE")
   }
 
@@ -32,25 +38,35 @@ class Login extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-  
+
     Auth.signIn(this.state.email, this.state.password)
-      .then( user => {
+      .then(user => {
         console.log("Auth User", user)
-        this.setState({isAuthenticated: true});
+        this.setState({ isAuthenticated: true });
         alert("Logged in");
       })
-      .then( result => {
+      .then(result => {
         console.log("GOING HOME")
-        this.props.history.push('/')
-      })      
-    .catch (err => {
-      console.log("Auth Error", err)
-      alert(err.message);
+        // this.props.history.push('/')
+        this.props.dispatch(
+          authBool()
+        )
+        this.setState({
+          toHome: true
+        })
+      })
+      .catch(err => {
+        console.log("Auth Error", err)
+        alert(err.message);
 
-    })
+      })
   }
 
   render() {
+    if (this.state.toHome === true) {
+      return <Redirect to='/' />
+    }
+
     return (
       <div className="login-page-container">
         <div className="login-container">
@@ -83,10 +99,10 @@ class Login extends Component {
                 type="submit"
               >
                 LOGIN
-              </Button>          
+              </Button>
             </div>
           </form>
-        </div>      
+        </div>
       </div>
     );
   }

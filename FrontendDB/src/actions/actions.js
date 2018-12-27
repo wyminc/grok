@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const AUTH_INFO = 'AUTH_INFO';
+export const AUTH_BOOL = 'AUTH_BOOL';
 
 export const GET_ALL_CARDS = 'GET_ALL_CARDS';
 export const GET_MY_CARD = "GET_MY_CARD";
@@ -15,6 +16,14 @@ export const MY_DELETED_CARD = "MY_DELETED_CARD";
 export const NO_CARD = "NO_CARD";
 
 //Auth Actions 
+export const authBool = () => {
+  return dispatch => {
+    dispatch({
+      type: AUTH_BOOL
+    })
+  }
+}
+
 export const authenticated = (data) => {
   return dispatch => {
     dispatch({

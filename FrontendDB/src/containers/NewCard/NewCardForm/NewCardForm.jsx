@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { AllTemplates } from './Template.jsx';
-import { templates,template1, template2, template3, template4, template5 } from './CardCssTemplates.js';
+import { templates } from './CardCssTemplates.js';
 import { FrontPreview, BackPreview } from './TemplatePreview.jsx';
 import { newCardData, newCardCss, newCard } from '../../../actions/actions.js';
 
@@ -105,11 +105,11 @@ class NewCardForm extends Component {
                                 <input onChange={this.handleChange} type="text" placeholder="Email" name="email" />
                             </div>
                         </div>
-                            <div className="next">
-                                <button onClick={this.handleSubmit}> NEXT </button>
-                            </div>
+                        <div className="next">
+                            <button onClick={this.handleSubmit}> NEXT </button>
+                        </div>
                     </div>
-                ) :  (
+                ) : (
                         <div className="design-form-container">
                             <div className="previous">
                                 <button> PREVIOUS</button>
@@ -154,7 +154,7 @@ class NewCardForm extends Component {
                             </div>
                         </div>
                     )}
-                    {/* {this.state.previous === false (
+                {/* {this.state.previous === false (
                         <div className="design-form-container">
                         <div className="previous">
                             <button>PREVIOUS</button>
