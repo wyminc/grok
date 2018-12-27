@@ -16,21 +16,22 @@ class Header extends Component {
       user: this.props.user
     }
 
+    console.log('this.state.isAuthenticated',this.state.isAuthenticated)
   }
 
   componentDidMount() {
     console.log("HEADER", this.props)
-    // Auth.currentUserInfo()
-    //  .then(data => {
-    //   console.log("AUTH CHECK", data)
-    //   this.setState({user: data.username, isAuthenticated: true})
-    //   console.log("STATE", this.state)
-    //  })
-    //  .catch(err => {
-    //   console.log(err)
-    //   this.setState({user:{}})
+    Auth.currentUserInfo()
+     .then(data => {
+      console.log("AUTH CHECK", data)
+      this.setState({user: data.username, isAuthenticated: true})
+      console.log("STATE", this.state)
+     })
+     .catch(err => {
+      console.log(err)
+      this.setState({user:{}})
 
-    //  })
+     })
   }
 
   handleLogout = event => {
@@ -52,6 +53,9 @@ class Header extends Component {
 
 
   render() {
+    console.log('this.props.authInfo', this.props.authInfo);
+    console.log('this.props', this.props)
+
     return (
       <div className="header-container">
         <div className="header">
@@ -60,26 +64,33 @@ class Header extends Component {
             <a href="/"><img src={logo} alt="logo" className="logo-image" /></a>
           </div>
           <div className="options">
+          {!this.props.authInfo.isAuthenticated ? (
+            <div className="options">
             <div className="signup">
               <a href="/signup">
                 <div>SIGN UP</div>
               </a>
-            </div>
-            {/* {!this.state.isAuthenticated */}
+            </div>   
             <div className="login">
               <a href="/login">
                 <div>LOG IN</div>
+              </a>
+            </div>              
+          </div>                 
+          ) : (
+          <div className="options">
+            <div className="wallet">
+              <a href="/wallet"> 
+                <div> WALLET </div>
               </a>
             </div>
             <div className="logout">
               <a href="/" onClick={this.handleLogout}>
                 <div>LOG OUT</div>
               </a>
-            </div>
-
-            {/* <div className="login">
-              <a href="/logout"><h3>Logout</h3></a>
-            </div> */}
+            </div>          
+          </div>
+          )}
           </div>
         </div>
       </div>
@@ -88,7 +99,8 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => ({
-  auth: state.isAuthenticated
+  auth: state.isAuthenticated,
+  authInfo: state.authInfo
 })
 
 export default connect(mapStateToProps)(Header)
