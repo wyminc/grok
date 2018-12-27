@@ -119,9 +119,12 @@ class EditCardForm extends Component {
         }
 
         return (
-            <div>
+            <div className="edit-card-form-container">
                 {this.state.next === false ? (
                     <div className="edit-form-container">
+                    <div className="edit-info-header">
+                        <h3>NEW INFORMATION</h3>
+                    </div>
                         <div className="edit-form" >
                             <div className="edit-field">
                                 <input
@@ -171,23 +174,24 @@ class EditCardForm extends Component {
                                     defaultValue={this.props.myCard.data.email}
                                 />
                             </div>
-                            {/* <div className="previous">
-                            <button>PREVIOUS</button>
-                        </div> */}
                             <div className="next">
-                                <button onClick={this.handleSubmit}> NEXT </button>
+                                <button 
+                                    onClick={this.handleSubmit}> 
+                                        NEXT 
+                                </button>
                             </div>
                         </div>
                     </div>
                 ) : (
                         <div className="edit-design-form-container">
-                            <div className="template-options-container">
+                            <div className="previous">PREVIOUS</div>
+                            <div className="edit-template-options-container">
                                 <AllTemplates
                                     templates={templates}
                                     chosenTemplate={this.chosenTemplate}
                                 />
                             </div>
-                            <div className="card-preview-container">
+                            <div className="edit-card-preview-container">
                                 <div className="back-view">
                                     <BackPreview
                                         style={this.props.editInfo.style.css}

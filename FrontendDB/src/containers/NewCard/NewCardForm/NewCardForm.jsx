@@ -23,7 +23,6 @@ class NewCardForm extends Component {
             previous: false,
             next: false,
             toWallet: false,
-            infoFormClass: "info-form-container"
         }
     }
 
@@ -50,8 +49,7 @@ class NewCardForm extends Component {
         console.log('adding new card info - handleSubmit: ', this.state);
         this.props.dispatch(newCardData(user, body))
         this.setState({
-            next: true,
-            infoFormClass: "info-form-exit"
+            next: true
         })
     }
 
@@ -78,6 +76,7 @@ class NewCardForm extends Component {
 
     render() {
         console.log("info form this.props before return", this.props)
+        console.log("infoFormClass", this.state.infoFormClass)
 
         if (this.state.toWallet === true) {
             return <Redirect to='/wallet' />
@@ -86,39 +85,73 @@ class NewCardForm extends Component {
         return (
             <div className="new-card-form-container">
                 {this.state.next === false ? (
-                    <div className={this.state.infoFormClass}>
+                    <div className="info-form-container">
                     <div className="info-form-header">
                         <h3>INFORMATION</h3>
                     </div>
                         <div className="info-form" >
                             <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name} />
+                                <input 
+                                    onChange={this.handleChange} 
+                                    type="text" 
+                                    placeholder="Company Name" 
+                                    name="company_name" 
+                                    value={this.state.company_name} 
+                                />
                             </div>
                             <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Name" name="name" />
+                                <input 
+                                    onChange={this.handleChange} 
+                                    type="text" 
+                                    placeholder="Name" 
+                                    name="name" 
+                                />
                             </div>
                             <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Title" name="title" />
+                                <input 
+                                    onChange={this.handleChange} 
+                                    type="text" 
+                                    placeholder="Title" 
+                                    name="title" 
+                                />
                             </div>
                             <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Address" name="address" />
+                                <input 
+                                    onChange={this.handleChange} 
+                                    type="text" 
+                                    placeholder="Address" 
+                                    name="address" 
+                                />
                             </div>
                             <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Phone Number" name="phone" />
+                                <input 
+                                    onChange={this.handleChange} 
+                                    type="text" 
+                                    placeholder="Phone Number" 
+                                    name="phone"
+                                />
                             </div>
                             <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Email" name="email" />
+                                <input 
+                                    onChange={this.handleChange} 
+                                    type="text" 
+                                    placeholder="Email" 
+                                    name="email" 
+                                />
                             </div>
                         </div>
                         <div className="next">
-                            <button onClick={this.handleSubmit}> NEXT STEP >>> </button>
+                            <button 
+                                onClick={this.handleSubmit}> 
+                                    NEXT STEP >>> 
+                            </button>
                         </div>
                     </div>
                 ) : (
                         <div className="design-form-container">
-                            <div className="previous">
+                            {/* <div className="previous">
                                 <button> PREVIOUS</button>
-                            </div>
+                            </div> */}
                             <div className="template-options-container">
                                 {/* <Template/> */}
                                 {/* <Template

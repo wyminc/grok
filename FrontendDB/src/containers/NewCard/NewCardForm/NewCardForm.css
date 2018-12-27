@@ -4,17 +4,18 @@
     background-color: #F8F9F9;
     width: 100vw; 
     height: 100vh;
+    animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .info-form-container{
-    display: flex;
+    /* display: flex;
     flex-direction: row wrap;
-    justify-content: space-around;
+    justify-content: space-around; */
     margin: auto;
     text-align: center;
     border: 1.5px solid lightgrey;
     box-shadow: 2px 2px 5px grey;
-    animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    /* animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
     padding: 3% 3% 3% 3%;
     width: 40%;
     background-color: white;
@@ -81,10 +82,6 @@
     border: 1.5px solid #4A8BD8;
 }
 
-.info-form-exit {
-    animation: exit-left 0.5s cubic-bezier (0.550, 0.85, 0.680, 0.530) both;
-}
-
 @keyframes form-button-color-fade {
     from {
         background-color: white;
@@ -97,16 +94,27 @@
 }
 
 /***** DESIGN FORM  *****/
-.design-form-container {
-    padding: 0 5% 5% 5%;
+.design-form-container{
+    /* padding: 0 5% 5% 5%;
     height: 100%;
     width: 50%;
     margin: auto;
     text-align: center;
     display: flex;
     flex-direction: row wrap;
-    justify-content: space-around;
-    animation: enter-right 0.5 cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    justify-content: space-evenly;
+    animation: enter-left 0.5 cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+    margin: auto;
+    text-align: center;
+    /* border: 1.5px solid lightgrey; */
+    /* box-shadow: 2px 2px 5px grey; */
+    /* animation: enter-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+    /* padding: 3% 3% 3% 3%; */
+    width: 80%;
+    /* background-color: white; */
 }
 
 .template-options-container {
@@ -116,7 +124,8 @@
 .template {
     margin: 10% 0 10% 0;
     width: 15vw;
-    height: 15vh;
+    height: 20vh;
+
     /* border: 1px solid black; */
     /* animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
@@ -131,9 +140,23 @@
 
 .front-preview, .back-preview {
     width: 30vw;
-    height: 25vh;
+    height: 30vh;
     margin: 1% 0 5% 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    box-shadow: 2px 2px 8px lightgrey;
+}
+
+.done button { 
+    position: relative;
+    width: 100%;
+    top: 50%;
+    padding: 20%;
+    color: white;
+    background-color: #4A8BD8;
+}
+
+button:focus {
+    outline: none;
 }
 
 /***** Animations *****/
