@@ -56,11 +56,7 @@ export const getMyCard = (id) => {
     axios
       .get(`http://34.216.211.92:8000/specific/${id}`)
       .then(response => {
-        if (response.user_id === "") {
-          dispatch({
-            type: NO_CARD
-          })
-        } else if (response.data.is_deleted === true) {
+        if (response.data.is_deleted === true) {
           dispatch({
             type: MY_DELETED_CARD,
             payload: response.data
@@ -73,7 +69,10 @@ export const getMyCard = (id) => {
         }
       })
       .catch(err => {
-        console.log("Error at getting my card", err)
+        dispatch({
+          type: NO_CARD
+        })
+        console.log("Error at getting my card", err.response.status)
       })
   }
 }
