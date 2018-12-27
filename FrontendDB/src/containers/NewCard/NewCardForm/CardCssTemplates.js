@@ -10,36 +10,38 @@ export const templates = [
             backgroundPosition:"center"
         },
         company: {
-            textTransform: "uppercase",
-            fontFamily: "'Quicksand', sans-serif",
+            textTransform: "capitalize",
+            fontFamily: "SnellRoundhand-Bold",
             color: "#F1D572",
-            fontWeight: "bold", 
-            fontSize: "20px", 
-            textAlign: "right",
+            fontSize: "24px", 
+            textAlign: "left",
             position:"relative",
-            top: "5%",
-            right: "5%"
+            top: "65%",
+            left: "5%",
+            letterSpaceing: "3px",
         },
         front: {
-            fontFamily:"'Quicksand', sans-serif",
+            fontFamily:"Baskerville-Bold",
             color: "black", 
             textShadow: "1px 1px 1px #F1D572",
             backgroundImage: "url('https://thumbs.dreamstime.com/t/details-golden-texture-background-gold-color-paint-wall-luxury-golden-background-wallpaper-gold-foil-details-golden-106104759.jpg')",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
+            letterSpacing: "2px",
         },
         name: {
-            textTransform: "uppercase",
-            fontSize: "24px",
-            fontWeight: "bold",
+            fontFamily: "SnellRoundhand-Bold",
+            fontSize: "30px",
             textAlign: "left",
-            padding: "5% 0 0 5%",
+            padding: "5% 0 5% 5%",
+            backgroundColor: "black",
+            color: "#F1D572"
         },
         info: {
             position: "relative",
             fontSize: "14px",
             textAlign: "left", 
-            top: "15%",
+            top: "10%",
             left: "1%",
             padding: "0 0 0 5%"
         }
@@ -54,30 +56,35 @@ export const templates = [
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "contain",
                 backgroundPosition: "left", 
-                fontFamily: "'Lobster', cursive",
-                textAlign: "right"
+                padding: "0 0 0 10%",
+                fontFamily: "Menlo",
+                textAlign: "right",
             },
             company: {
+                textTransform: "uppercase",
+                letterSpacing: "2px",
                 position: "relative", 
-                top: "25%",
-                right: "5%",
+                top: "35%",
+                right: "10%",
                 color: "black",
                 fontSize: "24px",
-                fontWeight: "bold",
             },
             front: {
                 backgroundColor: "black",
                 color: "white",
-                fontFamily: "'Lobster', cursive",
-                textTransform: "capitalize",
+                textTransform: "uppercase",
+                textAlign: "right",
             },
             name: {
-                fontSize: "20px",
-                textAlign: "center", 
-                padding: "8%",
-                letterSpacing: "5px"
+                textAlign: "right",
+                fontSize: "24px",
+                fontFamily: "Menlo",
+                padding: "5%",
+                letterSpacing: "5px",
             },
             info: {
+                fontFamily: "Avenir-Book",
+                padding: "0 5% 0 0",
                 fontSize: "14px",
                 letterSpacing: "3px"
             }
@@ -92,34 +99,39 @@ export const templates = [
                 backgroundSize: "cover"
             }, 
             company: {
+                padding: "5% 0 0 0",
+                height: "50%",
+                backgroundColor: "#717892",
                 position: "relative",
-                fontFamily: "'Lobster', cursive",
-                fontSize: "20px",
-                textAlign: "left",
-                top: "70%",
-                left: "5%",
-                color: "#717892"
+                fontFamily: "Didot-Bold",
+                textTransform: "uppercase",
+                letterSpaceing: "3px",
+                fontSize: "16px",
+                textAlign: "center",
+                top: "40%",
+                color: "white",
             },
             front: {
-                backgroundColor: "#717892",
-                borderLeft: "30px solid transparent",
-                borderImage: "url('https://i.pinimg.com/564x/c5/40/a6/c540a62abbdea8de41dbd6c6d12390b1.jpg') 10% round",
-                fontFamily: "'Lobster', cursive",
-                textAlign: "left",
-                color: "#F4F4F2"
+                backgroundColor: "white",
+                fontFamily: "Avenir-Book",
+                textAlign: "center",
+                color: "#717892",
             },
             name: {
+                color: "#717892",
                 position: "relative",
-                padding: "0 0 5% 0",
+                fontFamily: "Didot-Bold",
+                padding: "0 0 2% 0",
                 fontSize: "20px",
+                textTransform: "uppercase",
                 letterSpacing: "5px",
-                top: "20%",
-                left: "5%"
+                top: "15%",
             },
             info: {
+                fontFamily: "Didot-Bold",
                 position: "relative",
                 fontSize: "14px",
-                textAlign: "left",
+                textAlign: "center",
                 letterSpacing: "3px",
                 top: "25%",
                 left: "5%"
@@ -133,33 +145,44 @@ export const templates = [
                 backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover", 
+                textAlign: "right",
             },
             company: {
                 position: "relative",
-                fontFamily: "'Thasadith', sans-serif",
-                fontSize: "24px", 
-                color: "#F1D572",
-                textShadow: "1px 1px 5px grey",
-                top: "30%"
+                fontFamily: "Zapfino",
+                fontWeight: "bold",
+                fontSize: "18px", 
+                color: "black",
+                top: "15%",
+                right: "10%"
             },
             front: {
                 backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",
                 backgroundRepeat: "no-repeat", 
                 backgroundSize: "cover",
-                color: "#F1D572",
-                textShadow: "1px 1px 5px grey",   
+                color: "black",
+                // textShadow: "1px 1px 5px grey",   
             },
             name: {
+                fontFamily: "Zapfino",
+                fontWeight: "bold",
+                fontSize: "18px",
                 backgroundColor: "white",
-                opacity: "1",
                 position: "relative", 
-                top: "25%"
+                width: "50%",
+                height: "50%",
+                textAlign: "right",
+                left: "50%",
+                padding: "5% 5% 0 0"
             },
             info: {
                 backgroundColor: "white",
-                opacity: "1",
                 position: "relative", 
-                top: "25%"
+                width: "60%",
+                height: "50%",
+                textAlign: "right",
+                left: "40%",
+                padding: "0 5% 0 0"
             }
         }   
     }

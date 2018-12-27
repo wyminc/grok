@@ -1,5 +1,6 @@
 import {
   AUTH_INFO,
+  AUTH_BOOL,
   GET_ALL_CARDS,
   GET_MY_CARD,
   NEW_CARD_DATA,
@@ -38,6 +39,13 @@ const reducers = (state = {
 
   switch (action.type) {
     //~~~~ Cases ~~~~//
+    case AUTH_BOOL:
+      console.log("IM AT AUTH BOOL")
+      const bool = { isAuthenticated: true }
+      return {
+        ...state,
+        authInfo: bool
+      }
     case AUTH_INFO:
       const newAuthInfo = {
         isAuthenticated: true,
