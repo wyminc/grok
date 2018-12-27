@@ -17,11 +17,11 @@
     margin: auto;
     width: 100%;
 }
-
+/* 
 .next button, .previous button, .done button {
     position: relative;
     top: 50%;
-    /* margin: 12vh 0 0 5vh; */
+    margin: 12vh 0 0 5vh;
     background-color:white;
     padding: 15px;
     border: 2px solid #273746;
@@ -29,16 +29,16 @@
     font-size: 16px;
     color: #273746;
     font-weight: bold;
-}
+} */
 
 .previous button {
     position: relative;
     top: 41vh;
 }
 
-.next button:hover, .previous button:hover, .done button:hover {
+/* .next button:hover, .previous button:hover, .done button:hover {
     animation: form-button-color-fade 1.5s forwards;
-}
+} */
 
 @keyframes form-button-color-fade {
     from {
@@ -51,7 +51,7 @@
     }
 }
 
-input[type="text"] {
+/* input[type="text"] {
     width: 100%;
     height: 5vh;
     text-align: left;
@@ -60,7 +60,7 @@ input[type="text"] {
     border: transparent;
     box-shadow: 2px 2px 8px #273746;
     background-color: transparent;
-}
+} */
 
 /* .info-field input:focus-within {
     

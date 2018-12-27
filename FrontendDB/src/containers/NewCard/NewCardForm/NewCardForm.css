@@ -1,47 +1,88 @@
 /***** INFO FORM  *****/
-.info-form-container{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
+.new-card-form-container {
+    padding: 3% 0 0 0;
+    background-color: #F8F9F9;
+    width: 100vw; 
+    height: 100vh;
+}
 
-    animation: enter-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    padding: 5% 0 0 0;
-    
+.info-form-container{
+    /* display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around; */
+    margin: auto;
+    text-align: center;
+    border: 1.5px solid lightgrey;
+    box-shadow: 2px 2px 5px grey;
+    animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    padding: 3% 3% 3% 3%;
+    width: 40%;
+    background-color: white;
+}
+
+.info-form-header h3 {
+    letter-spacing: 2px;
+    padding: 0 0 5% 0;
 }
 
 .info-form {
-    width: 50%;
-    border: 1px solid lightgrey;
-    box-shadow: 2px 2px 5px grey;
+    width: 100%;
+    background-color: white;
+    margin: auto;
 } 
 
 .info-field {
-    margin: auto;
+    margin: 0 0 2% 0;
     width: 100%;
 }
 
-.next button, .previous button, .done button {
-    position: relative;
+.next button {
+    /* position: relative;
     top: 50%;
-    /* margin: 12vh 0 0 5vh; */
     background-color:white;
     padding: 15px;
     border: 2px solid #273746;
     border-radius: 15px;
     font-size: 16px;
     color: #273746;
+    font-weight: bold; */
+    letter-spacing: 2px;
+    font-size: 14px;
+    padding: 2%;
     font-weight: bold;
+    background-color: #4A8BD8;
+    color: white;
+    margin: 5% 0 2% 0;
+    width: 100%;
 }
+
 
 .previous button {
     position: relative;
     top: 41vh;
 }
 
-.next button:hover, .previous button:hover, .done button:hover {
+/* .next button:hover, .previous button:hover, .done button:hover {
     animation: form-button-color-fade 1.5s forwards;
+} */
+
+.info-field input {
+    width: 100%;
+    height: 5vh;
+    text-align: left;
+    padding: 0 0 0 2%;
+    margin: 1% 0 0 0;
+    background-color: white;
+    border: 1px solid lightgrey;
+}
+
+.info-form input:focus {
+    outline: none;
+    border: 1.5px solid #4A8BD8;
+}
+
+.info-form-exit {
+    animation: exit-left 0.5s cubic-bezier (0.550, 0.85, 0.680, 0.530) both;
 }
 
 @keyframes form-button-color-fade {
@@ -55,17 +96,6 @@
     }
 }
 
-input[type="text"] {
-    width: 100%;
-    height: 5vh;
-    text-align: left;
-    padding: 0 0 0 2%;
-    margin: 1% 0 0 0;
-    border: transparent;
-    box-shadow: 2px 2px 8px #273746;
-    background-color: transparent;
-}
-
 /***** DESIGN FORM  *****/
 .design-form-container {
     padding: 5%;
@@ -76,7 +106,7 @@ input[type="text"] {
     display: flex;
     flex-direction: row wrap;
     justify-content: space-around;
-    /* animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+    animation: enter-right 0.5 cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .template-options-container {
@@ -88,7 +118,7 @@ input[type="text"] {
     width: 15vw;
     height: 15vh;
     /* border: 1px solid black; */
-    animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .card-preview-container {
@@ -96,7 +126,7 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    animation: enter-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: enter-right 0.5 cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .front-preview, .back-preview {
@@ -126,6 +156,12 @@ input[type="text"] {
     100% {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+@keyframes exit-left {
+    0% {
+        transform: translateX(0);
     }
 }
 

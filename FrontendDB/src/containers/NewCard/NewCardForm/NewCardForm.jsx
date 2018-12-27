@@ -22,7 +22,8 @@ class NewCardForm extends Component {
             email: "",
             previous: false,
             next: false,
-            toWallet: false
+            toWallet: false,
+            infoFormClass: "info-form-container"
         }
     }
 
@@ -49,7 +50,8 @@ class NewCardForm extends Component {
         console.log('adding new card info - handleSubmit: ', this.state);
         this.props.dispatch(newCardData(user, body))
         this.setState({
-            next: true
+            next: true,
+            infoFormClass: "info-form-exit"
         })
     }
 
@@ -82,9 +84,12 @@ class NewCardForm extends Component {
         }
 
         return (
-            <div>
+            <div className="new-card-form-container">
                 {this.state.next === false ? (
-                    <div className="info-form-container">
+                    <div className={this.state.infoFormClass}>
+                    <div className="info-form-header">
+                        <h3>INFORMATION</h3>
+                    </div>
                         <div className="info-form" >
                             <div className="info-field">
                                 <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name} />
@@ -105,9 +110,9 @@ class NewCardForm extends Component {
                                 <input onChange={this.handleChange} type="text" placeholder="Email" name="email" />
                             </div>
                         </div>
-                            <div className="next">
-                                <button onClick={this.handleSubmit}> NEXT </button>
-                            </div>
+                        <div className="next">
+                            <button onClick={this.handleSubmit}> NEXT STEP >>> </button>
+                        </div>
                     </div>
                 ) :  (
                         <div className="design-form-container">
