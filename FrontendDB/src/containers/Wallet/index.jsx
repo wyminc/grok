@@ -79,7 +79,12 @@ class Wallet extends Component {
     }
     else if (this.state.cardClassName === "card-flip") {
       this.setState({
-        cardClassName: "card"
+        cardClassName: "card-flip-back"
+      })
+    } 
+    else if (this.state.cardClassName === "card-flip-back") {
+      this.setState ({
+        cardClassName: "card-flip"
       })
     }
   }
