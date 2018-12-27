@@ -174,12 +174,18 @@ class EditCardForm extends Component {
                                     defaultValue={this.props.myCard.data.email}
                                 />
                             </div>
-                            <div className="next">
+                            {/* <div className="next">
                                 <button 
                                     onClick={this.handleSubmit}> 
                                         NEXT 
                                 </button>
-                            </div>
+                            </div> */}
+                        </div>
+                        <div className="edit-next">
+                            <button 
+                                onClick={this.handleSubmit}> 
+                                    NEXT 
+                            </button>
                         </div>
                     </div>
                 ) : (
