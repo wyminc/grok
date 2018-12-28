@@ -72,7 +72,7 @@ const reducers = (state = {
       }
     case MY_DELETED_CARD:
       let deletedCard = { ...action.payload }
-      deleteCard.data = {
+      deletedCard.data = {
         company_name: "",
         name: "",
         title: "",
