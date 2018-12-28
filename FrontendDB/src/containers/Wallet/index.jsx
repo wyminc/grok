@@ -201,7 +201,6 @@ class Wallet extends Component {
             {/***** ALL CARDS IN WALLET *****/}
             <Route exact path='/wallet/othercards' render={() =>
             <div>
-                <div className="one-of-all">
                   <AllCards
                   previousCard={this.previousCard}
                   nextCard={this.nextCard}
@@ -218,7 +217,6 @@ class Wallet extends Component {
                   email={email}
                   cards={allCards}
                 />
-                </div>
             </div>
             }
             />

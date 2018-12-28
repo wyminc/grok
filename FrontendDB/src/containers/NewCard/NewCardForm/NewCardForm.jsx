@@ -86,7 +86,7 @@ class NewCardForm extends Component {
         }
 
         return (
-            <div className="new-card-form-container">
+            <div className="card-form-container">
                 {this.state.next === false ? (
                     <div className="info-form-container">
                     {/* <div className="info-form-header">
@@ -171,9 +171,9 @@ class NewCardForm extends Component {
                                         data={this.props.addInfo.data}
                                     />
                                 </div>
-                            </div>
-                            <div className="done">
-                                <button onClick={() => { this.postCard(this.props.addInfo) }}> >>> </button>
+                                <div className="done">
+                                    <button onClick={() => { this.postCard(this.props.addInfo) }}> >>> </button>
+                                </div>                                
                             </div>
                         </div>
                     )}
