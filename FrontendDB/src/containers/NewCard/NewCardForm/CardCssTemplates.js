@@ -16,8 +16,8 @@ export const templates = [
             fontSize: "24px", 
             textAlign: "left",
             position:"relative",
-            top: "15vh",
-            left: "2vw",
+            top: "110px",
+            left: "20px",
             letterSpaceing: "3px",
         },
         front: {
@@ -41,8 +41,8 @@ export const templates = [
             position: "relative",
             fontSize: "14px",
             textAlign: "left", 
-            top: "5vh",
-            left: "1vw",
+            top: "25px",
+            left: "15px",
             padding: "0 0 0 15px"
         }
     }
@@ -64,8 +64,8 @@ export const templates = [
                 textTransform: "uppercase",
                 letterSpacing: "2px",
                 position: "relative", 
-                top: "10vh",
-                right: "2vw",
+                top: "60px",
+                right: "20px",
                 color: "black",
                 fontSize: "24px",
             },
@@ -100,7 +100,7 @@ export const templates = [
             }, 
             company: {
                 padding: "15px 0 0 0",
-                height: "10vh",
+                height: "75px",
                 backgroundColor: "#717892",
                 position: "relative",
                 fontFamily: "Didot-Bold",
@@ -108,7 +108,7 @@ export const templates = [
                 letterSpaceing: "3px",
                 fontSize: "16px",
                 textAlign: "center",
-                top: "12vh",
+                top: "60px",
                 color: "white",
             },
             front: {
@@ -125,7 +125,7 @@ export const templates = [
                 fontSize: "20px",
                 textTransform: "uppercase",
                 letterSpacing: "5px",
-                top: "5vh",
+                top: "30px",
             },
             info: {
                 fontFamily: "Didot-Bold",
@@ -133,7 +133,7 @@ export const templates = [
                 fontSize: "14px",
                 textAlign: "center",
                 letterSpacing: "3px",
-                top: "6vh",
+                top: "50px",
                 
             }
         }   
@@ -153,8 +153,8 @@ export const templates = [
                 fontWeight: "bold",
                 fontSize: "14px", 
                 color: "black",
-                top: "8vh",
-                right: "3vw"
+                top: "50px",
+                right: "30px"
             },
             front: {
                 backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",

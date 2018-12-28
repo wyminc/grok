@@ -89,10 +89,13 @@ class NewCardForm extends Component {
             <div className="new-card-form-container">
                 {this.state.next === false ? (
                     <div className="info-form-container">
-                    <div className="info-form-header">
+                    {/* <div className="info-form-header">
                         <h3>INFORMATION</h3>
-                    </div>
-                        <div className="info-form" >
+                    </div> */}
+                    <div className="info-form" >
+                        <div className="info-form-header">
+                            <h3>INFORMATION</h3>
+                        </div>
                             <div className="info-field">
                                 <input 
                                     onChange={this.handleChange} 
@@ -142,12 +145,12 @@ class NewCardForm extends Component {
                                     name="email" 
                                 />
                             </div>
-                        </div>
-                        <div className="next">
+                            <div className="next">
                             <button 
                                 onClick={this.handleSubmit}> 
-                                    NEXT STEP >>> 
+                                    >>> 
                             </button>
+                        </div>                            
                         </div>
                     </div>
                 ) : (
@@ -170,7 +173,7 @@ class NewCardForm extends Component {
                                 </div>
                             </div>
                             <div className="done">
-                                <button onClick={() => { this.postCard(this.props.addInfo) }}> DONE </button>
+                                <button onClick={() => { this.postCard(this.props.addInfo) }}> >>> </button>
                             </div>
                         </div>
                     )}
