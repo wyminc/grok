@@ -12,6 +12,7 @@ import {
   DELETE_CARD,
   MY_DELETED_CARD,
   NO_CARD,
+  GOT_CARD,
   deleteCard
 } from '../actions/actions.js'
 
