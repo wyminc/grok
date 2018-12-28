@@ -4,7 +4,7 @@
   font-family: 'Ubuntu', sans-serif;
   /* background-color: black;
   color: white; */
-  border-bottom: 15px solid #273746;
+  /* border-bottom: 15px solid #273746; */
   padding: 1% 0 0.2% 0;
 }
 
@@ -14,12 +14,12 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: #273746;
 }
 
 .header {
   margin: auto;
-  width: 80%;
+  width: 80vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,9 +27,9 @@ a {
 
 .options {
   display: flex;
-  width: 25vw;
+  width: 20vw;
   flex-direction: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .login, .signup, .logout, .wallet {
@@ -58,6 +58,6 @@ box-shadow: inset 0 0 0 3px black; */
   }
   to {
     /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
-    border-bottom: 3px solid #73C6B6;
+    border-bottom: 3px solid #AFC851;
   }
 }

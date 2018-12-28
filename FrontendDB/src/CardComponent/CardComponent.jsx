@@ -1,5 +1,6 @@
 import React from 'react';
-import './styles.css'
+import './styles.css';
+import {CSSTransitionGroup} from 'react-transition-group';
 
 export const Card = (props) => {
   const { data, styles } = props;
@@ -25,10 +26,10 @@ export const Card = (props) => {
 
 export const AllCards = (props) => {
   console.log('all cards props', props);
-
-
-  return props.cards.map(card =>
-    <div key={card.user_id} className={props.cardContainer}>
+  
+  const contactCard = props.cards.map((card, i) => (
+    <div className="all-cards-container">
+    <div key={card.user_id} className={props.cardContainer}  onClick={() => {props.cardClass()}} >
       <div className={props.back} style={card.style.css.back}>
         <div className={props.company} style={card.style.css.company}>{card.data.company_name}</div>
       </div>
@@ -42,6 +43,21 @@ export const AllCards = (props) => {
         </div>
       </div>
     </div>
+    </div>
+  ))
+
+  console.log('contact card', contactCard)
+  console.log('contact card length', contactCard.length)
+  return (
+    <CSSTransitionGroup 
+      transitionName="all-cards"
+      transitionEnterTimeout={500}
+      transitionLeaveTimeout={300}
+    >
+    {/* <button onClick={() => {props.previousCard()}}>&#10094;</button> */}
+    {contactCard}
+    {/* <button onClick={() => {props.nextCard()}}>&#10095;</button> */}
+  </CSSTransitionGroup>
   )
 }
 
