@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import Transition from 'react-transition-group/Transition';
+import {CSSTransitionGroup} from 'react-transition-group';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -149,29 +151,8 @@ class NewCardForm extends Component {
                     </div>
                 ) : (
                         <div className="design-form-container">
-                            {/* <div className="previous">
-                                <button> PREVIOUS</button>
-                            </div> */}
                             <div className="template-options-container">
-                                {/* <Template/> */}
-                                {/* <Template
-                                    style={template1}
-                                    chosenTemplate={this.chosenTemplate}
-                                />
-                                <Template
-                                    style={template2}
-                                    chosenTemplate={this.chosenTemplate}
-                                />
-                                <Template
-                                    style={template3}
-                                    chosenTemplate={this.chosenTemplate}
-                                />
-                                <Template
-                                    style={template4}
-                                    chosenTemplate={this.chosenTemplate}
-                                />                                 */}
                                 <AllTemplates templates={templates} chosenTemplate={this.chosenTemplate} />
-                                {/* Note: Map through the templates */}
                             </div>
                             <div className="card-preview-container">
                                 <div className="back-view">
@@ -192,65 +173,6 @@ class NewCardForm extends Component {
                             </div>
                         </div>
                     )}
-                {/* {this.state.previous === false (
-                        <div className="design-form-container">
-                        <div className="previous">
-                            <button>PREVIOUS</button>
-                        </div>
-                        <div className="template-options-container">
-                            <Template
-                                style={template1}
-                                chosenTemplate={this.chosenTemplate}
-                            />
-                        </div>
-                        <div className="card-preview-container">
-                            <div className="back-view">
-                                <BackPreview
-                                    style={this.props.addInfo.css}
-                                    data={this.props.addInfo.data}
-                                />
-                            </div>
-                            <div className="front-view" style={this.props.addInfo.css}>
-                                <FrontPreview
-                                    style={this.props.addInfo.css}
-                                    data={this.props.addInfo.data}
-                                />
-                            </div>
-                        </div>
-                        <div className="done">
-                            <button onClick={() => { this.postCard(this.props.addInfo) }}> DONE </button>
-                        </div>
-                    </div>                        
-                    ) : (
-                        <div className="info-form-container">
-                        <div className="home">
-                            <button>HOME</button>
-                        </div>
-                        <div className="info-form" >
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Company Name" name="company_name" value={this.state.company_name} />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Name" name="name" />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Title" name="title" />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Address" name="address" />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Phone Number" name="phone" />
-                            </div>
-                            <div className="info-field">
-                                <input onChange={this.handleChange} type="text" placeholder="Email" name="email" />
-                            </div>
-                        </div>
-                            <div className="next">
-                                <button onClick={this.handleSubmit}> NEXT </button>
-                            </div>
-                    </div>
-                    )} */}
             </div>
         )
     }

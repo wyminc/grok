@@ -20,7 +20,7 @@
 
 .card-container {
     display: flex; 
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .card {
@@ -30,6 +30,7 @@
     height: 30vh;
     width: 25vw;
     margin: auto;
+    transition: transform 1s;
     /* animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;  */
 }
 
@@ -70,6 +71,7 @@ div.card-flip {
 }
 
 .card-info {
+    transform: rotateX(180deg);
     z-index: 2;
 }
 
@@ -92,7 +94,11 @@ div.card-flip {
     height: 3vh;
     width: 3w;
 }
-
+/* 
+.all-cards-container {
+    margin: 5%;
+} */
+ 
 
 @keyframes border-fadein {
     from {

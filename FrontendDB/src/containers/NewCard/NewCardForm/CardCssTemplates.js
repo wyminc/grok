@@ -16,8 +16,8 @@ export const templates = [
             fontSize: "24px", 
             textAlign: "left",
             position:"relative",
-            top: "65%",
-            left: "5%",
+            top: "15vh",
+            left: "2vw",
             letterSpaceing: "3px",
         },
         front: {
@@ -151,28 +151,28 @@ export const templates = [
                 position: "relative",
                 fontFamily: "Zapfino",
                 fontWeight: "bold",
-                fontSize: "18px", 
+                fontSize: "14px", 
                 color: "black",
-                top: "15%",
-                right: "10%"
+                top: "2em",
+                right: "2em"
             },
             front: {
                 backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",
                 backgroundRepeat: "no-repeat", 
                 backgroundSize: "cover",
                 color: "black",
-                // textShadow: "1px 1px 5px grey",   
+                // textShadow: "1px 1px 5px grey",      
             },
             name: {
                 fontFamily: "Zapfino",
                 fontWeight: "bold",
-                fontSize: "18px",
+                fontSize: "14px",
                 backgroundColor: "white",
                 position: "relative", 
-                width: "50%",
-                height: "50%",
+                width: "20em",
+                height: "5em",
                 textAlign: "right",
-                left: "50%",
+                left: "10em",
                 padding: "5% 5% 0 0"
             },
             info: {

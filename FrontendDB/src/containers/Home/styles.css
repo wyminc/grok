@@ -44,6 +44,28 @@
     animation: button-color-fade 1.5s forwards;
 }
 
+@keyframes enter-right {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes enter-left {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /**** NAVIGATION BAR *****/
 .nav-bar-container {
     width: 100vw; 
@@ -71,7 +93,7 @@
 }
 
 /***** CARD EXAMPLES / FEATURED CARDS *****/
-.card-example-header {
+/* .card-example-header {
     text-align: center;
     padding-top: 2%;
 }
@@ -91,10 +113,10 @@
     width: 25vw;
     height: 25vh;
     perspective: 1000px;
-}
+} */
 
 /***** CARD FLIP EFFECT *****/
-.card,  {
+/* .card,  {
     position: relative;
     width: 100%;
     height: 100%;
@@ -129,7 +151,7 @@
 .card-info {
     transform: rotateX(180deg);
     z-index: 2;
-}
+} */
 
 
 
@@ -137,7 +159,7 @@
 /***** CARD STYLING *****/
 
 /* CARD ONE */
-.one-back {
+/* .one-back {
     background-image: url('../../assets/card-background1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -164,11 +186,11 @@
     position: absolute;
     bottom: 8%; 
     left: 8%;
-}
+} */
 
 
 /* CARD TWO */
-.two-back {
+/* .two-back {
     background-image:url('../../assets/card-background2.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -200,10 +222,10 @@
 .two-info .address {
     border-top: 3px solid #EC7063;
     padding-top: 5%;
-}
+} */
 
 /* CARD THREE */
-.three-back {
+/* .three-back {
     background-image: url('../../assets/card-background3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -229,11 +251,11 @@
 
 .three-info .address, .three-info .phoneNumber, .three-info .email {
     font-size: 12px;
-}
+} */
 
 
 /* CARD FOUR */
-.four-back {
+/* .four-back {
     background-image: url('../../assets/card-background4.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -255,11 +277,11 @@
 
 .four-title {
     opacity: 0;
-}
+} */
 
 
 /* SHARED STYLING */
-
+/* 
 .one-info .name, 
 .two-info .name, 
 .three-info .name,
@@ -273,7 +295,7 @@
 .four-info .address, .four-info .phoneNumber, .four-info .email {
     font-size: 12px;
     padding-bottom: 2%;
-}
+} */
 
 
 /***** ABOUT SECTION *****/
