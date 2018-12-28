@@ -1,9 +1,8 @@
 import React from 'react';
 import './styles.css';
-import {CSSTransitionGroup} from 'react-transition-group';
 
 //Slider 
-import Slider from "react-slick";
+import Carousel from 'nuka-carousel';
 
 export const Card = (props) => {
   const { data, styles } = props;
@@ -29,12 +28,11 @@ export const Card = (props) => {
 
 export const AllCards = (props) => {
   console.log('all cards props', props);
-<<<<<<< HEAD
 
   if (props.cards.length > 0) {
-    return <Slider>
+    return <Carousel>
       {props.cards.map((card, index) =>
-        <div key={index} className={props.cardContainer}>
+        <div key={index} className={props.cardContainer} onClick={() => { props.cardClass() }}>
           <div className={props.back} style={card.style.css.back}>
             <div className={props.company} style={card.style.css.company}>{card.data.company_name}</div>
           </div>
@@ -49,7 +47,7 @@ export const AllCards = (props) => {
           </div>
         </div>
       )}
-    </Slider>
+    </Carousel>
   } else {
     return props.cards.map(card =>
       <div key={card.user_id} className={props.cardContainer}>
@@ -68,41 +66,6 @@ export const AllCards = (props) => {
       </div>
     )
   }
-=======
-  
-  const contactCard = props.cards.map((card, i) => (
-    <div className="all-cards-container">
-    <div key={card.user_id} className={props.cardContainer}  onClick={() => {props.cardClass()}} >
-      <div className={props.back} style={card.style.css.back}>
-        <div className={props.company} style={card.style.css.company}>{card.data.company_name}</div>
-      </div>
-      <div className={props.front} style={card.style.css.front}>
-        <div className={props.info} style={card.style.css.info}>
-          <div className={props.name} style={card.style.css.name}>{card.data.name}</div>
-          <div className={props.title}>{card.data.title}</div>
-          <div className={props.address}>{card.data.address}</div>
-          <div className={props.phone}>{card.data.phone}</div>
-          <div className={props.email}>{card.data.email}</div>
-        </div>
-      </div>
-    </div>
-    </div>
-  ))
-
-  console.log('contact card', contactCard)
-  console.log('contact card length', contactCard.length)
-  return (
-    <CSSTransitionGroup 
-      transitionName="all-cards"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={300}
-    >
-    {/* <button onClick={() => {props.previousCard()}}>&#10094;</button> */}
-    {contactCard}
-    {/* <button onClick={() => {props.nextCard()}}>&#10095;</button> */}
-  </CSSTransitionGroup>
-  )
->>>>>>> development
 }
 
 export const DisplayCard = (props) => {

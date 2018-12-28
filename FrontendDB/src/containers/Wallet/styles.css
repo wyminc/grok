@@ -27,7 +27,6 @@
     width: 25vw;
     margin: auto;
     transition: transform 1s;
-    /* animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;  */
 }
 
 div.card-flip {
@@ -94,7 +93,6 @@ div.card-flip {
 .all-cards-container {
     margin: 5%;
 } */
- 
 
 @keyframes border-fadein {
     from {
@@ -121,4 +119,8 @@ div.card-flip {
       0% {
           transform: rotateX(180deg);
       }
+  }
+  
+  .slider-frame{
+    min-height: 60vh;
   }
