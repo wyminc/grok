@@ -4,7 +4,7 @@
   font-family: 'Ubuntu', sans-serif;
   /* background-color: black;
   color: white; */
-  border-bottom: 15px solid #273746;
+  /* border-bottom: 15px solid #273746; */
   padding: 1% 0 0.2% 0;
 }
 
@@ -14,7 +14,7 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: #273746;
 }
 
 .header {
