@@ -47,3 +47,11 @@ func Delete(c *gin.Context) {
 
 	c.JSON(200, data)
 }
+
+func TestAll(c *gin.Context) {
+	i := (c.Param("id"))
+
+	data, _ := testCards(i)
+
+	c.JSON(200, data)
+}

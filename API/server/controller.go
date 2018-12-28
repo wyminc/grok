@@ -114,10 +114,19 @@ func updateCard(id string, data *newCard) (card, error) {
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
-	err = c.Update(bson.M{"user_id": id}, data)
+	var results []card
+
+	err = c.Find(bson.M{"user_id": id}).All(&results)
+
+	for _, card := range results {
+		if card.Is_deleted == false {
+			var doc = card.Id
+			err = c.Update(bson.M{"_id": doc}, data)
+		}
+	}
 
 	result := card{}
-	err = c.Find(bson.M{"user_id": id}).One(&result)
+	err = c.Find(bson.M{"user_id": id, "is_deleted": false}).One(&result)
 
 	if err != nil {
 		panic(err)
@@ -139,6 +148,9 @@ func deleteCard(id string) (card, error) {
 		if card.Is_deleted == false {
 			var doc = card.Id
 			err = c.Update(bson.M{"_id": doc}, bson.M{"$set": bson.M{"is_deleted": true}})
+			{
+				break
+			}
 		}
 	}
 
@@ -150,4 +162,21 @@ func deleteCard(id string) (card, error) {
 	}
 
 	return result, err
+}
+
+//
+func testCards(id string) ([]card, error) {
+	session, err := createSession("mongo:" + os.Getenv("MONGO"))
+	defer session.Close()
+
+	c := session.DB("grok").C("cards")
+	var results []card
+
+	err = c.Find(bson.M{"user_id": id}).All(&results)
+
+	if err != nil {
+		panic(err)
+	}
+
+	return results, err
 }
