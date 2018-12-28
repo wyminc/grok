@@ -3,22 +3,24 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: black;
-  color: white;
+  background-color: #4A8BD8;
+  color: #ECF7FE;
   font-family: 'Ubuntu', sans-serif;
   width: 100vw;
-  height: 10wh;
+  height: 15wh;
   padding: 1%;
-  bottom: 0%;
-  position: fixed;
 }
 
-/* .footer p {
-  display: inline-block;
-  margin: 15px;
-  color: white;
-} */
+.footer-title, .contact {
+  text-transform: uppercase;
+}
 
-/* .right {
-  float: right;
-} */
+.created-by {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.grok-logo-white {
+  width: 2vw;
+  height: 3vh;
+}

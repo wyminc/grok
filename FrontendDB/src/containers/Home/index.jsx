@@ -1,28 +1,24 @@
-//THIS WILL BE A SMART COMPONENT ONCE DATA IS IMPORTED
 import React, { Component } from 'react';
-import {CSSTransitionGroup} from 'react-transition-group';
 import './styles.css';
 
-import FeaturedCards from './FeaturedCards/FeaturedCards.jsx';
+//Slider 
+import Carousel from 'nuka-carousel';
+
+//Images
+import grok_logo_white from '../../assets/grok-white-logo.png';
 
 class Home extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: ['hello', 'world', 'click', 'me']
-    }
-  }
 
   render() {
 
     return (
-        <div id="top" className="home-body-container">
+        <div className="home-body-container">
           <div className="nav-bar-container">
             <div className="nav-bar">
               <a href="#about" className="nav-items">ABOUT GROK</a>
-              <a href="#cards" className="nav-items">DESIGN YOUR OWN CARD</a>
-              <a href="#social" className="nav-items">JOIN THE FAMILY</a> {/* Note: Social Media footer section*/}
+              <a href="#design" className="nav-items">DESIGN YOUR OWN CARD</a>
+              <a href="#contact" className="nav-items">CONTACT</a> 
             </div>
           </div>
           <div className="banner-container">
@@ -30,19 +26,47 @@ class Home extends Component {
             <button>GET STARTED</button>
           </a>
           <div className="grok-definition">
-            <p className="definition-title">
+            {/* <p className="grok-title">
               GROK
-                </p>
-            <p className="definition">
-              to empathize or communicate sympathetically; <br /> establish a rapport.
-                </p>
+            </p> */}
+            <div className="definition-title">
+              GROK BUSINESS CARDS 
+            </div>
+            <div className="definition">
+              <p className="words">
+                Genuine Connections.            
+              </p>
+              <p className="words">
+              Reduce Waste and Clutter.
+              </p>
+              <p className="words">
+                Orgaize Your Network.
+              </p>
+              <p className="words">
+                Keep Rapport. 
+              </p>
+            </div>
           </div>
           {/* <img className="banner" src="" alt="banner"/> */}
         </div>
+        <div id="design" className="design-info">
+          <div className="card-examples">
+          </div>
+          <div className="card-explanation">
+          </div>
+        </div>
         <div id="about" className="about-info">
         </div>
-        <div id="social" className="social-media-footer">
-          {/* [Add social media handles here] */}
+        <div id="contact" className="contact-footer">
+          <div className="contact-info">
+          
+          </div>
+          <div className="social-media">
+
+          </div>
+          <div className="back-to-top">
+            <a href="#top" className="footer-items">BACK TO TOP</a>
+          </div>
         </div>
       </div>
     )

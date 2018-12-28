@@ -58,7 +58,7 @@ class Header extends Component {
 
     return (
       <div className="header-container">
-        <div className="header">
+        <div className="header" id="top">
           <div className="logo">
             {/* <a href="/"><h1>Grok</h1></a> */}
             <a href="/"><img src={logo_blue} alt="logo" className="logo-image" /></a>
@@ -68,12 +68,12 @@ class Header extends Component {
               <div className="options">
                 <div className="signup">
                   <a href="/signup">
-                    <div>SIGN UP</div>
+                    <button>SIGN UP</button>
                   </a>
                 </div>
                 <div className="login">
                   <a href="/login">
-                    <div>LOG IN</div>
+                    <button>LOG IN</button>
                   </a>
                 </div>
               </div>
@@ -81,12 +81,12 @@ class Header extends Component {
                 <div className="options">
                   <div className="wallet">
                     <a href="/wallet">
-                      <div> WALLET </div>
+                      <button> WALLET </button>
                     </a>
                   </div>
                   <div className="logout">
                     <a href="/" onClick={this.handleLogout}>
-                      <div>LOG OUT</div>
+                      <button>LOG OUT</button>
                     </a>
                   </div>
                 </div>

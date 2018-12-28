@@ -2,22 +2,24 @@
     display: flex;
     flex-direction: row wrap;
     justify-content: flex-start;
-    padding: 10px 0 5px 20px;
-    width: 80vw;
-    height: 7vh;
+    /* padding: 10px 0 2px 20px; */
+    width: 40%;
+    height: 3.5vh;
+    position: relative;
+    top: -4vh;
+    left: 25vw;
 }
 
 .nav-button {
+    letter-spacing: 1.5px;
     margin-left: 10px;
-    padding: 0 5px 5px 10px;
+    padding: 0 1px 1px 10px;
     font-size: 16px;
 } 
 
-
-/* .card-container {
-    display: flex; 
-    flex-direction: row;
-} */
+.nav-button:hover {
+    animation: border-fadein 2s forwards;
+}
 
 .card {
     position: relative;
@@ -27,7 +29,6 @@
     width: 25vw;
     margin: auto;
     transition: transform 1s;
-    /* animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;  */
 }
 
 div.card-flip {
@@ -54,6 +55,11 @@ div.card-flip {
     animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 } */
 
+.display-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .card-info, .card-front {
     position: absolute; 
     width: 100%;
@@ -74,8 +80,8 @@ div.card-flip {
 .button-container {
     width: 25%;
     position: relative;
-    top: -6vh;
-    left: 70vw;
+    top: 100vh;
+    /* left: 25vw; */
     display: flex; 
     flex-direction: row;
     justify-content: flex-end;
@@ -90,11 +96,7 @@ div.card-flip {
     height: 3vh;
     width: 3w;
 }
-/* 
-.all-cards-container {
-    margin: 5%;
-} */
- 
+
 
 @keyframes border-fadein {
     from {
@@ -121,4 +123,8 @@ div.card-flip {
       0% {
           transform: rotateX(180deg);
       }
+  }
+  
+  .slider-frame{
+    min-height: 60vh;
   }

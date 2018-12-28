@@ -2,14 +2,11 @@
   display: flex;
   width: 100%;
   font-family: 'Ubuntu', sans-serif;
-  /* background-color: black;
-  color: white; */
-  /* border-bottom: 15px solid #273746; */
-  padding: 1% 0 0.2% 0;
+  padding: 15px 0 5px 0;
 }
 
 .logo-image {
-  height: 8vh;
+  height: 6vh;
 }
 
 a {
@@ -34,24 +31,24 @@ a {
 
 .login, .signup, .logout, .wallet {
   align-self: flex-end ;
-  font-size: 16px;
   font-weight: normal;
-  /* padding: 0 2% 0 2%; */
 }
 
-.login, .signup, .logout, .wallet {
+.login button, .signup button, .logout button, .wallet button {
   padding: 1% 1% 2% 1%;
+  font-size: 14px;
   letter-spacing: 1.5px;
-  /* border-bottom: 3px solid white; */
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.login, .logout {
+.login button, .logout button {
   background-color: #4A8BD8;
   color: white;
   padding: 10px 20px 10px 20px;
+  border: 1px solid #4A8BD8;
 }
 
-.signup, .wallet {
+.signup button, .wallet button {
   border: 1px solid #4A8BD8;
   background-color: white;
   color: #4A8BD8;
@@ -59,21 +56,20 @@ a {
 }
 
 
-.login a {
+/* .login a, .logout a {
   color: white;
 }
 
-.signup a {
+.signup , .wallet a {
   color: #4A8BD8
+} */
+
+.login button:hover, .logout button:hover{
+  animation: blue-button-color-fade 1s forwards;
 }
 
-
-.login:hover, .signup:hover, .logout:hover, .wallet:hover {
-  /* background: grey;
-  color: black;
-box-shadow: inset 0 0 0 3px black; */ 
-  /* animation: border-fadein 2s forwards; */
-  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+.signup button:hover, .wallet button:hover{
+  animation: white-button-color-fade 1s forwards;
 }
 
 @keyframes border-fadein {
@@ -81,7 +77,32 @@ box-shadow: inset 0 0 0 3px black; */
     border-bottom: 3px solid white;
   }
   to {
-    /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
     border-bottom: 3px solid #AFC851;
+  }
+}
+
+@keyframes blue-button-color-fade {
+  from {
+      background-color: #4A8BD8;
+      border: 1px solid #4A8BD8;
+      color: white;
+  }
+  to {
+      background-color: white;
+      border: 1px solid #4A8BD8;
+      color: #4A8BD8;
+  }
+}
+
+@keyframes white-button-color-fade {
+  from {
+      background-color:white;
+      border: 1px solid #4A8BD8;
+      color: #4A8BD8;
+  }
+  to {
+      background-color: #4A8BD8;
+      border: 1px solid #4A8BD8;
+      color: white;
   }
 }
