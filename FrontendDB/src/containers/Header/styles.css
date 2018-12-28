@@ -19,7 +19,7 @@ a {
 
 .header {
   margin: auto;
-  width: 80%;
+  width: 80vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,9 +27,9 @@ a {
 
 .options {
   display: flex;
-  width: 25vw;
+  width: 20vw;
   flex-direction: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .login, .signup, .logout, .wallet {
