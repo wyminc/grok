@@ -192,7 +192,7 @@ class EditCardForm extends Component {
                                     />
                                 </div>
                                 <div className="done">
-                                    <button onClick={() => { this.putCard(this.props.editInfo) }}> >>> </button>
+                                        <button onClick={() => { this.putCard(this.props.editInfo) }}> >>> </button>
                                 </div>
                             </div>
                         </div>
