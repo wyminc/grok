@@ -31,7 +31,7 @@
   width: 30%;
   border: 1px solid lightgrey;
   background-color: white;  
-  box-shadow: 2px 2px 5px grey;
+  box-shadow: 2px 2px 5px lightgrey;
 }
 
 .login-form-container {
@@ -67,7 +67,6 @@
 .login-form-container button {
   padding: 2%;
   font-weight: bold;
-  background-color: transparent;
   margin: 5% 0 2% 0;
   /* border: none; */
   /* border: 1px solid #73C6B6; */
@@ -92,6 +91,6 @@
   }
   to {
     /* border-bottom: 3px solid rgba (233, 190, 250, 1) */
-    border-bottom: 3px solid #73C6B6;
+    border-bottom: 3px solid #AFC851;
   }
 }
