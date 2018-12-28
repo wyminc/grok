@@ -35,6 +35,14 @@ export const authenticated = (data) => {
 
 //~~~~~~~~~~ CARD ACTIONS ~~~~~~~~~~//
 
+export const gotCard = () => {
+  return dispatch => {
+    dispatch({
+      type: GOT_CARD
+    })
+  }
+}
+
 export const getAllCards = (id) => {
   return dispatch => {
     axios

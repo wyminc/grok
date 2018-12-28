@@ -139,15 +139,6 @@ func deleteCard(id string) (card, error) {
 		if card.Is_deleted == false {
 			var doc = card.Id
 			err = c.Update(bson.M{"_id": doc}, bson.M{"$set": bson.M{"is_deleted": true}})
-			{
-				break
-			}
-		} else {
-			var doc = results[len(results)-1].Id
-			err = c.Update(bson.M{"_id": doc}, bson.M{"$set": bson.M{"is_deleted": true}})
-			{
-				break
-			}
 		}
 	}
 

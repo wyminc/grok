@@ -70,6 +70,13 @@ const reducers = (state = {
         ...state,
         myCard: noCard
       }
+    case GOT_CARD:
+      let gotCard = { ...state.myCard };
+      gotCard.no_card = false;
+      return {
+        ...state,
+        myCard: gotCard
+      }
     case MY_DELETED_CARD:
       let deletedCard = { ...action.payload }
       deletedCard.data = {

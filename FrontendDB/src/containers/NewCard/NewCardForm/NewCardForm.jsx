@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { AllTemplates } from './Template.jsx';
 import { templates } from './CardCssTemplates.js';
 import { FrontPreview, BackPreview } from './TemplatePreview.jsx';
-import { newCardData, newCardCss, newCard } from '../../../actions/actions.js';
+import { newCardData, newCardCss, newCard, gotCard } from '../../../actions/actions.js';
 
 import './NewCardForm.css';
 
@@ -68,6 +68,7 @@ class NewCardForm extends Component {
         }
         body.style.css = newCss;
         console.log("WHat is post body", body);
+        this.props.dispatch(gotCard());
         this.props.dispatch(newCard(body));
         this.setState({
             toWallet: true
