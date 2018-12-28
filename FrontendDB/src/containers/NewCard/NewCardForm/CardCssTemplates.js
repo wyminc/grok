@@ -33,7 +33,7 @@ export const templates = [
             fontFamily: "SnellRoundhand-Bold",
             fontSize: "30px",
             textAlign: "left",
-            padding: "5% 0 5% 5%",
+            padding: "5px 0 5px 15px",
             backgroundColor: "black",
             color: "#F1D572"
         },
@@ -41,9 +41,9 @@ export const templates = [
             position: "relative",
             fontSize: "14px",
             textAlign: "left", 
-            top: "10%",
-            left: "1%",
-            padding: "0 0 0 5%"
+            top: "5vh",
+            left: "1vw",
+            padding: "0 0 0 15px"
         }
     }
 },
@@ -56,7 +56,7 @@ export const templates = [
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "contain",
                 backgroundPosition: "left", 
-                padding: "0 0 0 10%",
+                padding: "0 0 0 20px",
                 fontFamily: "Menlo",
                 textAlign: "right",
             },
@@ -64,8 +64,8 @@ export const templates = [
                 textTransform: "uppercase",
                 letterSpacing: "2px",
                 position: "relative", 
-                top: "35%",
-                right: "10%",
+                top: "10vh",
+                right: "2vw",
                 color: "black",
                 fontSize: "24px",
             },
@@ -79,12 +79,12 @@ export const templates = [
                 textAlign: "right",
                 fontSize: "24px",
                 fontFamily: "Menlo",
-                padding: "5%",
+                padding: "20px",
                 letterSpacing: "5px",
             },
             info: {
                 fontFamily: "Avenir-Book",
-                padding: "0 5% 0 0",
+                padding: "0 20px 0 0",
                 fontSize: "14px",
                 letterSpacing: "3px"
             }
@@ -99,8 +99,8 @@ export const templates = [
                 backgroundSize: "cover"
             }, 
             company: {
-                padding: "5% 0 0 0",
-                height: "50%",
+                padding: "15px 0 0 0",
+                height: "10vh",
                 backgroundColor: "#717892",
                 position: "relative",
                 fontFamily: "Didot-Bold",
@@ -108,7 +108,7 @@ export const templates = [
                 letterSpaceing: "3px",
                 fontSize: "16px",
                 textAlign: "center",
-                top: "40%",
+                top: "12vh",
                 color: "white",
             },
             front: {
@@ -121,11 +121,11 @@ export const templates = [
                 color: "#717892",
                 position: "relative",
                 fontFamily: "Didot-Bold",
-                padding: "0 0 2% 0",
+                padding: "0 0 5px 0",
                 fontSize: "20px",
                 textTransform: "uppercase",
                 letterSpacing: "5px",
-                top: "15%",
+                top: "5vh",
             },
             info: {
                 fontFamily: "Didot-Bold",
@@ -133,8 +133,8 @@ export const templates = [
                 fontSize: "14px",
                 textAlign: "center",
                 letterSpacing: "3px",
-                top: "25%",
-                left: "5%"
+                top: "6vh",
+                
             }
         }   
     },
@@ -153,36 +153,27 @@ export const templates = [
                 fontWeight: "bold",
                 fontSize: "14px", 
                 color: "black",
-                top: "2em",
-                right: "2em"
+                top: "8vh",
+                right: "3vw"
             },
             front: {
                 backgroundImage: "url('https://i.pinimg.com/564x/88/ed/5e/88ed5e8ab5c14f6288825d5861b9e8d8.jpg')",
                 backgroundRepeat: "no-repeat", 
                 backgroundSize: "cover",
                 color: "black",
-                // textShadow: "1px 1px 5px grey",      
             },
             name: {
                 fontFamily: "Zapfino",
                 fontWeight: "bold",
-                fontSize: "14px",
-                backgroundColor: "white",
+                fontSize: "20px",
                 position: "relative", 
-                width: "20em",
-                height: "5em",
                 textAlign: "right",
-                left: "10em",
-                padding: "5% 5% 0 0"
+                padding: "10px 15px 0 0"
             },
             info: {
-                backgroundColor: "white",
                 position: "relative", 
-                width: "60%",
-                height: "50%",
                 textAlign: "right",
-                left: "40%",
-                padding: "0 5% 0 0"
+                padding: "10px 15px 0 0"
             }
         }   
     }

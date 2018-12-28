@@ -136,7 +136,6 @@ class Wallet extends Component {
         </div>
 
         {/***** WALLET CARD DISPLAY *****/}
-        <div className="display-container">
           <Switch>
             <Route exact path='/wallet' render={() =>
             <div className="card-container">
@@ -233,7 +232,6 @@ class Wallet extends Component {
             />
           </Switch>
         </div>
-      </div>
 
     )
   }
