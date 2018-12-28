@@ -12,6 +12,7 @@ import {
   DELETE_CARD,
   MY_DELETED_CARD,
   NO_CARD,
+  GOT_CARD,
   deleteCard
 } from '../actions/actions.js'
 
@@ -70,9 +71,16 @@ const reducers = (state = {
         ...state,
         myCard: noCard
       }
+    case GOT_CARD:
+      let gotCard = { ...state.myCard };
+      gotCard.no_card = false;
+      return {
+        ...state,
+        myCard: gotCard
+      }
     case MY_DELETED_CARD:
       let deletedCard = { ...action.payload }
-      deleteCard.data = {
+      deletedCard.data = {
         company_name: "",
         name: "",
         title: "",

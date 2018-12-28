@@ -14,6 +14,7 @@ export const EDIT_MY_CARD = "EDIT_MY_CARD";
 export const DELETE_CARD = "DELETE_CARD";
 export const MY_DELETED_CARD = "MY_DELETED_CARD";
 export const NO_CARD = "NO_CARD";
+export const GOT_CARD = "GOT_CARD";
 
 //Auth Actions 
 export const authBool = () => {
@@ -34,6 +35,14 @@ export const authenticated = (data) => {
 }
 
 //~~~~~~~~~~ CARD ACTIONS ~~~~~~~~~~//
+
+export const gotCard = () => {
+  return dispatch => {
+    dispatch({
+      type: GOT_CARD
+    })
+  }
+}
 
 export const getAllCards = (id) => {
   return dispatch => {

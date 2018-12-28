@@ -44,6 +44,8 @@ func getSpecific(id string) (card, error) {
 				{
 					break
 				}
+			} else {
+				result = results[len(results)-1]
 			}
 		}
 	}
@@ -96,6 +98,8 @@ func addCard(data *newCard) (card, error) {
 				{
 					break
 				}
+			} else {
+				result = results[len(results)-1]
 			}
 		}
 	}
@@ -127,7 +131,16 @@ func deleteCard(id string) (card, error) {
 	defer session.Close()
 
 	c := session.DB("grok").C("cards")
-	err = c.Update(bson.M{"user_id": id}, bson.M{"$set": bson.M{"is_deleted": true}})
+	var results []card
+
+	err = c.Find(bson.M{"user_id": id}).All(&results)
+
+	for _, card := range results {
+		if card.Is_deleted == false {
+			var doc = card.Id
+			err = c.Update(bson.M{"_id": doc}, bson.M{"$set": bson.M{"is_deleted": true}})
+		}
+	}
 
 	result := card{}
 	err = c.Find(bson.M{"user_id": id}).One(&result)
