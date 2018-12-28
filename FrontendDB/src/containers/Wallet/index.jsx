@@ -12,7 +12,6 @@ import './styles.css';
 import { getMyCard, getAllCards, deleteCard } from "../../actions/actions.js";
 import { timingSafeEqual } from 'crypto';
 
-// 
 //Function to create links
 const LinkButton = (props) => {
   return (

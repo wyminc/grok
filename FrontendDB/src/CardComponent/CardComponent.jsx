@@ -1,6 +1,9 @@
 import React from 'react';
 import './styles.css'
 
+//Slider 
+import Slider from "react-slick";
+
 export const Card = (props) => {
   const { data, styles } = props;
   console.log('card data', data)
@@ -26,23 +29,43 @@ export const Card = (props) => {
 export const AllCards = (props) => {
   console.log('all cards props', props);
 
-
-  return props.cards.map(card =>
-    <div key={card.user_id} className={props.cardContainer}>
-      <div className={props.back} style={card.style.css.back}>
-        <div className={props.company} style={card.style.css.company}>{card.data.company_name}</div>
-      </div>
-      <div className={props.front} style={card.style.css.front}>
-        <div className={props.info} style={card.style.css.info}>
-          <div className={props.name} style={card.style.css.name}>{card.data.name}</div>
-          <div className={props.title}>{card.data.title}</div>
-          <div className={props.address}>{card.data.address}</div>
-          <div className={props.phone}>{card.data.phone}</div>
-          <div className={props.email}>{card.data.email}</div>
+  if (props.cards.length > 0) {
+    return <Slider>
+      {props.cards.map((card, index) =>
+        <div key={index} className={props.cardContainer}>
+          <div className={props.back} style={card.style.css.back}>
+            <div className={props.company} style={card.style.css.company}>{card.data.company_name}</div>
+          </div>
+          <div className={props.front} style={card.style.css.front}>
+            <div className={props.info} style={card.style.css.info}>
+              <div className={props.name} style={card.style.css.name}>{card.data.name}</div>
+              <div className={props.title}>{card.data.title}</div>
+              <div className={props.address}>{card.data.address}</div>
+              <div className={props.phone}>{card.data.phone}</div>
+              <div className={props.email}>{card.data.email}</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </Slider>
+  } else {
+    return props.cards.map(card =>
+      <div key={card.user_id} className={props.cardContainer}>
+        <div className={props.back} style={card.style.css.back}>
+          <div className={props.company} style={card.style.css.company}>{card.data.company_name}</div>
+        </div>
+        <div className={props.front} style={card.style.css.front}>
+          <div className={props.info} style={card.style.css.info}>
+            <div className={props.name} style={card.style.css.name}>{card.data.name}</div>
+            <div className={props.title}>{card.data.title}</div>
+            <div className={props.address}>{card.data.address}</div>
+            <div className={props.phone}>{card.data.phone}</div>
+            <div className={props.email}>{card.data.email}</div>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export const DisplayCard = (props) => {
