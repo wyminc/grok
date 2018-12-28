@@ -70,7 +70,7 @@ class Wallet extends Component {
     this.props.dispatch(deleteCard(id));
   }
 
-  cardClass = (i) => {
+  cardClass = () => {
     if (this.state.cardClassName === "card") {
       this.setState({
         cardClassName: "card-flip"
@@ -202,8 +202,6 @@ class Wallet extends Component {
             <Route exact path='/wallet/othercards' render={() =>
             <div>
                   <AllCards
-                  previousCard={this.previousCard}
-                  nextCard={this.nextCard}
                   cardClass={this.cardClass}
                   cardContainer={this.state.cardClassName}
                   front={front}

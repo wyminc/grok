@@ -1,14 +1,16 @@
 /***** PLACEHOLDER BANNER *****/
 .banner-container {
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
     /* background-color: #273746; */
-    background-image: url('../../assets/Banner.jpg');
+    background-color: white;
+    /* background-image: url('../../assets/Banner.jpg'); */
     /* background-repeat: no-repeat; */
     background-size: 100vw 72vh;
     margin: auto;
     display: flex;
     flex-direction: row wrap;
+    /* border: 1px solid green; */
 }
 
 .grok-definition {
@@ -30,14 +32,17 @@
 }
 
 .get-started button {
-    margin: 12vh 0 0 5vh;
-    background-color:#273746;
+    /* margin: 12vh 0 0 5vh; */
+    position: relative;
+    top: 20vh;
+    left: 10vw;
+    background-color:#4A8BD8;
     padding: 15px;
     border: 2px solid white;
-    border-radius: 15px;
     font-size: 16px;
     color: white;
-    font-weight: bold;
+    font-weight: normal;
+    letter-spacing: 1.5px;
 }
 
 .get-started button:hover {
@@ -68,15 +73,18 @@
 
 /**** NAVIGATION BAR *****/
 .nav-bar-container {
+    z-index: 0;
     width: 100vw; 
     height: 5vh;
     padding: 1% 0 2% 0;
-    box-shadow: 2px 2px 2px lightgrey;
+    /* box-shadow: 2px 2px 2px lightgrey; */
     margin-bottom: 1%;
+    position: relative;
+    top: -5vh;
 }
 
 .nav-bar {
-    width: 80%;
+    width: 40%;
     margin: auto;
     display: flex;
     flex-direction: row wrap;
@@ -86,6 +94,7 @@
 .nav-items {
     font-size: 90%;
     padding-bottom: 0.25%;  
+    letter-spacing: 1.5px;
 }
 
 .nav-items:hover {

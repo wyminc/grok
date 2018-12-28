@@ -41,14 +41,38 @@ a {
 
 .login, .signup, .logout, .wallet {
   padding: 1% 1% 2% 1%;
-  border-bottom: 3px solid white;
+  letter-spacing: 1.5px;
+  /* border-bottom: 3px solid white; */
 }
+
+.login, .logout {
+  background-color: #4A8BD8;
+  color: white;
+  padding: 10px 20px 10px 20px;
+}
+
+.signup, .wallet {
+  border: 1px solid #4A8BD8;
+  background-color: white;
+  color: #4A8BD8;
+  padding: 10px 20px 10px 20px;
+}
+
+
+.login a {
+  color: white;
+}
+
+.signup a {
+  color: #4A8BD8
+}
+
 
 .login:hover, .signup:hover, .logout:hover, .wallet:hover {
   /* background: grey;
   color: black;
 box-shadow: inset 0 0 0 3px black; */ 
-  animation: border-fadein 2s forwards;
+  /* animation: border-fadein 2s forwards; */
   /* border: 1px solid rgba(0, 0, 0, 0.5); */
 }
 

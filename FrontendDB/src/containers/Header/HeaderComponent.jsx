@@ -5,8 +5,10 @@ import { Auth } from 'aws-amplify'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+//LOGO IMAGES
 // import logo from '../../assets/logo.png'
-import logo_green from '../../assets/logo_all_green.png'
+// import logo_green from '../../assets/logo_all_green.png'
+import logo_blue from '../../assets/logo_all_blue.png'
 
 class Header extends Component {
 
@@ -59,7 +61,7 @@ class Header extends Component {
         <div className="header">
           <div className="logo">
             {/* <a href="/"><h1>Grok</h1></a> */}
-            <a href="/"><img src={logo_green} alt="logo" className="logo-image" /></a>
+            <a href="/"><img src={logo_blue} alt="logo" className="logo-image" /></a>
           </div>
           <div className="options">
             {!this.props.authInfo.isAuthenticated ? (
