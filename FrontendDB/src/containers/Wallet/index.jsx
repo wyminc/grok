@@ -29,6 +29,7 @@ class Wallet extends Component {
       cardClassName: "card",
       decrement: 0,
       increment: 1,
+      authenticated: false
     }
   }
 
