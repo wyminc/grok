@@ -86,16 +86,23 @@ export default class Register extends Component {
 
   renderConfirmationForm() {
     return (
-        <form onSubmit={this.handleConfirmationSubmit}>
+    <div className="confirmation-page-container">
+      <div className="confirmation-container"> 
+        <div className="confirmation-header">
+          <h3>CONFIRM YOUR IDENTITY</h3>
+        </div>
+         <form onSubmit={this.handleConfirmationSubmit} className="confirmation-form-container">
           <FormGroup controlId="confirmationCode" bsSize="large">
-            <ControlLabel>Confirmation Code</ControlLabel>
+            <ControlLabel>CONFIRMATION CODE</ControlLabel>
             <FormControl
               autoFocus
               type="tel"
               value={this.state.confirmationCode}
               onChange={this.handleChange}
             />
-            <HelpBlock>Please check your email for the code.</HelpBlock>
+            <div className="confirmation-message">
+            <HelpBlock>PLEASE CHECK YOUR EMAIL FOR THE CONFIRMATION CODE.</HelpBlock>            
+            </div>
           </FormGroup>
           <LoaderButton
             block
@@ -103,10 +110,12 @@ export default class Register extends Component {
             disabled={!this.validateConfirmationForm()}
             type="submit"
             isLoading={this.state.isLoading}
-            text="Verify"
+            text="VERIFY"
             loadingText="Verifying…"
           />
-        </form>
+        </form>     
+      </div>    
+    </div>
     );
   }
 
