@@ -76,7 +76,7 @@ export const CardTemplates = (props) => {
     return <Carousel>
     {props.templates.map((template, index) => 
       <div key={index}>
-        <img className="template-images" src={props.template} alt="templates"/>
+        <img src={template} alt="templates" className="template-image"/>
       </div>  
     )}
   </Carousel>
@@ -84,7 +84,7 @@ export const CardTemplates = (props) => {
   else {
     return props.templates.map((template, index) => 
       <div key={index}>
-        <img src={props.template} alt="templates"/>
+        <img src={template} alt="templates" className="template-image"/>
       </div>  
     )
   }

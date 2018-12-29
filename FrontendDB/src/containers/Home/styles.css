@@ -127,18 +127,21 @@ html {
 }
 
 .card-examples {
-    width: 45vw;
-    height: auto;
+    width: 60vw;
 }
 
-.template-images {
-    width: 30vw;
+.template-image {
+    width: 50vw;
     height: auto;
 }
 
 .card-explanation {
-    width: 45vw;
+    width: 25vw;
 }
+/* 
+ .slider-frame {
+    min-width: 200px;
+} */
 
 /***** ABOUT SECTION *****/
 .about-info {

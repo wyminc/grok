@@ -9,7 +9,8 @@ import {CardTemplates} from '../../CardComponent/CardComponent.jsx';
 
 //Images
 import grok_logo_white from '../../assets/grok-white-logo.png';
-import lipstick from '../../assets/templates/lipstick-template.png';
+
+import lipstick from '../../assets/templates/lipstick-template.png'
 import gold from '../../assets/templates/gold-template.png';
 import marble from '../../assets/templates/marble-template.png';
 import pineapple from '../../assets/templates/pineapple-template.png';
@@ -19,10 +20,10 @@ class Home extends Component {
     super(props);
     this.state = {
       templates: [
-        '../../assets/grok-white-logo.png',
-        '../../assets/templates/lipstick-template.png',
-        '../../assets/templates/gold-template.png',
-        '../../assets/templates/pineapple-template.png'
+        pineapple,
+        gold,
+        lipstick,
+        marble
       ]
     }
   }
