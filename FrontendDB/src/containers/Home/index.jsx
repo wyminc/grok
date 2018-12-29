@@ -30,9 +30,6 @@ class Home extends Component {
 
 
   render() {
-    console.log("Home Props for Check", this.props)
-
-    const { isAuthenticated } = this.props.authInfo;
 
     return (
       <div className="home-body-container">
