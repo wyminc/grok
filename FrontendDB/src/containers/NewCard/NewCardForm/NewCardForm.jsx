@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import Transition from 'react-transition-group/Transition';
-import {CSSTransitionGroup} from 'react-transition-group';
+
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -89,68 +88,68 @@ class NewCardForm extends Component {
             <div className="card-form-container">
                 {this.state.next === false ? (
                     <div className="info-form-container">
-                    {/* <div className="info-form-header">
+                        {/* <div className="info-form-header">
                         <h3>INFORMATION</h3>
                     </div> */}
-                    <div className="info-form" >
-                        <div className="info-form-header">
-                            <h3>INFORMATION</h3>
-                        </div>
+                        <div className="info-form" >
+                            <div className="info-form-header">
+                                <h3>INFORMATION</h3>
+                            </div>
                             <div className="info-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    placeholder="Company Name" 
-                                    name="company_name" 
-                                    value={this.state.company_name} 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    placeholder="Company Name"
+                                    name="company_name"
+                                    value={this.state.company_name}
                                 />
                             </div>
                             <div className="info-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    placeholder="Name" 
-                                    name="name" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    placeholder="Name"
+                                    name="name"
                                 />
                             </div>
                             <div className="info-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    placeholder="Title" 
-                                    name="title" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    placeholder="Title"
+                                    name="title"
                                 />
                             </div>
                             <div className="info-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    placeholder="Address" 
-                                    name="address" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    placeholder="Address"
+                                    name="address"
                                 />
                             </div>
                             <div className="info-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    placeholder="Phone Number" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    placeholder="Phone Number"
                                     name="phone"
                                 />
                             </div>
                             <div className="info-field">
-                                <input 
-                                    onChange={this.handleChange} 
-                                    type="text" 
-                                    placeholder="Email" 
-                                    name="email" 
+                                <input
+                                    onChange={this.handleChange}
+                                    type="text"
+                                    placeholder="Email"
+                                    name="email"
                                 />
                             </div>
                             <div className="next">
-                            <button 
-                                onClick={this.handleSubmit}> 
-                                    >>> 
+                                <button
+                                    onClick={this.handleSubmit}>
+                                    >>>
                             </button>
-                        </div>                            
+                            </div>
                         </div>
                     </div>
                 ) : (
@@ -173,7 +172,7 @@ class NewCardForm extends Component {
                                 </div>
                                 <div className="done">
                                     <button onClick={() => { this.postCard(this.props.addInfo) }}> >>> </button>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                     )}

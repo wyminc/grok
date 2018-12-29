@@ -44,11 +44,15 @@ class Home extends Component {
           </div>
         </div>
         <div className="banner-container">
-          {isAuthenticated ? <a href="/wallet" className="get-started">
+          {/* {isAuthenticated ? <a href="/wallet" className="get-started">
             <button>GET STARTED</button>
           </a> : <a href="/newcardform" className="get-started">
               <button>GET STARTED</button>
-            </a>}
+            </a>} */}
+
+          <a href="/wallet" className="get-started">
+            <button>GET STARTED</button>
+          </a>
 
           <div className="grok-definition">
             {/* <p className="grok-title">
@@ -117,11 +121,14 @@ class Home extends Component {
               </p>
             </div>
           </div>
-          {isAuthenticated ? <a href="/wallet" className="about-get-started">
+          {/* {isAuthenticated ? <a href="/wallet" className="about-get-started">
             <button>GET STARTED</button>
           </a> : <a href="/newcardform" className="about-get-started">
               <button>GET STARTED</button>
-            </a>}
+            </a>} */}
+          <a href="/wallet" className="about-get-started">
+            <button>GET STARTED</button>
+          </a>
         </div>
 
         <div id="contact" className="contact-info-container">
