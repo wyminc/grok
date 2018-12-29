@@ -66,26 +66,68 @@ class Home extends Component {
           </div>
           {/* <img className="banner" src="" alt="banner"/> */}
         </div>
-        <div id="design" className="design-info">
+        <div id="design" className="design-info-container">
+          <div className="design">
           <div className="card-examples">
             <CardTemplates
               templates={this.state.templates}
             />
           </div>
           <div className="card-explanation">
+            <h3 className="home-design-header">DESIGN YOUR OWN CARD</h3>
+            <div className="design-text-container">
+              <p className="design-text">
+                Choose a template that fits your style and mood.
+              </p>
+              <p className="design-text">
+                Not sure which one you like better? Don't worry!
+              </p>
+              <p className="design-text">
+                You can always change your template if you feel like switching it up!
+              </p>           
+            </div>
+          </div>
           </div>
         </div>
         <div id="about" className="about-info">
-        </div>
-        <div id="contact" className="contact-footer">
-          <div className="contact-info">
-          
-          </div>
-          <div className="social-media">
+          <div className="about-header">
+            <h3>
+            THE ONLY APP YOU NEED TO GROK SOMEONE!
+            </h3>
+            <p className="the-grok-app">
 
+            </p>
           </div>
-          <div className="back-to-top">
-            <a href="#top" className="footer-items">BACK TO TOP</a>
+          <a href="/newcardform" className="about-get-started">
+            <button>GET STARTED</button>
+          </a>
+        </div>
+
+        <div id="contact" className="contact-info-container">
+          <div className="history-container">
+            <div className="about-grok-container">
+              <p className="about-grok">
+                To Grok is to understand something intuitively, empathize, communicate, establish a rapport. 
+              </p>
+              <p className="about-grok">
+                In the 1960s, American author, Robert Heinlein coined the word "grok" as a Martian word associated with water, life, and to live. 
+                The word, "grok", is used to bring together once separate realities - entangled in the same experiences, goals, history, and purpose. 
+              </p>
+              <p className="about-grok">
+                In computer programming culture, to "grok" something, is to boldly claim knowledge and mastery of a technique. 
+              </p>
+            </div>
+          </div>
+          <div className="contact-info">
+            {/* <h4>
+              EMAIL US: 
+            </h4>
+            <p>
+              grok.info@wegrokyou.com
+            </p> */}
+            <div className="back-to-top">
+            <a href="#top" className="footer-items"> TAKE ME BACK TO THE TOP</a>
+          </div>
           </div>
         </div>
       </div>

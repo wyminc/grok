@@ -117,17 +117,23 @@ html {
 }
 
 /***** DESIGN YOUR CARD SECTION *****/
-.design-info {
+.design-info-container {
     width: 100vw;
     height: 100vh;
+    margin: auto;
     background-color: #4A8BD8;
+}
+
+.design{
+    width: 80vw;
+    margin: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .card-examples {
-    width: 60vw;
+    width: 50vw;
 }
 
 .template-image {
@@ -136,12 +142,32 @@ html {
 }
 
 .card-explanation {
-    width: 25vw;
+    padding: 0 0 0 30px;
+    /* width: 100vw; */
+    vertical-align: middle;
+    margin: auto;
+    text-align: center;
+    color: white;   
 }
-/* 
- .slider-frame {
-    min-width: 200px;
-} */
+
+h3.home-design-header  {
+    font-size: 28px;
+    margin: 50px 0 50px 0;
+    letter-spacing: 2px;
+}
+
+p.design-text {
+    font-size: 16px;   
+    letter-spacing: 2px; 
+    padding: 10px;
+    font-style: italic;
+}
+
+.design-text-container {
+    width:100%;
+    text-align: justify;
+    margin: auto;
+}
 
 /***** ABOUT SECTION *****/
 .about-info {
@@ -157,13 +183,72 @@ html {
     box-shadow: 4px 4px 10px 4px rbga(0, 0, 0, 0.4);
 }
 
+.about-header  h3{
+    letter-spacing: 1px;
+    font-size: 30px;
+    position: relative;
+    top: 170px;
+    left: 50px;
+}
+
+.about-get-started button{
+    position: relative;
+    top: 47vh;
+    left: 70vw;
+    background-color:#4A8BD8;
+    padding: 15px;
+    border: 2px solid white;
+    font-size: 14px;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 1.5px;
+    font-family: 'Ubuntu', sans-serif;
+}
 
 /***** CONTACT SECTION *****/
-.contact-footer {
+.contact-info-container {
     width: 100vw;
-    height: 50vh;
+    height: 40vh;
     background-color: #4A8BD8;
+    display: flex;
+    flex-direction: column;
 }
+
+.about-grok-container {
+    width: 50vw;
+    /* position: relative;
+    top: 10vh;
+    width: 40vw;
+    left: 2vw; */
+    color: #1D4697;
+}
+
+.about-grok {
+    font-size: 15px;
+    padding: 10px;
+    text-align: justify;
+    letter-spacing: 2px;
+}
+
+.contact-info {
+    color: #1D4697;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.back-to-top a {
+    font-size: 14px;
+    position: relative;
+    left: 40%;
+    top: 4vh;
+    color: #1D4697;
+}
+
 
 /***** ANIMATION KEYFRAMES *****/
 @keyframes border-fadein {

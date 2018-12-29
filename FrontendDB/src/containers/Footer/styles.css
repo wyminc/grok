@@ -4,11 +4,12 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: #4A8BD8;
-  color: #ECF7FE;
+  color: #1D4697;
   font-family: 'Ubuntu', sans-serif;
   width: 100vw;
   height: 15wh;
   padding: 1%;
+  font-size: 14px;
 }
 
 .footer-title, .contact {
@@ -17,7 +18,6 @@
 
 .created-by {
   text-transform: uppercase;
-  font-size: 12px;
 }
 
 .grok-logo-white {
