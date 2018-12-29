@@ -94,9 +94,20 @@ class Home extends Component {
             <h3>
             THE ONLY APP YOU NEED TO GROK SOMEONE!
             </h3>
-            <p className="the-grok-app">
-
-            </p>
+            <div className="grok-app">
+              <p className="the-grok-app">
+                Business cards are a great way to meet and connect with people - they will never go out of style!  
+              </p>
+              <p className="the-grok-app">
+                The downsides? They take up space, they can easily be lost, and they are one of the leading causes of tree fatality.
+              </p>
+              <p className="the-grok-app">
+                Never miss out on an opportunity to build and grow your network with the business card wallet that won't add extra weight! 
+              </p>
+              <p className="the-grok-app">
+                Join the Grok family and a tree will thank you by providing that sweet sweet oxygen that we all love so much!
+              </p>
+            </div>
           </div>
           <a href="/newcardform" className="about-get-started">
             <button>GET STARTED</button>

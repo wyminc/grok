@@ -193,7 +193,7 @@ p.design-text {
 
 .about-get-started button{
     position: relative;
-    top: 47vh;
+    top: 14vh;
     left: 70vw;
     background-color:#4A8BD8;
     padding: 15px;
@@ -249,6 +249,17 @@ p.design-text {
     color: #1D4697;
 }
 
+.grok-app {
+    width: 40vw;
+    position: relative;
+    left: 23vw;
+    top: 27vh;
+}
+
+.the-grok-app {
+    padding: 10px;
+    letter-spacing: 2px;
+}
 
 /***** ANIMATION KEYFRAMES *****/
 @keyframes border-fadein {
