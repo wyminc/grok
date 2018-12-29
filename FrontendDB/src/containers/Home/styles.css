@@ -1,4 +1,37 @@
-/***** PLACEHOLDER BANNER *****/
+html {
+    scroll-behavior: smooth;
+}
+
+/**** NAVIGATION BAR *****/
+.nav-bar-container {
+    width: 40%; 
+    height: 5vh;
+    padding: 1% 0 2% 0;
+    margin-bottom: 1%;
+    position: relative;
+    top: -6vh;
+    left: 25vw;
+}
+
+.nav-bar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around;
+}
+
+.nav-items {
+    font-size: 90%;
+    padding-bottom: 2px;  
+    letter-spacing: 1.5px;
+}
+
+.nav-items:hover {
+    animation: border-fadein 2s forwards;
+}
+
+/***** BANNER *****/
 .banner-container {
     width: 100vw;
     height: 85vh;
@@ -83,40 +116,28 @@
     }
 }
 
-/**** NAVIGATION BAR *****/
-.nav-bar-container {
-    width: 40%; 
-    height: 5vh;
-    padding: 1% 0 2% 0;
-    margin-bottom: 1%;
-    position: relative;
-    top: -6vh;
-    left: 25vw;
-}
-
-.nav-bar {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: row wrap;
-    justify-content: space-around;
-}
-
-.nav-items {
-    font-size: 90%;
-    padding-bottom: 2px;  
-    letter-spacing: 1.5px;
-}
-
-.nav-items:hover {
-    animation: border-fadein 2s forwards;
-}
-
 /***** DESIGN YOUR CARD SECTION *****/
 .design-info {
     width: 100vw;
     height: 100vh;
     background-color: #4A8BD8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card-examples {
+    width: 45vw;
+    height: auto;
+}
+
+.template-images {
+    width: 30vw;
+    height: auto;
+}
+
+.card-explanation {
+    width: 45vw;
 }
 
 /***** ABOUT SECTION *****/

@@ -4,12 +4,28 @@ import './styles.css';
 //Slider 
 import Carousel from 'nuka-carousel';
 
+//Card Component
+import {CardTemplates} from '../../CardComponent/CardComponent.jsx';
+
 //Images
 import grok_logo_white from '../../assets/grok-white-logo.png';
+import lipstick from '../../assets/templates/lipstick-template.png';
+import gold from '../../assets/templates/gold-template.png';
+import marble from '../../assets/templates/marble-template.png';
+import pineapple from '../../assets/templates/pineapple-template.png';
 
 class Home extends Component {
-
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      templates: [
+        '../../assets/grok-white-logo.png',
+        '../../assets/templates/lipstick-template.png',
+        '../../assets/templates/gold-template.png',
+        '../../assets/templates/pineapple-template.png'
+      ]
+    }
+  }
   render() {
 
     return (
@@ -40,7 +56,7 @@ class Home extends Component {
               Reduce Waste and Clutter.
               </p>
               <p className="words">
-                Orgaize Your Network.
+                Organize Your Network.
               </p>
               <p className="words">
                 Keep Rapport. 
@@ -51,6 +67,9 @@ class Home extends Component {
         </div>
         <div id="design" className="design-info">
           <div className="card-examples">
+            <CardTemplates
+              templates={this.state.templates}
+            />
           </div>
           <div className="card-explanation">
           </div>

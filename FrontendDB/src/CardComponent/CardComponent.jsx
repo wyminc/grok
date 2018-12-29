@@ -68,6 +68,28 @@ export const AllCards = (props) => {
   }
 }
 
+export const CardTemplates = (props) => {
+  console.log('card template props', props)
+  if (props.templates.length > 0) {
+    console.log("props.templates", props.templates);
+    console.log("props.templates.length", props.templates.length)
+    return <Carousel>
+    {props.templates.map((template, index) => 
+      <div key={index}>
+        <img className="template-images" src={props.template} alt="templates"/>
+      </div>  
+    )}
+  </Carousel>
+  }
+  else {
+    return props.templates.map((template, index) => 
+      <div key={index}>
+        <img src={props.template} alt="templates"/>
+      </div>  
+    )
+  }
+}
+
 export const DisplayCard = (props) => {
   return (
     <div key="card" className={props.cardContainer}>
