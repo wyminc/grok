@@ -110,9 +110,13 @@ class App extends Component {
             <Route exact path="/newcardform" component={NewCardForm} />
             <Route exact path="/editcardform" component={EditCardForm} />
 
-            <Route exact path='/wallet' component={this.state.authenticated ? Wallet : Login} />
+            <Route exact path='/wallet' component={Wallet} />
+            <Route exact path='/wallet/mycard' component={Wallet} />
+            <Route exact path='/wallet/othercards' component={Wallet} />
+
+            {/* <Route exact path='/wallet' component={this.state.authenticated ? Wallet : Login} />
             <Route exact path='/wallet/mycard' component={this.state.authenticated ? Wallet : Login} />
-            <Route exact path='/wallet/othercards' component={this.state.authenticated ? Wallet : Login} />
+            <Route exact path='/wallet/othercards' component={this.state.authenticated ? Wallet : Login} /> */}
 
           </Switch>
 

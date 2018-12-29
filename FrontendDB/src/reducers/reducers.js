@@ -12,8 +12,7 @@ import {
   DELETE_CARD,
   MY_DELETED_CARD,
   NO_CARD,
-  GOT_CARD,
-  deleteCard
+  GOT_CARD
 } from '../actions/actions.js'
 
 const reducers = (state = {
@@ -43,6 +42,7 @@ const reducers = (state = {
   },
   added: false,
   edited: false,
+  deleted: false,
   authInfo: {}
 }, action) => {
 
@@ -97,7 +97,7 @@ const reducers = (state = {
       }
       return {
         ...state,
-        myCard: deletedCard
+        myCard: deletedCard, deleted: true
       }
     case GET_ALL_CARDS:
       if (!action.payload) {
