@@ -1,84 +1,138 @@
-//THIS WILL BE A SMART COMPONENT ONCE DATA IS IMPORTED
 import React, { Component } from 'react';
-import {CSSTransitionGroup} from 'react-transition-group';
 import './styles.css';
 
-import FeaturedCards from './FeaturedCards/FeaturedCards.jsx';
+import Footer from '../Footer/FooterComponent.jsx';
+
+//Card Component
+import {CardTemplates} from '../../CardComponent/CardComponent.jsx';
+
+//Images
+import lipstick from '../../assets/templates/lipstick-template.png'
+import gold from '../../assets/templates/gold-template.png';
+import marble from '../../assets/templates/marble-template.png';
+import pineapple from '../../assets/templates/pineapple-template.png';
 
 class Home extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      items: ['hello', 'world', 'click', 'me']
+      templates: [
+        pineapple,
+        gold,
+        lipstick,
+        marble
+      ]
     }
   }
-
-  handleAdd = () => {
-    const newItems = this.state.items.concat([
-      prompt('enter some text')
-    ]);
-    this.setState({items: newItems});
-  }
-
-  handleRemove = (i) => {
-    let newItems = this.state.items.slice();
-    newItems.splice(i, 1);
-    this.setState({items: newItems});
-  }
-
   render() {
-    const items = this.state.items.map((item, i) => (
-      <div key={item} onClick={() => this.handleRemove(i)}>
-      {item}
-      </div>
-    ));
 
     return (
-        <div id="top" className="home-body-container">
+        <div className="home-body-container">
+          <div className="nav-bar-container">
+            <div className="nav-bar">
+              <a href="#about" className="nav-items">ABOUT GROK</a>
+              <a href="#design" className="nav-items">DESIGN YOUR OWN CARD</a>
+              <a href="#contact" className="nav-items">CONTACT</a> 
+            </div>
+          </div>
           <div className="banner-container">
           <a href="/newcardform" className="get-started">
             <button>GET STARTED</button>
           </a>
           <div className="grok-definition">
-            <p className="definition-title">
+            {/* <p className="grok-title">
               GROK
-                </p>
-            <p className="definition">
-              to empathize or communicate sympathetically; <br /> establish a rapport.
-                </p>
+            </p> */}
+            <div className="definition-title">
+              GROK BUSINESS CARDS 
+            </div>
+            <div className="definition">
+              <p className="words">
+                Genuine Connections.            
+              </p>
+              <p className="words">
+              Reduce Waste and Clutter.
+              </p>
+              <p className="words">
+                Organize Your Network.
+              </p>
+              <p className="words">
+                Keep Rapport. 
+              </p>
+            </div>
           </div>
           {/* <img className="banner" src="" alt="banner"/> */}
         </div>
-        <div className="nav-bar-container">
-          <div className="nav-bar">
-            <a href="#about" className="nav-items">ABOUT GROK</a>
-            <a href="#cards" className="nav-items">DESIGN YOUR OWN CARD</a>
-            <a href="#social" className="nav-items">JOIN THE FAMILY</a> {/* Note: Social Media footer section*/}
+        <div id="design" className="design-info-container">
+          <div className="design">
+          <div className="card-examples">
+            <CardTemplates
+              templates={this.state.templates}
+            />
           </div>
-        </div>
-        {/* <div id="cards">
-          <div className="card-example-container">
-            <div className="card-example-header">
-              <h2>Design Your Own Card</h2>
-              <p>Choose from one of our templates or customize it and make it your own!</p>
+          <div className="card-explanation">
+            <h3 className="home-design-header">DESIGN YOUR OWN CARD</h3>
+            <div className="design-text-container">
+              <p className="design-text">
+                Choose a template that fits your style and mood.
+              </p>
+              <p className="design-text">
+                Not sure which one you like better? Don't worry!
+              </p>
+              <p className="design-text">
+                You can always change your template if you feel like switching it up!
+              </p>           
             </div>
-            <FeaturedCards />      
           </div>
-        </div> */}
+          </div>
+        </div>
         <div id="about" className="about-info">
-        {/* <button onClick={this.handleAdd}>add</button>
-          <CSSTransitionGroup
-            transitionName="test"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={300}
-          >
-            {items}
-          </CSSTransitionGroup> */}
+          <div className="about-header">
+            <h3>
+            THE ONLY APP YOU NEED TO GROK SOMEONE!
+            </h3>
+            <div className="grok-app">
+              <p className="the-grok-app">
+                Business cards are a great way to meet and connect with people - they will never go out of style!  
+              </p>
+              <p className="the-grok-app">
+                The downsides? They take up space, they can easily be lost, and they are one of the leading causes of tree fatality.
+              </p>
+              <p className="the-grok-app">
+                Never miss out on an opportunity to build and grow your network with the business card wallet that won't add extra weight! 
+              </p>
+              <p className="the-grok-app">
+                Join the Grok family and a tree will thank you by providing that sweet sweet oxygen that we all love so much!
+              </p>
+            </div>
+          </div>
+          <a href="/newcardform" className="about-get-started">
+            <button>GET STARTED</button>
+          </a>
         </div>
-        <div id="social" className="social-media-footer">
-          {/* [Add social media handles here] */}
+
+        <div id="contact" className="contact-info-container">
+          <div className="history-container">
+            <div className="about-grok-container">
+              <p className="about-grok">
+                To Grok is to understand something intuitively, empathize, communicate, establish a rapport. 
+              </p>
+              <p className="about-grok">
+                In the 1960s, American author, Robert Heinlein coined the word "grok" as a Martian word associated with water, life, and to live. 
+                The word, "grok", is used to bring together once separate realities - entangled in the same experiences, goals, history, and purpose. 
+              </p>
+              <p className="about-grok">
+                In computer programming culture, to "grok" something, is to boldly claim knowledge and mastery of a technique. 
+              </p>
+            </div>
+          </div>
+          <div className="contact-info">
+            <div className="back-to-top">
+            <a href="#top" className="footer-items"> TAKE ME BACK TO THE TOP</a>
+          </div>
+          </div>
         </div>
+        <Footer/>
       </div>
     )
   }

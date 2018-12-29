@@ -2,22 +2,23 @@
     display: flex;
     flex-direction: row wrap;
     justify-content: flex-start;
-    padding: 10px 0 5px 20px;
-    width: 80vw;
-    height: 7vh;
+    width: 40%;
+    height: 3.5vh;
+    position: relative;
+    top: -4vh;
+    left: 25vw;
 }
 
 .nav-button {
+    letter-spacing: 1.5px;
     margin-left: 10px;
-    padding: 0 5px 5px 10px;
+    padding: 0 1px 1px 10px;
     font-size: 16px;
 } 
 
-
-/* .card-container {
-    display: flex; 
-    flex-direction: row;
-} */
+.nav-button:hover {
+    animation: border-fadein 2s forwards;
+}
 
 .card {
     position: relative;
@@ -49,9 +50,10 @@ div.card-flip {
     animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; 
 }
 
-/* .card:active  {
-    animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-} */
+.display-container {
+    display: flex;
+    flex-direction: column;
+}
 
 .card-info, .card-front {
     position: absolute; 
@@ -71,13 +73,13 @@ div.card-flip {
 }
 
 .button-container {
-    width: 25%;
+    width: 30%;
     position: relative;
-    top: -6vh;
-    left: 70vw;
+    top: 20vh;
+    left: 34vw;
     display: flex; 
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-evenly;
 }
 
 .edit-button button, .delete-button button {
@@ -89,10 +91,7 @@ div.card-flip {
     height: 3vh;
     width: 3w;
 }
-/* 
-.all-cards-container {
-    margin: 5%;
-} */
+
 
 @keyframes border-fadein {
     from {

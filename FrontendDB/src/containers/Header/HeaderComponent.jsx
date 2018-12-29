@@ -5,8 +5,10 @@ import { Auth } from 'aws-amplify'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+//LOGO IMAGES
 // import logo from '../../assets/logo.png'
-import logo_green from '../../assets/logo_all_green.png'
+// import logo_green from '../../assets/logo_all_green.png'
+import logo_blue from '../../assets/logo_all_blue.png'
 
 class Header extends Component {
 
@@ -56,22 +58,22 @@ class Header extends Component {
 
     return (
       <div className="header-container">
-        <div className="header">
+        <div className="header" id="top">
           <div className="logo">
             {/* <a href="/"><h1>Grok</h1></a> */}
-            <a href="/"><img src={logo_green} alt="logo" className="logo-image" /></a>
+            <a href="/"><img src={logo_blue} alt="logo" className="logo-image" /></a>
           </div>
           <div className="options">
             {!this.props.authInfo.isAuthenticated ? (
               <div className="options">
                 <div className="signup">
                   <a href="/signup">
-                    <div>SIGN UP</div>
+                    <button>SIGN UP</button>
                   </a>
                 </div>
                 <div className="login">
                   <a href="/login">
-                    <div>LOG IN</div>
+                    <button>LOG IN</button>
                   </a>
                 </div>
               </div>
@@ -79,12 +81,12 @@ class Header extends Component {
                 <div className="options">
                   <div className="wallet">
                     <a href="/wallet">
-                      <div> WALLET </div>
+                      <button> WALLET </button>
                     </a>
                   </div>
                   <div className="logout">
                     <a href="/" onClick={this.handleLogout}>
-                      <div>LOG OUT</div>
+                      <button>LOG OUT</button>
                     </a>
                   </div>
                 </div>

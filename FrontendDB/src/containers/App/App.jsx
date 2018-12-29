@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 
 //~~~~ COMPONENTS ~~~~//
 import Header from '../Header/HeaderComponent.jsx'
-import Footer from '../Footer/FooterComponent.jsx'
 
 //~~~~ Actions ~~~~//
 import { authenticated } from '../../actions/actions.js'
@@ -118,8 +117,6 @@ class App extends Component {
           </Switch>
 
         </Router>
-
-        <Footer />
       </div>
     );
   }
