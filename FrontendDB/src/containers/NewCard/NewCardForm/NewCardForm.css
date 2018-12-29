@@ -68,8 +68,8 @@
 
 .template {
     margin: 0 0 10% 0;
-    width: 15vw;
-    height: 15vh;
+    width: 400px;
+    height: 200px;
     /* border: 1px solid black; */
     /* animation: enter-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
@@ -136,18 +136,6 @@
       border-bottom: 3px solid #AFC851;
     }
   }
-
-/*
-@keyframes exit-right {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(1000px);
-        opacity: 0;
-    }
-} */
 
 
 

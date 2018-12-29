@@ -24,8 +24,8 @@
     position: relative;
     top: 15vh;
     transform-style: preserve-3d;
-    height: 30vh;
-    width: 25vw;
+    width: 400px;
+    height: 200px;
     margin: auto;
     transition: transform 1s;
 }
@@ -34,8 +34,8 @@ div.card-flip {
     position: relative;
     transform-style: preserve-3d;
     top: 15vh;
-    height: 30vh;
-    width: 25vw;
+    width: 400px;
+    height: 200px;
     margin: auto;
     animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
 }
@@ -44,8 +44,8 @@ div.card-flip {
     position: relative;
     top: 15vh;
     transform-style: preserve-3d;
-    height: 30vh;
-    width: 25vw;
+    width: 400px;
+    height: 200px;
     margin: auto;
     animation: flip-back 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; 
 }

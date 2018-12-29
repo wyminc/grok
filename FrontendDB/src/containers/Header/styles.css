@@ -55,15 +55,6 @@ a {
   padding: 10px 20px 10px 20px;
 }
 
-
-/* .login a, .logout a {
-  color: white;
-}
-
-.signup , .wallet a {
-  color: #4A8BD8
-} */
-
 .login button:hover, .logout button:hover{
   animation: blue-button-color-fade 1s forwards;
 }

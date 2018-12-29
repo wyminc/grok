@@ -42,7 +42,6 @@ export const templates = [
             fontSize: "14px",
             textAlign: "left", 
             top: "25px",
-            left: "15px",
             padding: "0 0 0 15px"
         }
     }

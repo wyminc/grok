@@ -40,9 +40,6 @@ class Home extends Component {
             <button>GET STARTED</button>
           </a>
           <div className="grok-definition">
-            {/* <p className="grok-title">
-              GROK
-            </p> */}
             <div className="definition-title">
               GROK BUSINESS CARDS 
             </div>
@@ -61,7 +58,6 @@ class Home extends Component {
               </p>
             </div>
           </div>
-          {/* <img className="banner" src="" alt="banner"/> */}
         </div>
         <div id="design" className="design-info-container">
           <div className="design">

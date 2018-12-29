@@ -69,29 +69,17 @@
     display: flex;
     flex-direction: row wrap;
     justify-content: space-around;
-    /* padding: 5%;
-    height: 100%;
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: row wrap;
-    justify-content: space-around; */
-    /* animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
 
 .template-options-container {
-    /* padding: 5%; */
     padding: 5%;
     animation: enter-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .template {
     margin: 10% 0 10% 0;
-    width: 15vw;
-    height: 15vh;
-    /* border: 1px solid black; */
-    /* animation: enter-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+    width: 400px;
+    height: 200px;
 }
 
 .card-preview-container {
@@ -100,18 +88,9 @@
     flex-direction: column;
     justify-content: space-around;
     animation: enter-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    /* padding: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; */
-    /* animation: enter-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
 
 .front-preview, .back-preview {
-    /* width: 30vw;
-    height: 25vh;
-    margin: 5% 0 5% 0; */
-    /* border: 1px solid black; */
     width: 400px;
     height: 200px;
     margin: 10px 0 10px 0;

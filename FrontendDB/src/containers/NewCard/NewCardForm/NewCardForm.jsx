@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import Transition from 'react-transition-group/Transition';
-import {CSSTransitionGroup} from 'react-transition-group';
+
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
