@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-//Slider 
-import Carousel from 'nuka-carousel';
+import Footer from '../Footer/FooterComponent.jsx';
 
 //Card Component
 import {CardTemplates} from '../../CardComponent/CardComponent.jsx';
 
 //Images
-import grok_logo_white from '../../assets/grok-white-logo.png';
-
 import lipstick from '../../assets/templates/lipstick-template.png'
 import gold from '../../assets/templates/gold-template.png';
 import marble from '../../assets/templates/marble-template.png';
@@ -130,17 +127,12 @@ class Home extends Component {
             </div>
           </div>
           <div className="contact-info">
-            {/* <h4>
-              EMAIL US: 
-            </h4>
-            <p>
-              grok.info@wegrokyou.com
-            </p> */}
             <div className="back-to-top">
             <a href="#top" className="footer-items"> TAKE ME BACK TO THE TOP</a>
           </div>
           </div>
         </div>
+        <Footer/>
       </div>
     )
   }
