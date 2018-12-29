@@ -133,6 +133,9 @@ class Home extends Component {
               <p className="about-grok">
                 In computer programming culture, to "grok" something, is to boldly claim knowledge and mastery of a technique.
               </p>
+              <p className="about-grok">
+                Want to learn more? Email us at grok.info@wegrokyou.com
+              </p>
             </div>
           </div>
           <div className="contact-info">

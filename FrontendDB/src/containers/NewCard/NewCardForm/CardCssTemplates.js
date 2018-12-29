@@ -33,9 +33,8 @@ export const templates = [
             fontFamily: "SnellRoundhand-Bold",
             fontSize: "30px",
             textAlign: "left",
-            padding: "5px 0 5px 15px",
-            backgroundColor: "black",
-            color: "#F1D572"
+            padding: "5px 0 5px 10px",
+            color: "black"
         },
         info: {
             position: "relative",
